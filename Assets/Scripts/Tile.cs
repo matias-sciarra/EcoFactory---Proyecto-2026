@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class Tile : MonoBehaviour
 {
-    private Renderer rend;
-
     public Material normalMaterial;
-    public Material highlightMaterial;
+    public Material validMaterial;
+    public Material invalidMaterial;
+    public GameObject currentBuilding;
+
+    public bool occupied = false;
+
+    private Renderer rend;
 
     void Awake()
     {
@@ -15,13 +19,18 @@ public class Tile : MonoBehaviour
         rend.material = normalMaterial;
     }
 
-    public void Highlight()
-    {
-        rend.material = highlightMaterial;
-    }
-
-    public void UnHighlight()
+    public void SetNormal()
     {
         rend.material = normalMaterial;
+    }
+
+    public void SetValid()
+    {
+        rend.material = validMaterial;
+    }
+
+    public void SetInvalid()
+    {
+        rend.material = invalidMaterial;
     }
 }
