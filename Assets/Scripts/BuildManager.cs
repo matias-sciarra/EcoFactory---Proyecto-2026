@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
+﻿using UnityEngine;
 
 public class BuildManager : MonoBehaviour
 {
@@ -10,6 +7,7 @@ public class BuildManager : MonoBehaviour
     public Transform buildPosition;
     public GameObject buildingPrefab;
     public LayerMask gridLayer;
+
     private Tile lastPlacedTile;
     private Tile lastRemovedTile;
 
@@ -45,9 +43,9 @@ public class BuildManager : MonoBehaviour
         if (!buildMode)
             return;
 
-HandleTileSelection();
-HandleBuildingPlacement();
-HandleBuildingRemoval();
+        HandleTileSelection();
+        HandleBuildingPlacement();
+        HandleBuildingRemoval();
     }
 
     void EnterBuildMode()
@@ -118,62 +116,62 @@ HandleBuildingRemoval();
     }
 
     void HandleBuildingPlacement()
-{
-    if (currentTile == null)
-        return;
-
-    if (currentTile.occupied)
-        return;
-
-    if (Input.GetMouseButton(0))
     {
-        if (currentTile == lastPlacedTile)
+        if (currentTile == null)
             return;
 
-        GameObject building = Instantiate(
-    buildingPrefab,
-    currentTile.transform.position + Vector3.up * 0.55f,
-    Quaternion.identity
-);
+        if (currentTile.occupied)
+            return;
 
-currentTile.currentBuilding = building;
-currentTile.occupied = true;
-currentTile.SetInvalid();
+        if (Input.GetMouseButton(0))
+        {
+            if (currentTile == lastPlacedTile)
+                return;
 
-        lastPlacedTile = currentTile;
-    }
+            GameObject building = Instantiate(
+                buildingPrefab,
+                currentTile.transform.position + Vector3.up * 0.55f,
+                Quaternion.identity
+            );
 
-    if (Input.GetMouseButtonUp(0))
-    {
-        lastPlacedTile = null;
+            currentTile.currentBuilding = building;
+            currentTile.occupied = true;
+            currentTile.SetInvalid();
+
+            lastPlacedTile = currentTile;
+        }
+
+        if (Input.GetMouseButtonUp(0))
+        {
+            lastPlacedTile = null;
         }
     }
 
     void HandleBuildingRemoval()
-{
-    if (currentTile == null)
-        return;
-
-    if (!currentTile.occupied)
-        return;
-
-    if (Input.GetMouseButton(1))
     {
-        if (currentTile == lastRemovedTile)
+        if (currentTile == null)
             return;
 
-        Destroy(currentTile.currentBuilding);
+        if (!currentTile.occupied)
+            return;
 
-        currentTile.currentBuilding = null;
-        currentTile.occupied = false;
-        currentTile.SetValid();
+        if (Input.GetMouseButton(1))
+        {
+            if (currentTile == lastRemovedTile)
+                return;
 
-        lastRemovedTile = currentTile;
+            Destroy(currentTile.currentBuilding);
+
+            currentTile.currentBuilding = null;
+            currentTile.occupied = false;
+            currentTile.SetValid();
+
+            lastRemovedTile = currentTile;
+        }
+
+        if (Input.GetMouseButtonUp(1))
+        {
+            lastRemovedTile = null;
+        }
     }
-
-    if (Input.GetMouseButtonUp(1))
-    {
-        lastRemovedTile = null;
-    }
-}
 }

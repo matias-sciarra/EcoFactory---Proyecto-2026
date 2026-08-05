@@ -1,15 +1,13 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Tile : MonoBehaviour
 {
     public Material normalMaterial;
     public Material validMaterial;
     public Material invalidMaterial;
-    public GameObject currentBuilding;
 
     public bool occupied = false;
+    public GameObject currentBuilding;
 
     private Renderer rend;
 
