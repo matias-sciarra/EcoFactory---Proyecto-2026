@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class Trash : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public enum TrashType
     {
-        
+    Carton,
+    Plastico,
+    Vidrio,
+    Metal
+       
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public TrashType trashType;
+    public bool isHeld = false;
 }
