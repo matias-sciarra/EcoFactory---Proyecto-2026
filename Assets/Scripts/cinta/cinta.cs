@@ -18,7 +18,7 @@ public class cinta : MonoBehaviour
         beltinSequence = null;
     }
 
-    public Vector 3 GetItemPosition()
+    public Vector3 GetItemPosition()
     {
 
     }
@@ -27,7 +27,7 @@ public class cinta : MonoBehaviour
     {
 
     }
-    private Belt FindNextBelt()
+    private cinta FindNextBelt()
     {
 
     }
