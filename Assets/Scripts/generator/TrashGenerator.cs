@@ -18,12 +18,19 @@ public class TrashGenerator : MonoBehaviour
         if (temporizador >= intervalo)
         {
             temporizador = 0f;
-            GenerateTrash()
+            GenerateTrash();
         }
 
-       void GenerateTrash()
-       {
+    void GenerateTrash()
+        {
+            Vector3 posicion = primeraCinta.GetItemPosition();
+            Quaternion rotacion = Quaternion.identity;
 
+            GameObject nueva = Instantiate(Prefabtrash, posicion, rotacion);
+
+            BeltItem itemComponent = nueva.GetComponent<BeltItem>();
+            primeraCinta.beltItem = itemComponent;
+        }
 
        }
 
@@ -32,6 +39,6 @@ public class TrashGenerator : MonoBehaviour
 
 
 
-}
+
 
 
