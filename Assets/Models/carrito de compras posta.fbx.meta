@@ -1,0 +1,398 @@
+fileFormatVersion: 2
+guid: 631860c364242814bab220b4ce85df5f
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: negro de las ruedas
+    100004: negro de las ruedas.001
+    100006: negro de las ruedas.002
+    100008: negro de las ruedas.003
+    100010: negro de las ruedas.004
+    100012: negro de las ruedas.005
+    100014: negro de las ruedas.006
+    100016: negro de las ruedas.007
+    100018: negro de las ruedas.008
+    100020: negro de las ruedas.009
+    100022: negro de las ruedas.010
+    100024: negro de las ruedas.011
+    100026: negro de las ruedas.012
+    100028: negro de las ruedas.013
+    100030: negro de las ruedas.014
+    100032: negro de las ruedas.015
+    100034: negro de las ruedas.016
+    100036: negro de las ruedas.017
+    100038: negro de las ruedas.018
+    100040: negro de las ruedas.019
+    100042: negro de las ruedas.020
+    100044: negro de las ruedas.021
+    100046: negro de las ruedas.022
+    100048: negro de las ruedas.023
+    100050: negro de las ruedas.024
+    100052: negro de las ruedas.025
+    100054: negro de las ruedas.026
+    100056: negro de las ruedas.027
+    100058: negro de las ruedas.028
+    100060: negro de las ruedas.029
+    100062: negro de las ruedas.030
+    100064: negro de las ruedas.031
+    100066: negro de las ruedas.032
+    100068: negro de las ruedas.033
+    100070: negro de las ruedas.034
+    100072: negro de las ruedas.035
+    100074: negro de las ruedas.036
+    100076: negro de las ruedas.037
+    100078: negro de las ruedas.038
+    100080: negro de las ruedas.039
+    100082: negro de las ruedas.040
+    100084: negro de las ruedas.041
+    100086: negro de las ruedas.042
+    100088: negro de las ruedas.043
+    100090: negro de las ruedas.044
+    100092: negro de las ruedas.045
+    100094: negro de las ruedas.046
+    100096: negro de las ruedas.047
+    100098: negro de las ruedas.048
+    100100: negro de las ruedas.049
+    100102: negro de las ruedas.050
+    100104: negro de las ruedas.051
+    100106: negro de las ruedas.052
+    100108: negro de las ruedas.053
+    100110: negro de las ruedas.054
+    100112: negro de las ruedas.055
+    100114: negro de las ruedas.056
+    100116: negro de las ruedas.057
+    100118: negro de las ruedas.058
+    100120: negro de las ruedas.059
+    400000: //RootNode
+    400002: negro de las ruedas
+    400004: negro de las ruedas.001
+    400006: negro de las ruedas.002
+    400008: negro de las ruedas.003
+    400010: negro de las ruedas.004
+    400012: negro de las ruedas.005
+    400014: negro de las ruedas.006
+    400016: negro de las ruedas.007
+    400018: negro de las ruedas.008
+    400020: negro de las ruedas.009
+    400022: negro de las ruedas.010
+    400024: negro de las ruedas.011
+    400026: negro de las ruedas.012
+    400028: negro de las ruedas.013
+    400030: negro de las ruedas.014
+    400032: negro de las ruedas.015
+    400034: negro de las ruedas.016
+    400036: negro de las ruedas.017
+    400038: negro de las ruedas.018
+    400040: negro de las ruedas.019
+    400042: negro de las ruedas.020
+    400044: negro de las ruedas.021
+    400046: negro de las ruedas.022
+    400048: negro de las ruedas.023
+    400050: negro de las ruedas.024
+    400052: negro de las ruedas.025
+    400054: negro de las ruedas.026
+    400056: negro de las ruedas.027
+    400058: negro de las ruedas.028
+    400060: negro de las ruedas.029
+    400062: negro de las ruedas.030
+    400064: negro de las ruedas.031
+    400066: negro de las ruedas.032
+    400068: negro de las ruedas.033
+    400070: negro de las ruedas.034
+    400072: negro de las ruedas.035
+    400074: negro de las ruedas.036
+    400076: negro de las ruedas.037
+    400078: negro de las ruedas.038
+    400080: negro de las ruedas.039
+    400082: negro de las ruedas.040
+    400084: negro de las ruedas.041
+    400086: negro de las ruedas.042
+    400088: negro de las ruedas.043
+    400090: negro de las ruedas.044
+    400092: negro de las ruedas.045
+    400094: negro de las ruedas.046
+    400096: negro de las ruedas.047
+    400098: negro de las ruedas.048
+    400100: negro de las ruedas.049
+    400102: negro de las ruedas.050
+    400104: negro de las ruedas.051
+    400106: negro de las ruedas.052
+    400108: negro de las ruedas.053
+    400110: negro de las ruedas.054
+    400112: negro de las ruedas.055
+    400114: negro de las ruedas.056
+    400116: negro de las ruedas.057
+    400118: negro de las ruedas.058
+    400120: negro de las ruedas.059
+    2100000: Meralico de las barras
+    2100002: Material.001
+    2100004: Negro de las ruedas
+    2100006: Griz de las ruedas
+    2300000: negro de las ruedas
+    2300002: negro de las ruedas.001
+    2300004: negro de las ruedas.002
+    2300006: negro de las ruedas.003
+    2300008: negro de las ruedas.004
+    2300010: negro de las ruedas.005
+    2300012: negro de las ruedas.006
+    2300014: negro de las ruedas.007
+    2300016: negro de las ruedas.008
+    2300018: negro de las ruedas.009
+    2300020: negro de las ruedas.010
+    2300022: negro de las ruedas.011
+    2300024: negro de las ruedas.012
+    2300026: negro de las ruedas.013
+    2300028: negro de las ruedas.014
+    2300030: negro de las ruedas.015
+    2300032: negro de las ruedas.016
+    2300034: negro de las ruedas.017
+    2300036: negro de las ruedas.018
+    2300038: negro de las ruedas.019
+    2300040: negro de las ruedas.020
+    2300042: negro de las ruedas.021
+    2300044: negro de las ruedas.022
+    2300046: negro de las ruedas.023
+    2300048: negro de las ruedas.024
+    2300050: negro de las ruedas.025
+    2300052: negro de las ruedas.026
+    2300054: negro de las ruedas.027
+    2300056: negro de las ruedas.028
+    2300058: negro de las ruedas.029
+    2300060: negro de las ruedas.030
+    2300062: negro de las ruedas.031
+    2300064: negro de las ruedas.032
+    2300066: negro de las ruedas.033
+    2300068: negro de las ruedas.034
+    2300070: negro de las ruedas.035
+    2300072: negro de las ruedas.036
+    2300074: negro de las ruedas.037
+    2300076: negro de las ruedas.038
+    2300078: negro de las ruedas.039
+    2300080: negro de las ruedas.040
+    2300082: negro de las ruedas.041
+    2300084: negro de las ruedas.042
+    2300086: negro de las ruedas.043
+    2300088: negro de las ruedas.044
+    2300090: negro de las ruedas.045
+    2300092: negro de las ruedas.046
+    2300094: negro de las ruedas.047
+    2300096: negro de las ruedas.048
+    2300098: negro de las ruedas.049
+    2300100: negro de las ruedas.050
+    2300102: negro de las ruedas.051
+    2300104: negro de las ruedas.052
+    2300106: negro de las ruedas.053
+    2300108: negro de las ruedas.054
+    2300110: negro de las ruedas.055
+    2300112: negro de las ruedas.056
+    2300114: negro de las ruedas.057
+    2300116: negro de las ruedas.058
+    2300118: negro de las ruedas.059
+    3300000: negro de las ruedas
+    3300002: negro de las ruedas.001
+    3300004: negro de las ruedas.002
+    3300006: negro de las ruedas.003
+    3300008: negro de las ruedas.004
+    3300010: negro de las ruedas.005
+    3300012: negro de las ruedas.006
+    3300014: negro de las ruedas.007
+    3300016: negro de las ruedas.008
+    3300018: negro de las ruedas.009
+    3300020: negro de las ruedas.010
+    3300022: negro de las ruedas.011
+    3300024: negro de las ruedas.012
+    3300026: negro de las ruedas.013
+    3300028: negro de las ruedas.014
+    3300030: negro de las ruedas.015
+    3300032: negro de las ruedas.016
+    3300034: negro de las ruedas.017
+    3300036: negro de las ruedas.018
+    3300038: negro de las ruedas.019
+    3300040: negro de las ruedas.020
+    3300042: negro de las ruedas.021
+    3300044: negro de las ruedas.022
+    3300046: negro de las ruedas.023
+    3300048: negro de las ruedas.024
+    3300050: negro de las ruedas.025
+    3300052: negro de las ruedas.026
+    3300054: negro de las ruedas.027
+    3300056: negro de las ruedas.028
+    3300058: negro de las ruedas.029
+    3300060: negro de las ruedas.030
+    3300062: negro de las ruedas.031
+    3300064: negro de las ruedas.032
+    3300066: negro de las ruedas.033
+    3300068: negro de las ruedas.034
+    3300070: negro de las ruedas.035
+    3300072: negro de las ruedas.036
+    3300074: negro de las ruedas.037
+    3300076: negro de las ruedas.038
+    3300078: negro de las ruedas.039
+    3300080: negro de las ruedas.040
+    3300082: negro de las ruedas.041
+    3300084: negro de las ruedas.042
+    3300086: negro de las ruedas.043
+    3300088: negro de las ruedas.044
+    3300090: negro de las ruedas.045
+    3300092: negro de las ruedas.046
+    3300094: negro de las ruedas.047
+    3300096: negro de las ruedas.048
+    3300098: negro de las ruedas.049
+    3300100: negro de las ruedas.050
+    3300102: negro de las ruedas.051
+    3300104: negro de las ruedas.052
+    3300106: negro de las ruedas.053
+    3300108: negro de las ruedas.054
+    3300110: negro de las ruedas.055
+    3300112: negro de las ruedas.056
+    3300114: negro de las ruedas.057
+    3300116: negro de las ruedas.058
+    3300118: negro de las ruedas.059
+    4300000: negro de las ruedas
+    4300002: negro de las ruedas.001
+    4300004: negro de las ruedas.002
+    4300006: negro de las ruedas.003
+    4300008: negro de las ruedas.004
+    4300010: negro de las ruedas.005
+    4300012: negro de las ruedas.006
+    4300014: negro de las ruedas.007
+    4300016: negro de las ruedas.008
+    4300018: negro de las ruedas.009
+    4300020: negro de las ruedas.010
+    4300022: negro de las ruedas.011
+    4300024: negro de las ruedas.012
+    4300026: negro de las ruedas.013
+    4300028: negro de las ruedas.014
+    4300030: negro de las ruedas.015
+    4300032: negro de las ruedas.016
+    4300034: negro de las ruedas.017
+    4300036: negro de las ruedas.018
+    4300038: negro de las ruedas.019
+    4300040: negro de las ruedas.020
+    4300042: negro de las ruedas.021
+    4300044: negro de las ruedas.022
+    4300046: negro de las ruedas.023
+    4300048: negro de las ruedas.024
+    4300050: negro de las ruedas.025
+    4300052: negro de las ruedas.026
+    4300054: negro de las ruedas.027
+    4300056: negro de las ruedas.028
+    4300058: negro de las ruedas.029
+    4300060: negro de las ruedas.030
+    4300062: negro de las ruedas.031
+    4300064: negro de las ruedas.032
+    4300066: negro de las ruedas.033
+    4300068: negro de las ruedas.034
+    4300070: negro de las ruedas.035
+    4300072: negro de las ruedas.037
+    4300074: negro de las ruedas.038
+    4300076: negro de las ruedas.039
+    4300078: negro de las ruedas.040
+    4300080: negro de las ruedas.041
+    4300082: negro de las ruedas.042
+    4300084: negro de las ruedas.043
+    4300086: negro de las ruedas.044
+    4300088: negro de las ruedas.045
+    4300090: negro de las ruedas.046
+    4300092: negro de las ruedas.047
+    4300094: negro de las ruedas.048
+    4300096: negro de las ruedas.049
+    4300098: negro de las ruedas.050
+    4300100: negro de las ruedas.051
+    4300102: negro de las ruedas.052
+    4300104: negro de las ruedas.053
+    4300106: negro de las ruedas.054
+    4300108: negro de las ruedas.055
+    4300110: negro de las ruedas.056
+    4300112: negro de las ruedas.057
+    4300114: negro de las ruedas.058
+    4300116: negro de las ruedas.059
+    4300118: negro de las ruedas.036
+    2186277476908879412: ImportLogs
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
