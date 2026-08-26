@@ -12,9 +12,8 @@ GameObject:
   - component: {fileID: 6845850527497833696}
   - component: {fileID: 9156518400318780483}
   - component: {fileID: 1425093897055282957}
-  - component: {fileID: 4438267165501958565}
   m_Layer: 0
-  m_Name: Trash
+  m_Name: BeltItem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -92,17 +91,3 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4438267165501958565
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3490963828292567112}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25dbcddb7ce022046aab60da53718d19, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  trashType: 0
-  isHeld: 0

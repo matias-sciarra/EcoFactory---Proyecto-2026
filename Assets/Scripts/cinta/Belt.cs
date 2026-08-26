@@ -9,25 +9,26 @@ public class Belt : MonoBehaviour
 
     public Belt beltInSequence;
     public BeltItem beltItem;
+    public Machine MachineInSequence;
     public bool isSpaceTaken;
+    private bool isMoving = false;
 
     private BeltManager _beltManager;
 
     private void Start()
     {
-        _beltManager = FindObjectOfType<BeltManager>();
-        beltInSequence = null;
-        beltInSequence = FindNextBelt();
-        gameObject.name = $"Belt: {_beltID++}";
+    _beltManager = FindObjectOfType<BeltManager>();
+    gameObject.name = $"Belt: {_beltID++}";
     }
 
     private void Update()
     {
-        if (beltInSequence == null)
-            beltInSequence = FindNextBelt();
 
-        if (beltItem != null && beltItem.item != null)
+
+        if (beltItem != null && beltItem.item != null && !isMoving)
+        {
             StartCoroutine(StartBeltMove());
+        }
     }
 
     public Vector3 GetItemPosition()
@@ -37,31 +38,36 @@ public class Belt : MonoBehaviour
         return new Vector3(position.x, position.y + padding, position.z);
     }
 
-    private IEnumerator StartBeltMove()
+private IEnumerator StartBeltMove()
+{
+    isMoving = true;
+    isSpaceTaken = true;
+
+
+    if (beltItem.item != null && beltInSequence != null && beltInSequence.isSpaceTaken == false)
     {
-        isSpaceTaken = true;
 
-        if (beltItem.item != null && beltInSequence != null && beltInSequence.isSpaceTaken == false)
+        Vector3 toPosition = beltInSequence.GetItemPosition();
+        beltInSequence.isSpaceTaken = true;
+        var step = _beltManager.speed * Time.deltaTime;
+
+        while (beltItem.item.transform.position != toPosition)
         {
-            Vector3 toPosition = beltInSequence.GetItemPosition();
-
-            beltInSequence.isSpaceTaken = true;
-
-            var step = _beltManager.speed * Time.deltaTime;
-
-            while (beltItem.item.transform.position != toPosition)
-            {
-                beltItem.item.transform.position = 
-                    Vector3.MoveTowards(beltItem.transform.position, toPosition, step);
-
-                yield return null;
-            }
-
-            isSpaceTaken = false;
-            beltInSequence.beltItem = beltItem;
-            beltItem = null;
+            beltItem.item.transform.position = 
+                Vector3.MoveTowards(beltItem.item.transform.position, toPosition, step);
+            yield return null;
         }
+
+        isSpaceTaken = false;
+        beltInSequence.beltItem = beltItem;
+        beltItem = null;
     }
+    else
+    {
+    }
+
+    isMoving = false;
+}
 
     private Belt FindNextBelt()
     {

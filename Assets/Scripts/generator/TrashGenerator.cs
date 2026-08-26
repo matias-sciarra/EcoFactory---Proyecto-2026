@@ -12,20 +12,26 @@ public class TrashGenerator : MonoBehaviour
 
 
 
-    void update()
+    void Update()
     {
         temporizador+= Time.deltaTime;
         if (temporizador >= intervalo)
         {
             temporizador = 0f;
-            GenerateTrash()
+        
+            GenerateTrash();
         }
 
-       void GenerateTrash()
-       {
+    }
+    void GenerateTrash()
+    {
+        Vector3 position = primeraCinta.GetItemPosition();
+        Quaternion rotation = Quaternion.identity;
+        GameObject nueva = Instantiate( Prefabtrash, position, rotation );
+        Debug.Log("se genero");
 
-
-       }
+        BeltItem itemcomponent = nueva.GetComponent<BeltItem>();
+        primeraCinta.beltItem = itemcomponent;
 
     }
 
