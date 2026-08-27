@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class machine : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private int canridadrequerida = 4;
+    public GameObject preresiduo;
+    public GameObject residuoproscesado;
+    public Belt primeraCinta;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
+
+    public void recibirbasura(trash )
 }
