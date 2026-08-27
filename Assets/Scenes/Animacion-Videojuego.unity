@@ -165,19 +165,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: e3cf909cb759fac41960cd46d9775712, type: 3}
       propertyPath: m_Name
-      value: Pilon de botellas
+      value: Pilondebotellas
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e3cf909cb759fac41960cd46d9775712, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.172515
+      value: -6.125
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e3cf909cb759fac41960cd46d9775712, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.93640363
+      value: 1.11
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e3cf909cb759fac41960cd46d9775712, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.9582237
+      value: -0.985
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e3cf909cb759fac41960cd46d9775712, type: 3}
       propertyPath: m_LocalRotation.x
