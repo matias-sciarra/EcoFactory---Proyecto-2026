@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
-public class Grid_Script : MonoBehaviour
+public class GridScript : MonoBehaviour
 {
     [Header("Grid")]
     public int width = 50;
