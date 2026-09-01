@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -209,7 +209,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &346029985
 GameObject:
@@ -245,7 +245,7 @@ MonoBehaviour:
   runSpeed: 12
   jumpHeight: 1.5
   gravity: -19.62
-  playerCamera: {fileID: 0}
+  playerCamera: {fileID: 534669904}
   mouseSensitivity: 2.5
   maxLookAngle: 85
   invertY: 0
@@ -283,12 +283,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 346029985}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 23.8, y: 3, z: 31.65}
+  m_LocalPosition: {x: 13.1, y: 12.85, z: 5.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 534669905}
+  m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &534669902
 GameObject:
@@ -366,11 +365,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 534669902}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.06, y: 0.35, z: 0.3}
+  m_LocalPosition: {x: 13.09, y: 13.423, z: 5.93}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 346029988}
-  m_RootOrder: 0
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1007721880
 GameObject:
@@ -400,7 +399,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1542028750
 GameObject:
@@ -437,7 +436,7 @@ MonoBehaviour:
     type: 3}
   gridLayer:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 0
   rayDistance: 100
 --- !u!4 &1542028752
 Transform:
@@ -451,7 +450,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1889531784
 GameObject:
@@ -479,13 +478,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1889531784}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63db6c07f4d2a024e88a06b9c6512ace, type: 3}
+  m_Script: {fileID: 11500000, guid: b6f34a7eb3479ee498460a66f2c7b897, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  width: 50
-  height: 50
   tilePrefab: {fileID: 7829106026343458566, guid: 295bdbe5c63f72045afdb63fc5cb7245,
     type: 3}
+  width: 20
+  height: 20
+  tileSize: 1
 --- !u!4 &1889531786
 Transform:
   m_ObjectHideFlags: 0
@@ -498,5 +498,5 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

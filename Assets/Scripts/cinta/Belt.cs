@@ -9,7 +9,7 @@ public class Belt : MonoBehaviour
 
     public Belt beltInSequence;
     public BeltItem beltItem;
-    public Machine MachineInSequence;
+    public machine MachineInSequence;
     public bool isSpaceTaken;
     private bool isMoving = false;
 
