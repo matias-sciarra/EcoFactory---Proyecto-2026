@@ -10,8 +10,7 @@ public class TrashGenerator : MonoBehaviour
     public float intervalo = 2f;
     public Belt primeraCinta;       
 
-
-
+    //hace que se genere la basura despues de 2 segundos
     void Update()
     {
         temporizador+= Time.deltaTime;
@@ -23,6 +22,8 @@ public class TrashGenerator : MonoBehaviour
         }
 
     }
+
+    //Genera la basura arriba de la cinta para que se pueda ir hacia otra maquina u otro lugar
     void GenerateTrash()
     {
         Vector3 position = primeraCinta.GetItemPosition();

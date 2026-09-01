@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class Grabbable : MonoBehaviour
 {
-    public string itemId = "cubo_negro";
+    //Id del item que queres agarrar, no hace falta pero se puede usar
+    public string itemId = "Pilon de botellas";
 
     public bool IsHeld { get; private set; }
 
@@ -10,6 +11,7 @@ public class Grabbable : MonoBehaviour
     private Collider col;
     private Transform originalParent;
 
+    //Pone Rigidbody y Collider antes de que empiece el update y start para que funcione y no le falte a ningun getcomponent
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -17,6 +19,7 @@ public class Grabbable : MonoBehaviour
         originalParent = transform.parent;
     }
 
+    //Funcion del momento donde tenes agarrado el objeto
     public void OnGrabbed(Transform holdPoint)
     {
         IsHeld = true;
@@ -30,6 +33,7 @@ public class Grabbable : MonoBehaviour
         transform.localRotation = Quaternion.identity;
     }
 
+    //Funcion para dropear el objeto, o cuando se dropea
     public void OnDropped()
     {
         IsHeld = false;
@@ -40,6 +44,7 @@ public class Grabbable : MonoBehaviour
         if (col != null) col.enabled = true;
     }
 
+    //Funcion para cuando la maquina agarra el objeto
     public void OnConsumedByMachine()
     {
         IsHeld = false;

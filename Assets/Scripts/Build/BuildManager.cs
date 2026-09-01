@@ -2,7 +2,6 @@
 
 public class BuildManager : MonoBehaviour
 {
-    [Header("Referencias")]
     public GameObject player;
     public Transform buildPosition;
     public GameObject buildingPrefab;
@@ -11,7 +10,6 @@ public class BuildManager : MonoBehaviour
     private Tile lastPlacedTile;
     private Tile lastRemovedTile;
 
-    [Header("Distancia del Raycast")]
     public float rayDistance = 100f;
 
     private FPSController fpsController;
@@ -28,6 +26,7 @@ public class BuildManager : MonoBehaviour
         fpsController = player.GetComponent<FPSController>();
     }
 
+    //Hace que cuando se presiona la B, se entra al modo de construccion y se sale de este mismo
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.B))
@@ -48,6 +47,7 @@ public class BuildManager : MonoBehaviour
         HandleBuildingRemoval();
     }
 
+    //Funcion para entrar al buildmode
     void EnterBuildMode()
     {
         oldPosition = player.transform.position;
@@ -62,6 +62,7 @@ public class BuildManager : MonoBehaviour
         Cursor.visible = true;
     }
 
+    //Funcion para salir del buildmode
     void ExitBuildMode()
     {
         if (currentTile != null)
@@ -77,8 +78,9 @@ public class BuildManager : MonoBehaviour
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-    }
+    }  
 
+    //Setea las casillas de construccion validas y las invalidas
     void HandleTileSelection()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -115,6 +117,7 @@ public class BuildManager : MonoBehaviour
         }
     }
 
+    //Cuando presionas click izquierdo en una casilla vacia con el cursor de mouse te deja aplicar la construccions
     void HandleBuildingPlacement()
     {
         if (currentTile == null)
@@ -147,6 +150,7 @@ public class BuildManager : MonoBehaviour
         }
     }
 
+    //Hace que cuando tocas click derecho con el mouse, se remueva la construccion
     void HandleBuildingRemoval()
     {
         if (currentTile == null)

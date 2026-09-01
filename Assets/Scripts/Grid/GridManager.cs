@@ -14,6 +14,7 @@ public class GridManager : MonoBehaviour
         GenerateGrid();
     }
 
+    //Genera la plataforma
     void GenerateGrid()
     {
         for (int x = 0; x < width; x++)

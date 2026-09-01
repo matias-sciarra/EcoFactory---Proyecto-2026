@@ -8,6 +8,7 @@ public class MachineSlot : MonoBehaviour
     public float processTime = 1.5f;
     private bool isProcessing;
 
+    //Funcion para poner el objeto en la maquina
     public bool TryInsert(Grabbable item)
     {
         if (item == null || isProcessing) return false;
@@ -18,6 +19,7 @@ public class MachineSlot : MonoBehaviour
         return true;
     }
 
+    //Proceso de transformacion de objeto mas tiempo de proceso
     private System.Collections.IEnumerator ProcessRoutine()
     {
         isProcessing = true;
@@ -27,6 +29,7 @@ public class MachineSlot : MonoBehaviour
         isProcessing = false;
     }
 
+    //Funcion de spawn del objeto procesado
     private void SpawnOutput()
     {
         if (outputPrefab == null || outputPoint == null) return;

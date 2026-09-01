@@ -2,16 +2,15 @@ using UnityEngine;
 
 public class PlayerGrabber : MonoBehaviour
 {
-    [Header("Referencias")]
     public Transform rayOrigin;
     public Transform holdPoint;
 
-    [Header("Configuración")]
     public float grabDistance = 3f;
     public KeyCode interactKey = KeyCode.E;
 
     private Grabbable heldItem;
 
+    //Prueba cuando tocas la e si se puede agarrar o no el objeto, en el update para que sea siempre en toda la escena
     private void Update()
     {
         if (Input.GetKeyDown(interactKey))
@@ -23,6 +22,7 @@ public class PlayerGrabber : MonoBehaviour
         }
     }
 
+    //Chequea si cuando tocas la tecla para agarrar hay un objeto o no
     private void TryGrab()
     {
         if (Physics.Raycast(rayOrigin.position, rayOrigin.forward, out RaycastHit hit, grabDistance))
@@ -36,6 +36,7 @@ public class PlayerGrabber : MonoBehaviour
         }
     }
 
+    //Prueba si cuando tenes el objeto agarrado podes insertarlo en la maquina o dropearlo en el piso
     private void TryDropOrInsert()
     {
         if (Physics.Raycast(rayOrigin.position, rayOrigin.forward, out RaycastHit hit, grabDistance))

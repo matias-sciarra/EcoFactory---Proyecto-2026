@@ -4,11 +4,8 @@ using UnityEngine;
 
 public class GridScript : MonoBehaviour
 {
-    [Header("Grid")]
     public int width = 50;
     public int height = 50;
-
-    [Header("Prefabs")]
     public GameObject tilePrefab;
 
     void Start()
@@ -16,6 +13,7 @@ public class GridScript : MonoBehaviour
         GenerateGrid();
     }
 
+    //Genera la grid en la posicion indicada
     void GenerateGrid()
     {
         for (int x = 0; x < width; x++)

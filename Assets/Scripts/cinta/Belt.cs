@@ -12,18 +12,19 @@ public class Belt : MonoBehaviour
     public machine MachineInSequence;
     public bool isSpaceTaken;
     private bool isMoving = false;
-
     private BeltManager _beltManager;
 
+    // Busca en la escena un objeto que tenga un script beltmanager o un componente como ese y lo asigna a _beltmanager 
+    // Para facilitar aplicar funciones
     private void Start()
     {
     _beltManager = FindObjectOfType<BeltManager>();
     gameObject.name = $"Belt: {_beltID++}";
     }
 
+    //Controla cuando la cinta empieza a mover un objeto y cuando no
     private void Update()
     {
-
 
         if (beltItem != null && beltItem.item != null && !isMoving)
         {
@@ -31,6 +32,7 @@ public class Belt : MonoBehaviour
         }
     }
 
+    //Le da la posicion en la cinta al objeto salido de la maquina
     public Vector3 GetItemPosition()
     {
         var padding = 0.3f;
@@ -38,6 +40,7 @@ public class Belt : MonoBehaviour
         return new Vector3(position.x, position.y + padding, position.z);
     }
 
+    //Hace que la cinta empiece el movimiento de objetos
 private IEnumerator StartBeltMove()
 {
     isMoving = true;
@@ -69,6 +72,7 @@ private IEnumerator StartBeltMove()
     isMoving = false;
 }
 
+    //Pasa el objeto de un objeto a otra, (ya que no es toda una cinta en conjunto, son varias partes)
     private Belt FindNextBelt()
     {
         Transform currentBeltTransform = transform;
