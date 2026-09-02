@@ -198,15 +198,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e3cf909cb759fac41960cd46d9775712, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 31.11
+      value: 31.55
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e3cf909cb759fac41960cd46d9775712, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 17.8
+      value: 17.98
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e3cf909cb759fac41960cd46d9775712, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 50.11
+      value: 49.59
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e3cf909cb759fac41960cd46d9775712, type: 3}
       propertyPath: m_LocalRotation.x
@@ -392,7 +392,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   beltInSequence: {fileID: 0}
-  beltItem: {fileID: 0}
+  beltItem: {fileID: 114095491901894122, guid: a429f50e21c121a4da0405b66dc1de6b, type: 3}
   MachineInSequence: {fileID: 0}
   isSpaceTaken: 0
 --- !u!65 &997951043
@@ -517,7 +517,7 @@ MonoBehaviour:
   outputPrefab: {fileID: 3490963828292567112, guid: a429f50e21c121a4da0405b66dc1de6b,
     type: 3}
   processTime: 1.5
-  cantidad: 3
+  cantidad: 1
   actual: 0
   primeraCinta: {fileID: 1325015648}
 --- !u!4 &1093756756 stripped
@@ -572,7 +572,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   beltInSequence: {fileID: 997951042}
-  beltItem: {fileID: 0}
+  beltItem: {fileID: 114095491901894122, guid: a429f50e21c121a4da0405b66dc1de6b, type: 3}
   MachineInSequence: {fileID: 0}
   isSpaceTaken: 0
 --- !u!65 &1325015649
