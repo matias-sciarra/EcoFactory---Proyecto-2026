@@ -4,9 +4,11 @@ public class MachineSlot : MonoBehaviour
 {
     public string acceptedItemId = "";
     public GameObject outputPrefab;
-    public Transform outputPoint;
     public float processTime = 1.5f;
     private bool isProcessing;
+    public int cantidad = 3;
+    public int actual = 0;
+    public Belt primeraCinta;
 
     //Funcion para poner el objeto en la maquina
     public bool TryInsert(Grabbable item)
@@ -15,7 +17,12 @@ public class MachineSlot : MonoBehaviour
         if (!string.IsNullOrEmpty(acceptedItemId) && item.itemId != acceptedItemId) return false;
 
         item.OnConsumedByMachine();
-        StartCoroutine(ProcessRoutine());
+        actual++;
+        if(actual >= cantidad){
+            actual = 0;
+            StartCoroutine(ProcessRoutine());
+        }
+
         return true;
     }
 
@@ -32,10 +39,12 @@ public class MachineSlot : MonoBehaviour
     //Funcion de spawn del objeto procesado
     private void SpawnOutput()
     {
-        if (outputPrefab == null || outputPoint == null) return;
+        if (outputPrefab == null || primeraCinta == null) return;
+        Vector3 position = primeraCinta.GetItemPosition();
+        Quaternion rotacion = Quaternion.identity;
+        GameObject nueva = Instantiate(outputPrefab, position, rotacion);
 
-        GameObject result = Instantiate(outputPrefab, outputPoint.position, outputPoint.rotation);
-        if (result.GetComponent<Grabbable>() == null)
-            result.AddComponent<Grabbable>();
+        BeltItem itemcomponent = nueva.GetComponent<BeltItem>();
+        primeraCinta.beltItem = itemcomponent;
     }
 }
