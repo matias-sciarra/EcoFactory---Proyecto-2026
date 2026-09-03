@@ -25,10 +25,13 @@ public class Belt : MonoBehaviour
     //Controla cuando la cinta empieza a mover un objeto y cuando no
     private void Update()
     {
-
         if (beltItem != null && beltItem.item != null && !isMoving)
         {
             StartCoroutine(StartBeltMove());
+        }
+        else if (beltItem != null)
+        {
+            Debug.Log($"{name}: no arranca. item={beltItem.item}, isMoving={isMoving}");
         }
     }
 
@@ -44,12 +47,9 @@ public class Belt : MonoBehaviour
 private IEnumerator StartBeltMove()
 {
     isMoving = true;
-    isSpaceTaken = true;
-
 
     if (beltItem.item != null && beltInSequence != null && beltInSequence.isSpaceTaken == false)
     {
-
         Vector3 toPosition = beltInSequence.GetItemPosition();
         beltInSequence.isSpaceTaken = true;
         var step = _beltManager.speed * Time.deltaTime;
@@ -64,9 +64,6 @@ private IEnumerator StartBeltMove()
         isSpaceTaken = false;
         beltInSequence.beltItem = beltItem;
         beltItem = null;
-    }
-    else
-    {
     }
 
     isMoving = false;
