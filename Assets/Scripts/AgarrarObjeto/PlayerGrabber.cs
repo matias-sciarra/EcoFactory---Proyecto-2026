@@ -10,6 +10,8 @@ public class PlayerGrabber : MonoBehaviour
 
     private Grabbable heldItem;
 
+    public bool IsHolding => heldItem != null;
+
     //Prueba cuando tocas la e si se puede agarrar o no el objeto, en el update para que sea siempre en toda la escena
     private void Update()
     {
