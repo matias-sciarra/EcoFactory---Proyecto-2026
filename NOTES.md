@@ -80,3 +80,17 @@ Running log of explanations/advice given by Claude. Newest at the bottom.
 - En `detectar()`, la condición para mostrar el cartel pasó de `if(distancia < distanciacerca)` a `if(distancia < distanciacerca && !jugador.IsHolding)`. El `else if(distancia >= distanciacerca)` se simplificó a un `else` liso, porque ahora la condición para "no mostrar" es la negación de una condición compuesta (lejos **o** con algo agarrado), no solo la distancia.
 
 **Acción requerida en Unity:** arrastrar el GameObject del jugador (el que tiene `PlayerGrabber`) al nuevo campo `Jugador` del `MachineSlot` en el Inspector; si queda vacío tira `NullReferenceException`.
+
+---
+
+## 2026-09-03 — Belt.cs: mismo sistema de detectar/mejora/botón, aplicado a la velocidad de la cinta
+
+**Pedido:** replicar en [Belt.cs](Assets/Scripts/cinta/Belt.cs) el mismo patrón de `MachineSlot.cs` (detección por distancia cada frame, cartel-botón que se oculta si el jugador tiene algo agarrado, costo creciente, tecla Q), pero mejorando la velocidad de la cinta en vez del tiempo de proceso.
+
+**Campos nuevos en `Belt`:** `radiodetection`, `distanciacerca`, `cartelmejora` (Button), `manager` (moneymanager), `jugador` (PlayerGrabber), `costomejora`, `cantidadMejoras` (privado), `txtcostomejora`. Agregado `using UnityEngine.UI;` y `using TMPro;`.
+
+**`detectar()` y `mejorar()`:** copiados del mismo patrón de `MachineSlot`. La diferencia es el efecto de `mejorar()`: en vez de tocar `processTime`, hace `_beltManager.speed += 1f / 3f;` — la velocidad vive en `BeltManager` (compartida por todas las cintas de la escena vía `FindObjectOfType<BeltManager>()`), así que cualquier mejora de velocidad afecta a todas las cintas, no solo al segmento donde está el botón.
+- `detectar()` ahora se llama desde el `Update()` existente de `Belt` (que ya se usaba para mover los items), junto al resto de la lógica de movimiento.
+- Costo base `costomejora = 50f` y exponente `1.6f` son valores de partida, iguales a los originales de `MachineSlot` antes de que los ajustaras a 300/2.3 — cambialos en el Inspector o en el código si querés otra progresión.
+
+**Acción requerida en Unity:** cada `Belt` que tenga este botón de mejora necesita en el Inspector: `cartelmejora` (Button), `manager` (moneymanager), `jugador` (PlayerGrabber) y `txtcostomejora` (TextMeshProUGUI) asignados — si son varios segmentos de cinta con botón propio, hay que asignarlos en cada uno.

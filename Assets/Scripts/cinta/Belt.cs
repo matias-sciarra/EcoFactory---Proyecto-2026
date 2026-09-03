@@ -2,6 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class Belt : MonoBehaviour
 {
@@ -14,17 +16,31 @@ public class Belt : MonoBehaviour
     private bool isMoving = false;
     private BeltManager _beltManager;
 
-    // Busca en la escena un objeto que tenga un script beltmanager o un componente como ese y lo asigna a _beltmanager 
-    // Para facilitar aplicar funciones
+    public float radiodetection = 5f;
+    private bool jugadorcerca = false;
+    public Button cartelmejora;
+    public float distanciacerca = 2f;
+    public moneymanager manager;
+    public PlayerGrabber jugador;
+    public float costomejora = 50f;
+    private int cantidadMejoras = 0;
+    public TextMeshProUGUI txtcostomejora;
+
+
     private void Start()
     {
     _beltManager = FindObjectOfType<BeltManager>();
     gameObject.name = $"Belt: {_beltID++}";
+
+    txtcostomejora.text = costomejora.ToString();
+    cartelmejora.onClick.AddListener(mejorar);
     }
 
     //Controla cuando la cinta empieza a mover un objeto y cuando no
     private void Update()
     {
+        detectar();
+
         if (beltItem != null && beltItem.item != null && !isMoving)
         {
             StartCoroutine(StartBeltMove());
@@ -32,6 +48,54 @@ public class Belt : MonoBehaviour
         else if (beltItem != null)
         {
             Debug.Log($"{name}: no arranca. item={beltItem.item}, isMoving={isMoving}");
+        }
+    }
+
+    //Detecta si el jugador esta cerca (y sin nada agarrado) para mostrar el cartel de mejora
+    public void detectar()
+    {
+        Vector3 inicio = transform.position;
+
+        Collider[] objetosdetectados = Physics.OverlapSphere(inicio, radiodetection);
+
+        foreach (Collider col in objetosdetectados)
+        {
+            if(col.CompareTag("Player"))
+            {
+                float distancia = Vector3.Distance(transform.position, col.transform.position);
+                if(distancia < distanciacerca && !jugador.IsHolding)
+                {
+                    jugadorcerca = true;
+                    cartelmejora.gameObject.SetActive(true);
+                }
+                else
+                {
+                    jugadorcerca = false;
+                    cartelmejora.gameObject.SetActive(false);
+                }
+
+                if(jugadorcerca && Input.GetKeyDown(KeyCode.Q))
+                {
+                    mejorar();
+                }
+            }
+        };
+    }
+
+    //Compra una mejora de velocidad para la cinta (velocidad compartida via BeltManager)
+    public void mejorar()
+    {
+        float costoActual = costomejora * Mathf.Pow(1.6f, cantidadMejoras);
+
+        if (manager.dinero >= costoActual)
+        {
+            manager.dinero -= costoActual;
+            manager.txtdinero.text = manager.dinero.ToString();
+            cantidadMejoras += 1;
+            _beltManager.speed += 1f / 3f;
+
+            float costoSiguiente = costomejora * Mathf.Pow(1.6f, cantidadMejoras);
+            txtcostomejora.text = costoSiguiente.ToString();
         }
     }
 
