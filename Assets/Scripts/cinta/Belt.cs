@@ -12,6 +12,8 @@ public class Belt : MonoBehaviour
     public Belt beltInSequence;
     public BeltItem beltItem;
     public machine MachineInSequence;
+    public moneymachine moneyMachineInSequence;
+    public MachineSlot machineSlotInSequence;
     public bool isSpaceTaken;
     private bool isMoving = false;
     private BeltManager _beltManager;
@@ -127,6 +129,33 @@ private IEnumerator StartBeltMove()
 
         isSpaceTaken = false;
         beltInSequence.beltItem = beltItem;
+        beltItem = null;
+    }
+    else if (beltItem.item != null && beltInSequence == null &&
+        (moneyMachineInSequence != null || machineSlotInSequence != null))
+    {
+        Transform machineTransform = moneyMachineInSequence != null
+            ? moneyMachineInSequence.transform
+            : machineSlotInSequence.transform;
+
+        Vector3 toPosition = machineTransform.position;
+        GameObject item = beltItem.item;
+        var step = _beltManager.speed * Time.deltaTime;
+
+        //Igual que el movimiento hacia otra cinta, pero el destino es la maquina
+        while (item != null && item.transform.position != toPosition)
+        {
+            item.transform.position =
+                Vector3.MoveTowards(item.transform.position, toPosition, step);
+            yield return null;
+        }
+
+        //Si la maquina no lo destruyo por colision (ej: no tiene Rigidbody), lo destruimos igual al llegar
+        if (item != null)
+        {
+            Destroy(item);
+        }
+
         beltItem = null;
     }
 
