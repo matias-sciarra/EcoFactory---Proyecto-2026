@@ -6,19 +6,13 @@ public class BuildManager : MonoBehaviour
     public Transform buildPosition;
     public GameObject buildingPrefab;
     public LayerMask gridLayer;
-
+    public float rayDistance = 100f;
     private Tile lastPlacedTile;
     private Tile lastRemovedTile;
-
-    public float rayDistance = 100f;
-
     private FPSController fpsController;
-
     private Vector3 oldPosition;
     private Quaternion oldRotation;
-
     private bool buildMode = false;
-
     private Tile currentTile;
 
     void Start()
