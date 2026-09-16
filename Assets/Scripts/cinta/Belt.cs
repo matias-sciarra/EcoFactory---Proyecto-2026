@@ -133,11 +133,13 @@ private IEnumerator StartBeltMove()
         beltItem = null;
     }
     else if (beltItem.item != null && beltInSequence == null &&
-        (moneyMachineInSequence != null || machineSlotInSequence != null))
+        (moneyMachineInSequence != null || machineSlotInSequence != null || MachineInSequence != null))
     {
         Transform machineTransform = moneyMachineInSequence != null
             ? moneyMachineInSequence.transform
-            : machineSlotInSequence.transform;
+            : machineSlotInSequence != null
+                ? machineSlotInSequence.transform
+                : MachineInSequence.transform;
 
         Vector3 toPosition = machineTransform.position;
         GameObject item = beltItem.item;
@@ -151,10 +153,19 @@ private IEnumerator StartBeltMove()
             yield return null;
         }
 
-        //Si la maquina no lo destruyo por colision (ej: no tiene Rigidbody), lo destruimos igual al llegar
         if (item != null)
         {
-            Destroy(item);
+            Trash trash = MachineInSequence != null ? item.GetComponent<Trash>() : null;
+
+            if (trash != null)
+            {
+                MachineInSequence.ReceiveTrash(trash);
+            }
+            else
+            {
+                //Si la maquina no lo destruyo por colision (ej: no tiene Rigidbody), lo destruimos igual al llegar
+                Destroy(item);
+            }
         }
 
         beltItem = null;

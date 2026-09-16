@@ -11,11 +11,11 @@ public class machine : MonoBehaviour
 
 
     //Recibe la basura en la maquina y suma uno al contador
-    public void ReceiveTrash(Trash Basura)
+    public void ReceiveTrash(Trash beltItem)
     {
         contador+=1;
         Debug.Log("llego bien");
-        Destroy(Basura.gameObject);
+        Destroy(beltItem.gameObject);
         if (contador >= cantidadrequerida){
             contador = 0;
             generarbasuraproscesada();
@@ -35,4 +35,5 @@ public class machine : MonoBehaviour
 
         Debug.Log("en la cinta");
     }
+
 }

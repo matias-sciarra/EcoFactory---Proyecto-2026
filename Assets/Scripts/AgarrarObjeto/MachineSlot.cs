@@ -37,8 +37,21 @@ public class MachineSlot : MonoBehaviour
     //Funcion para poner el objeto en la maquina
     public bool TryInsert(Grabbable item)
     {
-        if (item == null || isProcessing) return false;
-        if (!string.IsNullOrEmpty(acceptedItemId) && item.itemId != acceptedItemId) return false;
+        if (item == null)
+        {
+            Debug.Log("TryInsert: rechazado, item es null");
+            return false;
+        }
+        if (isProcessing)
+        {
+            Debug.Log("TryInsert: rechazado, la máquina está procesando (isProcessing = true)");
+            return false;
+        }
+        if (!string.IsNullOrEmpty(acceptedItemId) && item.itemId != acceptedItemId)
+        {
+            Debug.Log($"TryInsert: rechazado, itemId '{item.itemId}' no coincide con acceptedItemId '{acceptedItemId}'");
+            return false;
+        }
 
         item.OnConsumedByMachine();
         actual++;

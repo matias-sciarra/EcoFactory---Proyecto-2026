@@ -29,12 +29,27 @@ public class PlayerGrabber : MonoBehaviour
     {
         if (Physics.Raycast(rayOrigin.position, rayOrigin.forward, out RaycastHit hit, grabDistance))
         {
+            Debug.Log("TryGrab: el rayo pegó contra: " + hit.collider.gameObject.name);
+
             Grabbable grabbable = hit.collider.GetComponent<Grabbable>();
-            if (grabbable != null && !grabbable.IsHeld)
+            if (grabbable == null)
+            {
+                Debug.Log("TryGrab: ese objeto no tiene el componente Grabbable");
+            }
+            else if (grabbable.IsHeld)
+            {
+                Debug.Log("TryGrab: el objeto ya está siendo sostenido (IsHeld = true)");
+            }
+            else
             {
                 heldItem = grabbable;
                 heldItem.OnGrabbed(holdPoint);
+                Debug.Log("TryGrab: agarrado con éxito");
             }
+        }
+        else
+        {
+            Debug.Log("TryGrab: el rayo no pegó contra nada");
         }
     }
 
