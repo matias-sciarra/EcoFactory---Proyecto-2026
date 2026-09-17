@@ -1,65 +1,50 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class GridManager : MonoBehaviour
 {
-    public static GridManager Instance;
+    public static GridManager Instance { get; private set; }
 
-    public float cellSize = 1f;
-    public int gridWidth = 50;
-    public int gridHeight = 50;
+    public Transform tilesParent;
 
-    private void Awake()
+    private Dictionary<Vector3Int, Tile> tiles = new Dictionary<Vector3Int, Tile>();
+
+    void Awake()
     {
         Instance = this;
+        RegisterExistingTiles();
     }
 
-    public Vector3 GetGridPosition(Vector3 worldPosition)
+    void RegisterExistingTiles()
     {
-        float x = Mathf.Floor(worldPosition.x / cellSize) * cellSize;
-        float y = worldPosition.y;
-        float z = Mathf.Floor(worldPosition.z / cellSize) * cellSize;
+        Tile[] existingTiles = tilesParent.GetComponentsInChildren<Tile>();
 
-        return new Vector3(x, y, z);
-    }
-
-    public Vector3 GetCellCenter(Vector3 worldPosition)
-    {
-        float x = Mathf.Floor(worldPosition.x / cellSize) * cellSize + cellSize / 2f;
-        float y = worldPosition.y;
-        float z = Mathf.Floor(worldPosition.z / cellSize) * cellSize + cellSize / 2f;
-
-        return new Vector3(x, y, z);
-    }
-
-    public bool IsInsideGrid(Vector3 worldPosition)
-    {
-        float maxX = gridWidth * cellSize;
-        float maxZ = gridHeight * cellSize;
-
-        return worldPosition.x >= 0 &&
-               worldPosition.x < maxX &&
-               worldPosition.z >= 0 &&
-               worldPosition.z < maxZ;
-    }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.gray;
-
-        for (int x = 0; x <= gridWidth; x++)
+        foreach (Tile tile in existingTiles)
         {
-            Vector3 start = new Vector3(x * cellSize, 0, 0);
-            Vector3 end = new Vector3(x * cellSize, 0, gridHeight * cellSize);
-
-            Gizmos.DrawLine(start, end);
+            Vector3Int gridPos = WorldToGrid(tile.transform.position);
+            tiles[gridPos] = tile;
         }
+    }
 
-        for (int z = 0; z <= gridHeight; z++)
-        {
-            Vector3 start = new Vector3(0, 0, z * cellSize);
-            Vector3 end = new Vector3(gridWidth * cellSize, 0, z * cellSize);
+    public Vector3Int WorldToGrid(Vector3 worldPos)
+    {
+        return new Vector3Int(
+            Mathf.RoundToInt(worldPos.x),
+            0,
+            Mathf.RoundToInt(worldPos.z)
+        );
+    }
 
-            Gizmos.DrawLine(start, end);
-        }
+    public Tile GetTileAt(Vector3 worldPos)
+    {
+        Vector3Int gridPos = WorldToGrid(worldPos);
+        tiles.TryGetValue(gridPos, out Tile tile);
+        return tile;
+    }
+
+    public bool IsOccupied(Vector3 worldPos)
+    {
+        Tile tile = GetTileAt(worldPos);
+        return tile != null && tile.occupied;
     }
 }

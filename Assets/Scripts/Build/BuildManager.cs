@@ -3,13 +3,13 @@
 public class BuildManager : MonoBehaviour
 {
     public GameObject player;
+    public Behaviour fpsController;
     public Transform buildPosition;
     public GameObject buildingPrefab;
     public LayerMask gridLayer;
     public float rayDistance = 100f;
     private Tile lastPlacedTile;
     private Tile lastRemovedTile;
-    private FPSController fpsController;
     private Vector3 oldPosition;
     private Quaternion oldRotation;
     private bool buildMode = false;
@@ -17,10 +17,12 @@ public class BuildManager : MonoBehaviour
 
     void Start()
     {
-        fpsController = player.GetComponent<FPSController>();
+        if (fpsController == null)
+        {
+            Debug.LogError("No se asigno el controller del player en el inspector");
+        }
     }
 
-    //Hace que cuando se presiona la B, se entra al modo de construccion y se sale de este mismo
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.B))
@@ -41,7 +43,6 @@ public class BuildManager : MonoBehaviour
         HandleBuildingRemoval();
     }
 
-    //Funcion para entrar al buildmode
     void EnterBuildMode()
     {
         oldPosition = player.transform.position;
@@ -56,7 +57,6 @@ public class BuildManager : MonoBehaviour
         Cursor.visible = true;
     }
 
-    //Funcion para salir del buildmode
     void ExitBuildMode()
     {
         if (currentTile != null)
@@ -72,9 +72,8 @@ public class BuildManager : MonoBehaviour
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-    }  
+    }
 
-    //Setea las casillas de construccion validas y las invalidas
     void HandleTileSelection()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -111,7 +110,6 @@ public class BuildManager : MonoBehaviour
         }
     }
 
-    //Cuando presionas click izquierdo en una casilla vacia con el cursor de mouse te deja aplicar la construccions
     void HandleBuildingPlacement()
     {
         if (currentTile == null)
@@ -144,7 +142,6 @@ public class BuildManager : MonoBehaviour
         }
     }
 
-    //Hace que cuando tocas click derecho con el mouse, se remueva la construccion
     void HandleBuildingRemoval()
     {
         if (currentTile == null)
