@@ -1,50 +1,62 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class GridManager : MonoBehaviour
+public class Grid_Manager : MonoBehaviour
 {
-    public static GridManager Instance { get; private set; }
+    [Header("Grid Settings")]
+    public int gridWidth = 20;
+    public int gridHeight = 20;
+    public float cellSize = 1f;
 
-    public Transform tilesParent;
+    [Header("Tiles")]
+    public GameObject tilePrefab;
 
-    private Dictionary<Vector3Int, Tile> tiles = new Dictionary<Vector3Int, Tile>();
+    private GridCell[,] cells;
 
     void Awake()
     {
-        Instance = this;
-        RegisterExistingTiles();
+        cells = new GridCell[gridWidth, gridHeight];
+        GenerateGrid();
     }
 
-    void RegisterExistingTiles()
+    void GenerateGrid()
     {
-        Tile[] existingTiles = tilesParent.GetComponentsInChildren<Tile>();
-
-        foreach (Tile tile in existingTiles)
+        for (int x = 0; x < gridWidth; x++)
         {
-            Vector3Int gridPos = WorldToGrid(tile.transform.position);
-            tiles[gridPos] = tile;
+            for (int z = 0; z < gridHeight; z++)
+            {
+                Vector3 worldPos = GridToWorld(new Vector3Int(x, 0, z));
+                GameObject tileObj = Instantiate(tilePrefab, worldPos, Quaternion.identity, transform);
+                GridCell cell = tileObj.GetComponent<GridCell>();
+
+                if (cell == null)
+                    cell = tileObj.AddComponent<GridCell>();
+
+                cell.GridPosition = new Vector3Int(x, 0, z);
+                cells[x, z] = cell;
+            }
         }
     }
 
     public Vector3Int WorldToGrid(Vector3 worldPos)
     {
-        return new Vector3Int(
-            Mathf.RoundToInt(worldPos.x),
-            0,
-            Mathf.RoundToInt(worldPos.z)
-        );
+        int x = Mathf.RoundToInt(worldPos.x / cellSize);
+        int z = Mathf.RoundToInt(worldPos.z / cellSize);
+        return new Vector3Int(x, 0, z);
     }
 
-    public Tile GetTileAt(Vector3 worldPos)
+    public Vector3 GridToWorld(Vector3Int gridPos)
     {
-        Vector3Int gridPos = WorldToGrid(worldPos);
-        tiles.TryGetValue(gridPos, out Tile tile);
-        return tile;
+        return new Vector3(gridPos.x * cellSize, 0, gridPos.z * cellSize);
     }
 
-    public bool IsOccupied(Vector3 worldPos)
+    public bool IsWithinBounds(Vector3Int gridPos)
     {
-        Tile tile = GetTileAt(worldPos);
-        return tile != null && tile.occupied;
+        return gridPos.x >= 0 && gridPos.x < gridWidth && gridPos.z >= 0 && gridPos.z < gridHeight;
+    }
+
+    public GridCell GetCell(Vector3Int gridPos)
+    {
+        if (!IsWithinBounds(gridPos)) return null;
+        return cells[gridPos.x, gridPos.z];
     }
 }
