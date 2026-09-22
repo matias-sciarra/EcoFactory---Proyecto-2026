@@ -2,25 +2,29 @@
 
 public class Grid_Manager : MonoBehaviour
 {
-    public int gridWidth = 10;
-    public int gridHeight = 10;
+    public int gridWidth;
+    public int gridHeight;
 
-    public float cellSize = 1.2f;
+    public float cellSize;
 
     private GridCell[,] cells;
 
-    void Awake()
+    // Genera la grilla de celdas al iniciar el juego
+    void Start()
     {
         cells = new GridCell[gridWidth, gridHeight];
 
         GenerateGrid();
     }
 
+    // funcion que hace que se genera la grilla
     void GenerateGrid()
     {
+        // calcula la posición inicial para centrar la grilla en el mundo
         float startX = -(gridWidth * cellSize) / 2f;
         float startZ = -(gridHeight * cellSize) / 2f;
 
+        // crea las celdas de la grilla
         for (int x = 0; x < gridWidth; x++)
         {
             for (int z = 0; z < gridHeight; z++)
@@ -51,6 +55,7 @@ public class Grid_Manager : MonoBehaviour
         }
     }
 
+    // convierte una posición en el mundo a una posición en la grilla
     public Vector3Int WorldToGrid(Vector3 worldPos)
     {
         float startX = -(gridWidth * cellSize) / 2f;
@@ -67,6 +72,7 @@ public class Grid_Manager : MonoBehaviour
         return new Vector3Int(x, 0, z);
     }
 
+    // convierte una posición en la grilla a una posición en el mundo
     public Vector3 GridToWorld(Vector3Int gridPos)
     {
         float startX = -(gridWidth * cellSize) / 2f;
@@ -79,6 +85,7 @@ public class Grid_Manager : MonoBehaviour
         );
     }
 
+    // verifica si una posición en la grilla está dentro de los límites de la grilla
     public bool IsWithinBounds(Vector3Int gridPos)
     {
         return gridPos.x >= 0 &&
@@ -87,6 +94,7 @@ public class Grid_Manager : MonoBehaviour
                gridPos.z < gridHeight;
     }
 
+    // obtiene la celda correspondiente a una posición en la grilla
     public GridCell GetCell(Vector3Int gridPos)
     {
         if (!IsWithinBounds(gridPos))
@@ -95,6 +103,7 @@ public class Grid_Manager : MonoBehaviour
         return cells[gridPos.x, gridPos.z];
     }
 
+    // activa o desactiva el modo de construcción en todas las celdas de la grilla
     public void SetBuildMode(bool active)
     {
         for (int x = 0; x < gridWidth; x++)

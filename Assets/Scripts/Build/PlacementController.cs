@@ -13,8 +13,10 @@ public class PlacementController : MonoBehaviour
 
     private bool buildMode;
 
+    // hace que el jugador pueda colocar y quitar edificios en la grilla
     void Update()
     {
+        // si no está en modo construcción, no hace nada
         if (!buildMode)
             return;
 
@@ -22,13 +24,15 @@ public class PlacementController : MonoBehaviour
             Input.mousePosition
         );
 
+        // hace un raycast desde la cámara del jugador hacia el suelo para detectar la celda en la que está el mouse
         if (Physics.Raycast(
             ray,
             out RaycastHit hit,
             100f,
             groundLayer
         ))
-        {
+
+        {   // si el raycast golpea el suelo, obtiene la posición de la celda en la grilla y la celda
             Vector3Int gridPosition =
                 gridManager.WorldToGrid(hit.point);
 
@@ -70,7 +74,7 @@ public class PlacementController : MonoBehaviour
             }
         }
         else
-        {
+        {   // si el raycast no golpea el suelo, resetea la celda actual
             if (currentCell != null)
             {
                 currentCell.SetNormal();
@@ -78,6 +82,7 @@ public class PlacementController : MonoBehaviour
             }
         }
 
+        // permite rotar la máquina con la tecla R
         if (Input.GetKeyDown(KeyCode.R))
         {
             rotationSteps++;
@@ -87,6 +92,7 @@ public class PlacementController : MonoBehaviour
         }
     }
 
+    // coloca el edificio en la celda actual
     void PlaceBuilding()
     {
         Vector3 position =
@@ -111,11 +117,12 @@ public class PlacementController : MonoBehaviour
             );
 
         // Hace la máquina un poco más grande.
-        building.transform.localScale *= 1.15f;
+        //building.transform.localScale *= 1.15f;
 
         currentCell.Occupy(building);
     }
 
+    // elimina el edificio de la celda actual
     void RemoveBuilding()
     {
         if (currentCell.PlacedObject != null)
@@ -126,6 +133,7 @@ public class PlacementController : MonoBehaviour
         currentCell.Clear();
     }
 
+    // inicia el modo construcción con el prefab del edificio a colocar
     public void StartPlacement(GameObject prefab)
     {
         buildingPrefab = prefab;
@@ -137,6 +145,7 @@ public class PlacementController : MonoBehaviour
         gridManager.SetBuildMode(true);
     }
 
+    // cancela el modo construcción y resetea la celda actual
     public void CancelPlacement()
     {
         if (currentCell != null)

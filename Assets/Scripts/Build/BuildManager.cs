@@ -17,6 +17,7 @@ private Quaternion oldPlayerRotation;
 private Vector3 oldCameraLocalPosition;
 private Quaternion oldCameraLocalRotation;
 
+// Define que pasa cuando tocas la b y llama a las funciones exitbuildmode y enterbuildmode depende que pase.
 void Update()
 {
     if (Input.GetKeyDown(KeyCode.B))
@@ -28,6 +29,7 @@ void Update()
     }
 }
 
+// Entra al modo build
 void EnterBuildMode()
 {
     buildMode = true;
@@ -40,12 +42,10 @@ void EnterBuildMode()
 
     fpsController.enabled = false;
 
-    player.transform.position = buildPosition.position;
-
     player.transform.rotation = Quaternion.identity;
 
-    fpsCamera.localPosition = Vector3.zero;
-    fpsCamera.localRotation = Quaternion.Euler(90f, 0f, 0f);
+    fpsCamera.position = buildPosition.position;
+    fpsCamera.rotation = Quaternion.Euler(90f, 0f, 0f);
 
     Cursor.lockState = CursorLockMode.None;
     Cursor.visible = true;
@@ -59,16 +59,26 @@ void ExitBuildMode()
 
     placementController.CancelPlacement();
 
-    fpsCamera.localPosition = oldCameraLocalPosition;
-    fpsCamera.localRotation = oldCameraLocalRotation;
+    fpsController.enabled = false;
 
     player.transform.position = oldPlayerPosition;
     player.transform.rotation = oldPlayerRotation;
+
+    fpsCamera.localPosition = oldCameraLocalPosition;
+    fpsCamera.localRotation = oldCameraLocalRotation;
+
+    CharacterController characterController =
+        player.GetComponent<CharacterController>();
+
+    if (characterController != null)
+    {
+        characterController.enabled = false;
+        characterController.enabled = true;
+    }
 
     fpsController.enabled = true;
 
     Cursor.lockState = CursorLockMode.Locked;
     Cursor.visible = false;
-}
-
+    }   
 }
