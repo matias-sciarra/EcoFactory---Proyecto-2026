@@ -1,39 +1,28 @@
 fileFormatVersion: 2
-guid: c8586056bb81ea743a1aec5a769be48d
+guid: ed11bf6291739c14090ffb7f38c396c0
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: Cube
-    100002: Cube.002
-    100004: //RootNode
-    400000: Cube
-    400002: Cube.002
-    400004: //RootNode
-    2100000: mADERA tEXTURA
-    2100002: mATERIAL METALICO PRINCIPAL
+    100000: //RootNode
+    400000: //RootNode
+    2100000: mATERIAL METALICO PRINCIPAL
+    2100002: mADERA tEXTURA
     2100004: Material.001
     2100006: Mtalico
     2100008: Cables
-    2100010: Material.011
-    2100012: Material.010
-    2100014: Material.003
-    2100016: Material.012
+    2100010: Material.010
+    2100012: Material.012
+    2100014: Material.011
+    2100016: Material.003
     2100018: Material.014
     2100020: Material.013
     2100022: Material.006
     2100024: Box 1
     2100026: Material.005
-    2100028: No Name
-    2300000: Cube
-    2300002: Cube.002
-    3300000: Cube
-    3300002: Cube.002
-    4300000: Cube
-    4300002: Cube.002
-    7400000: Cube.002|Cube.001|Cube|CubeAction
-    7400002: Cube.002|Cube.002Action
-    7400004: Cube.002|Cube|CubeAction
-    9500000: //RootNode
+    2100028: Vidrio
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Cylinder
     2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
@@ -87,8 +76,8 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 0.01
-    hasPreviousCalculatedGlobalScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -115,7 +104,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

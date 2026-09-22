@@ -2,171 +2,73 @@
 
 public class BuildManager : MonoBehaviour
 {
-    public GameObject player;
-    public Behaviour fpsController;
-    public Transform buildPosition;
-    public GameObject buildingPrefab;
-    public LayerMask gridLayer;
-    public float rayDistance = 100f;
-    private Tile lastPlacedTile;
-    private Tile lastRemovedTile;
-    private Vector3 oldPosition;
-    private Quaternion oldRotation;
-    private bool buildMode = false;
-    private Tile currentTile;
+public GameObject player;
+public Behaviour fpsController;
+public Transform fpsCamera;
+public Transform buildPosition;
+public PlacementController placementController;
+public GameObject buildingPrefab;
 
-    void Start()
+private bool buildMode;
+
+private Vector3 oldPlayerPosition;
+private Quaternion oldPlayerRotation;
+
+private Vector3 oldCameraLocalPosition;
+private Quaternion oldCameraLocalRotation;
+
+void Update()
+{
+    if (Input.GetKeyDown(KeyCode.B))
     {
-        if (fpsController == null)
-        {
-            Debug.LogError("No se asigno el controller del player en el inspector");
-        }
-    }
-
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.B))
-        {
-            buildMode = !buildMode;
-
-            if (buildMode)
-                EnterBuildMode();
-            else
-                ExitBuildMode();
-        }
-
-        if (!buildMode)
-            return;
-
-        HandleTileSelection();
-        HandleBuildingPlacement();
-        HandleBuildingRemoval();
-    }
-
-    void EnterBuildMode()
-    {
-        oldPosition = player.transform.position;
-        oldRotation = player.transform.rotation;
-
-        fpsController.enabled = false;
-
-        player.transform.position = buildPosition.position;
-        player.transform.rotation = buildPosition.rotation;
-
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
-    }
-
-    void ExitBuildMode()
-    {
-        if (currentTile != null)
-        {
-            currentTile.SetNormal();
-            currentTile = null;
-        }
-
-        player.transform.position = oldPosition;
-        player.transform.rotation = oldRotation;
-
-        fpsController.enabled = true;
-
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-    }
-
-    void HandleTileSelection()
-    {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-        RaycastHit hit;
-
-        if (Physics.Raycast(ray, out hit, rayDistance, gridLayer))
-        {
-            Tile tile = hit.collider.GetComponent<Tile>();
-
-            if (tile != null)
-            {
-                if (currentTile != tile)
-                {
-                    if (currentTile != null)
-                        currentTile.SetNormal();
-
-                    currentTile = tile;
-
-                    if (tile.occupied)
-                        tile.SetInvalid();
-                    else
-                        tile.SetValid();
-                }
-            }
-        }
+        if (buildMode)
+            ExitBuildMode();
         else
-        {
-            if (currentTile != null)
-            {
-                currentTile.SetNormal();
-                currentTile = null;
-            }
-        }
+            EnterBuildMode();
     }
+}
 
-    void HandleBuildingPlacement()
-    {
-        if (currentTile == null)
-            return;
+void EnterBuildMode()
+{
+    buildMode = true;
 
-        if (currentTile.occupied)
-            return;
+    oldPlayerPosition = player.transform.position;
+    oldPlayerRotation = player.transform.rotation;
 
-        if (Input.GetMouseButton(0))
-        {
-            if (currentTile == lastPlacedTile)
-                return;
+    oldCameraLocalPosition = fpsCamera.localPosition;
+    oldCameraLocalRotation = fpsCamera.localRotation;
 
-            GameObject building = Instantiate(
-                buildingPrefab,
-                currentTile.transform.position + Vector3.up * 0.55f,
-                Quaternion.identity
-            );
+    fpsController.enabled = false;
 
-            currentTile.currentBuilding = building;
-            currentTile.occupied = true;
-            currentTile.SetInvalid();
+    player.transform.position = buildPosition.position;
 
-            lastPlacedTile = currentTile;
-        }
+    player.transform.rotation = Quaternion.identity;
 
-        if (Input.GetMouseButtonUp(0))
-        {
-            lastPlacedTile = null;
-        }
-    }
+    fpsCamera.localPosition = Vector3.zero;
+    fpsCamera.localRotation = Quaternion.Euler(90f, 0f, 0f);
 
-    void HandleBuildingRemoval()
-    {
-        if (currentTile == null)
-            return;
+    Cursor.lockState = CursorLockMode.None;
+    Cursor.visible = true;
 
-        if (!currentTile.occupied)
-            return;
+    placementController.StartPlacement(buildingPrefab);
+}
 
-        if (Input.GetMouseButton(1))
-        {
-            if (currentTile == lastRemovedTile)
-                return;
+void ExitBuildMode()
+{
+    buildMode = false;
 
-            Destroy(currentTile.currentBuilding);
+    placementController.CancelPlacement();
 
-            currentTile.currentBuilding = null;
-            currentTile.occupied = false;
-            currentTile.SetValid();
+    fpsCamera.localPosition = oldCameraLocalPosition;
+    fpsCamera.localRotation = oldCameraLocalRotation;
 
-            lastRemovedTile = currentTile;
-        }
+    player.transform.position = oldPlayerPosition;
+    player.transform.rotation = oldPlayerRotation;
 
-        if (Input.GetMouseButtonUp(1))
-        {
-            lastRemovedTile = null;
-        }
-    }
+    fpsController.enabled = true;
+
+    Cursor.lockState = CursorLockMode.Locked;
+    Cursor.visible = false;
+}
+
 }

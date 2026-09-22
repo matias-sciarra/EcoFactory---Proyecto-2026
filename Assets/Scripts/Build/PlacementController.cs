@@ -2,115 +2,153 @@
 
 public class PlacementController : MonoBehaviour
 {
-    [Header("Refs")]
     public Camera playerCamera;
     public LayerMask groundLayer;
     public Grid_Manager gridManager;
+    public GameObject buildingPrefab;
 
-    [Header("Ghost")]
-    public Material validMaterial;
-    public Material invalidMaterial;
+    private GridCell currentCell;
 
-    private GameObject currentPrefab;
-    private GameObject ghostObject;
-    private Renderer[] ghostRenderers;
-    private int rotationSteps = 0; // 0,1,2,3 -> 0°,90°,180°,270°
-    private Vector3Int currentGridPos;
-    private bool isValidPlacement;
+    private int rotationSteps;
 
-    public void StartPlacement(GameObject prefab)
-    {
-        currentPrefab = prefab;
-        ghostObject = Instantiate(prefab);
-        SetGhostMode(ghostObject);
-        ghostRenderers = ghostObject.GetComponentsInChildren<Renderer>();
-    }
+    private bool buildMode;
 
     void Update()
     {
-        if (ghostObject == null) return;
+        if (!buildMode)
+            return;
 
-        HandleRotationInput();
-        UpdateGhostPosition();
+        Ray ray = playerCamera.ScreenPointToRay(
+            Input.mousePosition
+        );
 
-        if (Input.GetMouseButtonDown(0) && isValidPlacement)
-            ConfirmPlacement();
-
-        if (Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.Escape))
-            CancelPlacement();
-    }
-
-    void HandleRotationInput()
-    {
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Physics.Raycast(
+            ray,
+            out RaycastHit hit,
+            100f,
+            groundLayer
+        ))
         {
-            rotationSteps = (rotationSteps + 1) % 4;
-            ghostObject.transform.rotation = Quaternion.Euler(0, rotationSteps * 90f, 0);
-        }
-    }
+            Vector3Int gridPosition =
+                gridManager.WorldToGrid(hit.point);
 
-    void UpdateGhostPosition()
-    {
-        Ray ray = playerCamera.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out RaycastHit hit, 100f, groundLayer))
-        {
-            currentGridPos = gridManager.WorldToGrid(hit.point);
-            Vector3 snappedWorldPos = gridManager.GridToWorld(currentGridPos);
+            GridCell cell =
+                gridManager.GetCell(gridPosition);
 
-            ghostObject.transform.position = snappedWorldPos;
+            if (cell != currentCell)
+            {
+                if (currentCell != null)
+                    currentCell.SetNormal();
 
-            isValidPlacement = ValidatePlacement(currentGridPos);
-            SetGhostColor(isValidPlacement);
+                currentCell = cell;
+            }
+
+            if (currentCell != null)
+            {
+                if (currentCell.IsOccupied)
+                    currentCell.SetInvalid();
+                else
+                    currentCell.SetValid();
+            }
+
+            if (
+                Input.GetMouseButtonDown(0) &&
+                currentCell != null &&
+                !currentCell.IsOccupied
+            )
+            {
+                PlaceBuilding();
+            }
+
+            if (
+                Input.GetMouseButtonDown(1) &&
+                currentCell != null &&
+                currentCell.IsOccupied
+            )
+            {
+                RemoveBuilding();
+            }
         }
         else
         {
-            isValidPlacement = false;
-            SetGhostColor(false);
+            if (currentCell != null)
+            {
+                currentCell.SetNormal();
+                currentCell = null;
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            rotationSteps++;
+
+            if (rotationSteps >= 4)
+                rotationSteps = 0;
         }
     }
 
-    bool ValidatePlacement(Vector3Int gridPos)
+    void PlaceBuilding()
     {
-        if (!gridManager.IsWithinBounds(gridPos))
-            return false;
+        Vector3 position =
+            gridManager.GridToWorld(
+                currentCell.GridPosition
+            );
 
-        GridCell cell = gridManager.GetCell(gridPos);
-        if (cell == null || cell.IsOccupied)
-            return false;
+        position.y = 0;
 
-        return true;
+        Quaternion rotation =
+            Quaternion.Euler(
+                0,
+                rotationSteps * 90f,
+                0
+            );
+
+        GameObject building =
+            Instantiate(
+                buildingPrefab,
+                position,
+                rotation
+            );
+
+        // Hace la máquina un poco más grande.
+        building.transform.localScale *= 1.15f;
+
+        currentCell.Occupy(building);
     }
 
-    void ConfirmPlacement()
+    void RemoveBuilding()
     {
-        GameObject placed = Instantiate(currentPrefab, ghostObject.transform.position, ghostObject.transform.rotation);
+        if (currentCell.PlacedObject != null)
+        {
+            Destroy(currentCell.PlacedObject);
+        }
 
-        GridCell cell = gridManager.GetCell(currentGridPos);
-        cell.Occupy(placed);
+        currentCell.Clear();
+    }
 
-        CancelPlacement();
+    public void StartPlacement(GameObject prefab)
+    {
+        buildingPrefab = prefab;
+
+        rotationSteps = 0;
+
+        buildMode = true;
+
+        gridManager.SetBuildMode(true);
     }
 
     public void CancelPlacement()
     {
-        if (ghostObject != null)
-            Destroy(ghostObject);
+        if (currentCell != null)
+        {
+            currentCell.SetNormal();
+            currentCell = null;
+        }
 
-        ghostObject = null;
-        currentPrefab = null;
         rotationSteps = 0;
-    }
 
-    void SetGhostMode(GameObject obj)
-    {
-        foreach (var col in obj.GetComponentsInChildren<Collider>())
-            col.enabled = false;
-    }
+        buildMode = false;
 
-    void SetGhostColor(bool valid)
-    {
-        Material mat = valid ? validMaterial : invalidMaterial;
-        foreach (var r in ghostRenderers)
-            r.material = mat;
+        gridManager.SetBuildMode(false);
     }
 }
