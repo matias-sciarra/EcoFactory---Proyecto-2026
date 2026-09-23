@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+﻿    using UnityEngine;
 
 public class GridCell : MonoBehaviour
 {
@@ -37,7 +37,7 @@ public class GridCell : MonoBehaviour
         visual.transform.localPosition = new Vector3(0, 0.01f, 0);
 
         // rota el cuadrado para que quede paralelo al plano del suelo
-        visual.transform.localRotation = Quaternion.Euler(90, 0, 0);
+        visual.transform.localRotation = Quaternion.Euler(-90, 0, 0);
 
         // Tamaño de la celda visual.
         // separacion entre celdas
@@ -53,8 +53,8 @@ public class GridCell : MonoBehaviour
         visualRenderer = visual.GetComponent<Renderer>();
 
         // crea materiales para representar los diferentes estados de la celda
-        normalMaterial = new Material(Shader.Find("Unlit/Color"));
-        normalMaterial.color = new Color(1f, 1f, 1f, 0f);
+        normalMaterial = new Material(Shader.Find("Unlit/Transparent"));
+        normalMaterial.color = new Color(1f, 1f, 1f, 0.15f);
 
         // crea materiales para representar los diferentes estados de la celda
         validMaterial = new Material(Shader.Find("Unlit/Color"));
