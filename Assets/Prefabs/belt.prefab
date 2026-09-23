@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &505293570557014399
 RectTransform:
   m_ObjectHideFlags: 0
@@ -476,6 +476,8 @@ MonoBehaviour:
   beltInSequence: {fileID: 0}
   beltItem: {fileID: 114095491901894122, guid: a429f50e21c121a4da0405b66dc1de6b, type: 3}
   MachineInSequence: {fileID: 0}
+  moneyMachineInSequence: {fileID: 0}
+  machineSlotInSequence: {fileID: 0}
   isSpaceTaken: 0
   radiodetection: 5
   cartelmejora: {fileID: 505293570708976992}
