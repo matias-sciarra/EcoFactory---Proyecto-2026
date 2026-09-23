@@ -74,7 +74,7 @@ public class PlacementController : MonoBehaviour
                 rotationSteps = 0;
 
             if (previewObject != null)
-                previewObject.transform.rotation = Quaternion.Euler(0, rotationSteps * 45f, 0);
+                previewObject.transform.rotation = Quaternion.Euler(0, rotationSteps * 90f, 0);
         }
     }
 
@@ -141,7 +141,7 @@ public class PlacementController : MonoBehaviour
         Destroy(previewObject);
 
     previewObject = Instantiate(buildingPrefab);
-    previewObject.transform.rotation = Quaternion.Euler(0, rotationSteps * 45f, 0);
+    previewObject.transform.rotation = Quaternion.Euler(0, rotationSteps * 90f, 0);
 
     foreach (Collider col in previewObject.GetComponentsInChildren<Collider>())
         col.enabled = false;
