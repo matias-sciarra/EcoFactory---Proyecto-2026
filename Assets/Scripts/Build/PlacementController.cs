@@ -133,4 +133,20 @@ public class PlacementController : MonoBehaviour
             previewObject = null;
         }
     }
+    public void ChangeBuilding(GameObject prefab)
+{
+    buildingPrefab = prefab;
+
+    if (previewObject != null)
+        Destroy(previewObject);
+
+    previewObject = Instantiate(buildingPrefab);
+    previewObject.transform.rotation = Quaternion.Euler(0, rotationSteps * 45f, 0);
+
+    foreach (Collider col in previewObject.GetComponentsInChildren<Collider>())
+        col.enabled = false;
+
+    if (currentCell == null)
+        previewObject.SetActive(false);
+}
 }
