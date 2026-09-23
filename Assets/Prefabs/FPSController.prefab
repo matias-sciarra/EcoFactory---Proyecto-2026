@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8301348219249617277}
   - component: {fileID: 8301348219259879421}
   - component: {fileID: 8301348219261093245}
+  - component: {fileID: 1048904821}
   m_Layer: 0
   m_Name: FPSController
   m_TagString: Player
@@ -289,6 +290,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &1048904821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8301348219256675485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90c6bb08903ad6541ab324195941a693, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rayOrigin: {fileID: 8301348219256438975}
+  holdPoint: {fileID: 8301348219256438973}
+  grabDistance: 3
+  interactKey: 101
 --- !u!1 &8301348219256675487
 GameObject:
   m_ObjectHideFlags: 0
