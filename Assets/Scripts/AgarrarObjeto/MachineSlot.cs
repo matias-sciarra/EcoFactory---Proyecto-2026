@@ -16,9 +16,10 @@ public class MachineSlot : MonoBehaviour
     private bool jugadorcerca = false;
     public Button cartelmejora;
     public float distanciacerca = 2f;
-    public moneymanager manager;
+    public economymanager manager;
     public PlayerGrabber jugador;
     public float costomejora = 300f;
+    private const float MULTIPLICADOR_MEJORA = 1.6f;
     private int cantidadMejoras = 0;
     public TextMeshProUGUI txtcostomejora;
 
@@ -107,7 +108,7 @@ public class MachineSlot : MonoBehaviour
                     cartelmejora.gameObject.SetActive(false);
                 }
 
-                if(jugadorcerca && Input.GetKeyDown(KeyCode.Q))
+                if(jugadorcerca && !BuildManager.BuildModeActivo && Input.GetKeyDown(KeyCode.Q))
                 {
                     mejorar();
                 }
@@ -118,18 +119,23 @@ public class MachineSlot : MonoBehaviour
 
     public void mejorar()
     {
-        float costoActual = costomejora * Mathf.Pow(1.6f, cantidadMejoras);
+        int costoActual = GetCostoMejora(cantidadMejoras);
 
-        if (manager.dinero >= costoActual)
+        // Gastar descuenta la plata y refresca el texto del dinero; devuelve false si no alcanza
+        if (manager.Gastar(costoActual))
         {
-            manager.dinero -= costoActual;
-            manager.txtdinero.text = manager.dinero.ToString();
             cantidadMejoras += 1;
             processTime = Mathf.Max(0f, processTime - 1f / 3f);
 
-            float costoSiguiente = costomejora * Mathf.Pow(2.3f, cantidadMejoras);
-            txtcostomejora.text = costoSiguiente.ToString();
+            txtcostomejora.text = GetCostoMejora(cantidadMejoras).ToString();
         }
+    }
+
+    // Lo que sale la mejora numero "mejoras": costomejora * 1.6 ^ mejoras.
+    // Se cobra y se muestra con esta misma cuenta para que no se desfasen.
+    private int GetCostoMejora(int mejoras)
+    {
+        return Mathf.RoundToInt(costomejora * Mathf.Pow(MULTIPLICADOR_MEJORA, mejoras));
     }
 
 }

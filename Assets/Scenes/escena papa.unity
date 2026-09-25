@@ -430,7 +430,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1003141785}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e1fc2d18a6ea6d4684a0d2471309a84, type: 3}
+  m_Script: {fileID: 11500000, guid: 7df5860378b4f24498eef765040923f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   txtdinero: {fileID: 1117356791}

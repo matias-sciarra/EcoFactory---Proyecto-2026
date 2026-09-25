@@ -13,6 +13,14 @@ public class PlacementController : MonoBehaviour
 
     private GameObject previewObject;
 
+    // Lo setea el BuildManager en su Awake, no hace falta arrastrarlo en el Inspector
+    private BuildManager buildManager;
+
+    public void SetBuildManager(BuildManager manager)
+    {
+        buildManager = manager;
+    }
+
     void Update()
     {
         if (!buildMode)
@@ -80,6 +88,11 @@ public class PlacementController : MonoBehaviour
 
     void PlaceBuilding()
     {
+        // El BuildManager cobra la maquina seleccionada (precio escalado + descuento de plata).
+        // Si no alcanza la plata devuelve false y no se coloca nada.
+        if (buildManager != null && !buildManager.TryComprarSeleccionada())
+            return;
+
         Vector3 position = gridManager.GridToWorld(currentCell.GridPosition);
         position.y = 0;
 

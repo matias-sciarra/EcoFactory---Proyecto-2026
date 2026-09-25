@@ -15,7 +15,7 @@ public class PlayerGrabber : MonoBehaviour
     //Prueba cuando tocas la e si se puede agarrar o no el objeto, en el update para que sea siempre en toda la escena
     private void Update()
     {
-        if (Input.GetKeyDown(interactKey))
+        if (!BuildManager.BuildModeActivo && Input.GetKeyDown(interactKey))
         {
             if (heldItem == null)
                 TryGrab();
