@@ -12,7 +12,7 @@ public class BuildManager : MonoBehaviour
         public int vecesComprada = 0;
     }
 
-    public const int CANTIDAD_MAQUINAS = 3;
+    public const int CANTIDAD_MAQUINAS = 2;
     private const float MULTIPLICADOR_PRECIO = 1.7f;
 
     public GameObject player;
@@ -27,7 +27,6 @@ public class BuildManager : MonoBehaviour
     {
         new MaquinaConstruible { precioBase = 100 },
         new MaquinaConstruible { precioBase = 150 },
-        new MaquinaConstruible { precioBase = 200 }
     };
 
     public int indiceSeleccionado;
