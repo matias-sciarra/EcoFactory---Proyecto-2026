@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Linq;
 
 public class Belt : MonoBehaviour
 {
@@ -21,7 +22,7 @@ public class Belt : MonoBehaviour
     public bool isSpaceTaken;
     private bool isMoving = false;
     private BeltManager _beltManager;
-
+    public LayerMask capasconectadas;
     public float radiodetection = 5f;
     private bool jugadorcerca = false;
     public Button cartelmejora;
@@ -49,9 +50,14 @@ public class Belt : MonoBehaviour
         //Las cintas colocadas en runtime salen de un prefab, y un prefab no puede guardar
         //referencias a objetos de la escena: hay que resolverlas aca
         if (manager == null) manager = FindObjectOfType<economymanager>();
-        if (jugador == null) jugador = FindObjectOfType<PlayerGrabber>();
+        if (jugador == null) jugador = FindObjectOfType<PlayerGrabber>();   
         if ( beltItem == null) beltItem = FindObjectOfType<BeltItem>();
-        if (beltInSequence == null && maquinadisponible == true) beltInSequence = FindNextBelt();
+        if (beltInSequence == null && maquinadisponible == true) 
+        {
+            beltInSequence = FindObjectsOfType<Belt>()
+            .FirstOrDefault( b => b != this && Vector3.Distance(b.transform.position, transform.position) < distanciamaximabelt);
+            
+        }
 
         if (txtcostomejora != null) txtcostomejora.text = costomejora.ToString();
         if (cartelmejora != null) cartelmejora.onClick.AddListener(mejorar);
@@ -115,20 +121,33 @@ public class Belt : MonoBehaviour
                 }
             }
 
-            if(col.CompareTag("belt"))
-            {
-                float distanciabelt = Vector3.Distance(transform.position, col.transform.position);
 
-                if(distanciabelt < distanciamaximabelt)
-                {
-                    maquinadisponible = true;
-                }
-
-            }
         };
     }
 
-    //Compra una mejora de velocidad para la cinta (velocidad compartida via BeltManager)
+    public void detectarbelt()
+
+    {
+        float altura = 0.5f;
+        Vector3 inicio = transform.position + Vector3.up * altura;
+        Vector3 direccion = transform.forward;
+        float distanciamax = 1f;
+
+        beltInSequence = null;
+
+        Debug.DrawRay(inicio, direccion * distanciamax, Color.red);
+        if(Physics.Raycast(inicio, direccion, out RaycastHit hit, distanciamax, capasconectadas))
+        {
+            Belt siguienteBelt = hit.collider.GetComponent<Belt>();
+            if(siguienteBelt != null)
+            {
+                beltInSequence = siguienteBelt;
+            }
+        }
+
+
+    }
+
     public void mejorar()
     {
         if (manager == null)
@@ -139,7 +158,6 @@ public class Belt : MonoBehaviour
 
         int costoActual = GetCostoMejora(cantidadMejoras);
 
-        // Gastar descuenta la plata y refresca el texto del dinero; devuelve false si no alcanza
         if (manager.Gastar(costoActual))
         {
             cantidadMejoras += 1;
@@ -152,8 +170,6 @@ public class Belt : MonoBehaviour
         }
     }
 
-    // Lo que sale la mejora numero "mejoras": costomejora * 2.1 ^ mejoras.
-    // Se cobra y se muestra con esta misma cuenta para que no se desfasen.
     private int GetCostoMejora(int mejoras)
     {
         return Mathf.RoundToInt(costomejora * Mathf.Pow(MULTIPLICADOR_MEJORA, mejoras));

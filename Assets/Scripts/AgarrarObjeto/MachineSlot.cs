@@ -100,7 +100,6 @@ public class MachineSlot : MonoBehaviour
         Vector3 inicio = transform.position;
 
         Collider[] objetosdetectados = Physics.OverlapSphere(inicio, radiodetection);
-            Debug.Log($"colliders detectados: {objetosdetectados.Length}");
 
 
         foreach (Collider col in  objetosdetectados)
@@ -108,7 +107,6 @@ public class MachineSlot : MonoBehaviour
             if(col.CompareTag("Player"))
             {
                 float distancia = Vector3.Distance(transform.position, col.transform.position);
-                Debug.Log($"player encontrado a {distancia}, necesita < {distanciacerca}, holding: {jugador.IsHolding}");
                 if(distancia < distanciacerca && !jugador.IsHolding)
                 {
                     jugadorcerca = true;

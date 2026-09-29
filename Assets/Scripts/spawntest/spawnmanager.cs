@@ -24,8 +24,7 @@ public class spawnmanager : MonoBehaviour
        {
             spawn();
             tiempo = 0;
-            Debug.Log("se genero un prefab");
-            Debug.Log(tiempo.ToString());
+
        }
 
 

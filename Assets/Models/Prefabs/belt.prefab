@@ -383,7 +383,7 @@ GameObject:
   - component: {fileID: 1063099872}
   m_Layer: 0
   m_Name: belt
-  m_TagString: Untagged
+  m_TagString: belt
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -486,3 +486,5 @@ MonoBehaviour:
   jugador: {fileID: 0}
   costomejora: 50
   txtcostomejora: {fileID: 505293570762039675}
+  distanciamaximabelt: 2
+  maquinadisponible: 0
