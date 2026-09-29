@@ -8,7 +8,18 @@ public class machine : MonoBehaviour
     public GameObject residuoproscesado;
     public Belt primeraCinta;
     private int contador = 0;
+    public economymanager manager;
 
+    //Lo que paga cada residuo que entra y se destruye en la maquina
+    public int dineroPorResiduo = 100;
+
+    void Awake()
+    {
+        //Se puede dejar vacio en el Inspector: las maquinas construidas en runtime salen de
+        //un prefab, y un prefab no puede guardar una referencia a un objeto de la escena
+        if (manager == null)
+            manager = FindObjectOfType<economymanager>();
+    }
 
     //Recibe la basura en la maquina y suma uno al contador
     public void ReceiveTrash(Trash beltItem)
@@ -16,10 +27,26 @@ public class machine : MonoBehaviour
         contador+=1;
         Debug.Log("llego bien");
         Destroy(beltItem.gameObject);
+
+        //Un pago por cada residuo destruido
+        Pagar();
+
         if (contador >= cantidadrequerida){
             contador = 0;
             generarbasuraproscesada();
         }
+    }
+
+    //Suma la plata del residuo. Si no hay economymanager no rompe, solo avisa
+    private void Pagar()
+    {
+        if (manager == null)
+        {
+            Debug.LogWarning(name + ": no hay economymanager en la escena, no se paga el residuo");
+            return;
+        }
+
+        manager.Ganar(dineroPorResiduo);
     }
 
     //Cuando la maquina detecta que entro un objeto de basura, lo procesa y lo saca

@@ -26,8 +26,15 @@ public class MachineSlot : MonoBehaviour
 
     void Start()
     {
-        txtcostomejora.text = costomejora.ToString();
-        cartelmejora.onClick.AddListener(mejorar);
+        if (manager == null) manager = FindObjectOfType<economymanager>();
+        if (jugador == null) jugador = FindObjectOfType<PlayerGrabber>();
+
+        if (manager == null) Debug.LogError("No se encontró el economymanager", this);
+        if (jugador == null) Debug.LogError("No se encontró el PlayerGrabber", this);
+
+        if (txtcostomejora != null) txtcostomejora.text = costomejora.ToString();
+        if (cartelmejora != null) cartelmejora.onClick.AddListener(mejorar);
+    
     }
 
     void Update()
@@ -91,12 +98,15 @@ public class MachineSlot : MonoBehaviour
         Vector3 inicio = transform.position;
 
         Collider[] objetosdetectados = Physics.OverlapSphere(inicio, radiodetection);
+            Debug.Log($"colliders detectados: {objetosdetectados.Length}");
+
 
         foreach (Collider col in  objetosdetectados)
         {
             if(col.CompareTag("Player"))
             {
                 float distancia = Vector3.Distance(transform.position, col.transform.position);
+                Debug.Log($"player encontrado a {distancia}, necesita < {distanciacerca}, holding: {jugador.IsHolding}");
                 if(distancia < distanciacerca && !jugador.IsHolding)
                 {
                     jugadorcerca = true;

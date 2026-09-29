@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &505293570557014399
 RectTransform:
   m_ObjectHideFlags: 0
@@ -117,7 +117,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &505293570708976997
 RectTransform:
   m_ObjectHideFlags: 0
@@ -380,7 +380,7 @@ GameObject:
   - component: {fileID: 505293571264455645}
   - component: {fileID: 505293571264455644}
   - component: {fileID: 505293571264455647}
-  - component: {fileID: 505293571264455646}
+  - component: {fileID: 1063099872}
   m_Layer: 0
   m_Name: belt
   m_TagString: Untagged
@@ -461,7 +461,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &505293571264455646
+--- !u!114 &1063099872
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -474,7 +474,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   beltInSequence: {fileID: 0}
-  beltItem: {fileID: 114095491901894122, guid: a429f50e21c121a4da0405b66dc1de6b, type: 3}
+  beltItem: {fileID: 0}
   MachineInSequence: {fileID: 0}
   moneyMachineInSequence: {fileID: 0}
   machineSlotInSequence: {fileID: 0}
