@@ -32,6 +32,8 @@ public class Belt : MonoBehaviour
     private const float MULTIPLICADOR_MEJORA = 2.1f;
     private int cantidadMejoras = 0;
     public TextMeshProUGUI txtcostomejora;
+    public float distanciamaximabelt = 2f;
+    public bool maquinadisponible = false;
 
     //Velocidad de la cinta. Si por lo que sea no hay BeltManager no rompe ni devuelve 0
     private float Velocidad
@@ -48,6 +50,8 @@ public class Belt : MonoBehaviour
         //referencias a objetos de la escena: hay que resolverlas aca
         if (manager == null) manager = FindObjectOfType<economymanager>();
         if (jugador == null) jugador = FindObjectOfType<PlayerGrabber>();
+        if ( beltItem == null) beltItem = FindObjectOfType<BeltItem>();
+        if (beltInSequence == null && maquinadisponible == true) beltInSequence = FindNextBelt();
 
         if (txtcostomejora != null) txtcostomejora.text = costomejora.ToString();
         if (cartelmejora != null) cartelmejora.onClick.AddListener(mejorar);
@@ -109,6 +113,17 @@ public class Belt : MonoBehaviour
                 {
                     mejorar();
                 }
+            }
+
+            if(col.CompareTag("belt"))
+            {
+                float distanciabelt = Vector3.Distance(transform.position, col.transform.position);
+
+                if(distanciabelt < distanciamaximabelt)
+                {
+                    maquinadisponible = true;
+                }
+
             }
         };
     }

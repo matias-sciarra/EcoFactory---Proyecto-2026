@@ -28,9 +28,11 @@ public class MachineSlot : MonoBehaviour
     {
         if (manager == null) manager = FindObjectOfType<economymanager>();
         if (jugador == null) jugador = FindObjectOfType<PlayerGrabber>();
+        if (primeraCinta == null) primeraCinta = FindObjectOfType<Belt>();
 
         if (manager == null) Debug.LogError("No se encontró el economymanager", this);
         if (jugador == null) Debug.LogError("No se encontró el PlayerGrabber", this);
+        if (primeraCinta == null) Debug.LogError("no se encontro la primera cinta", this);
 
         if (txtcostomejora != null) txtcostomejora.text = costomejora.ToString();
         if (cartelmejora != null) cartelmejora.onClick.AddListener(mejorar);
