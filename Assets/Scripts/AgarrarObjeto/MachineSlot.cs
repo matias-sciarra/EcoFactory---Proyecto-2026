@@ -22,17 +22,17 @@ public class MachineSlot : MonoBehaviour
     private const float MULTIPLICADOR_MEJORA = 1.6f;
     private int cantidadMejoras = 0;
     public TextMeshProUGUI txtcostomejora;
+    public LayerMask capasconectadas;
+    public float distanciamax = 3f;
 
 
     void Start()
     {
         if (manager == null) manager = FindObjectOfType<economymanager>();
         if (jugador == null) jugador = FindObjectOfType<PlayerGrabber>();
-        if (primeraCinta == null) primeraCinta = FindObjectOfType<Belt>();
 
         if (manager == null) Debug.LogError("No se encontró el economymanager", this);
         if (jugador == null) Debug.LogError("No se encontró el PlayerGrabber", this);
-        if (primeraCinta == null) Debug.LogError("no se encontro la primera cinta", this);
 
         if (txtcostomejora != null) txtcostomejora.text = costomejora.ToString();
         if (cartelmejora != null) cartelmejora.onClick.AddListener(mejorar);
@@ -42,6 +42,7 @@ public class MachineSlot : MonoBehaviour
     void Update()
     {
         detectar();
+        detectarbelt();
     }
 
     //Funcion para poner el objeto en la maquina
@@ -124,6 +125,28 @@ public class MachineSlot : MonoBehaviour
                 }
             }
         };
+
+    }
+
+        public void detectarbelt()
+
+    {
+        float altura = 0.5f;
+        Vector3 inicio = transform.position + Vector3.up * altura;
+        Vector3 direccion = transform.forward;
+
+        primeraCinta = null;
+
+        Debug.DrawRay(inicio, direccion * distanciamax, Color.red);
+        if(Physics.Raycast(inicio, direccion, out RaycastHit hit, distanciamax, capasconectadas))
+        {
+            Belt siguienteBelt = hit.collider.GetComponent<Belt>();
+            if(primeraCinta != null)
+            {
+                primeraCinta = siguienteBelt;
+            }
+        }
+
 
     }
 

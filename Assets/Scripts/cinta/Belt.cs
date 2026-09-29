@@ -51,14 +51,7 @@ public class Belt : MonoBehaviour
         //referencias a objetos de la escena: hay que resolverlas aca
         if (manager == null) manager = FindObjectOfType<economymanager>();
         if (jugador == null) jugador = FindObjectOfType<PlayerGrabber>();   
-        if ( beltItem == null) beltItem = FindObjectOfType<BeltItem>();
-        if (beltInSequence == null && maquinadisponible == true) 
-        {
-            beltInSequence = FindObjectsOfType<Belt>()
-            .FirstOrDefault( b => b != this && Vector3.Distance(b.transform.position, transform.position) < distanciamaximabelt);
-            
-        }
-
+        if (beltInSequence == null && maquinadisponible == true); 
         if (txtcostomejora != null) txtcostomejora.text = costomejora.ToString();
         if (cartelmejora != null) cartelmejora.onClick.AddListener(mejorar);
     }
@@ -86,11 +79,14 @@ public class Belt : MonoBehaviour
     private void Update()
     {
         detectar();
+        detectarbelt();
 
         if (beltItem != null && beltItem.item != null && !isMoving)
         {
             StartCoroutine(StartBeltMove());
         }
+
+        
     }
 
     //Detecta si el jugador esta cerca (y sin nada agarrado) para mostrar el cartel de mejora
