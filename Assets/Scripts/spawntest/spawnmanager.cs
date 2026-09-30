@@ -9,7 +9,7 @@ public class spawnmanager : MonoBehaviour
     private float tiempo = 0f;
     private  int contadordedestroyables = 0;
     private int limitededestruibles = 5;
-    public float radiodetection = 5f;
+    public float radiodetection = 15f;
 
     void Start()
     {
