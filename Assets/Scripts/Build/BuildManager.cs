@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using TMPro; 
 
 public class BuildManager : MonoBehaviour
 {
@@ -15,12 +16,15 @@ public class BuildManager : MonoBehaviour
     public const int CANTIDAD_MAQUINAS = 2;
     private const float MULTIPLICADOR_PRECIO = 1.7f;
 
+    
     public GameObject player;
     public Behaviour fpsController;
     public Transform fpsCamera;
     public Transform buildPosition;
     public PlacementController placementController;
     public economymanager economyManager;
+    public TextMeshProUGUI txtMaquina;
+    private int ultimoDinero = -1;
 
     // Array fijo de 3 maquinas, con sus precios base 100 / 150 / 200
     public MaquinaConstruible[] maquinas = new MaquinaConstruible[CANTIDAD_MAQUINAS]
@@ -61,6 +65,7 @@ public class BuildManager : MonoBehaviour
             characterController = player.GetComponent<CharacterController>();
 
         buildModeActivo = false;
+        if (txtMaquina != null) txtMaquina.gameObject.SetActive(false);
     }
 
     void Update()
@@ -89,6 +94,11 @@ public class BuildManager : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Alpha1 + i))
                 SeleccionarMaquina(i);
         }
+        if (economyManager != null && economyManager.dinero != ultimoDinero)
+        {
+            ultimoDinero = economyManager.dinero;
+            ActualizarUIMaquina();
+        }
     }
 
     // ---------- Seleccion de maquina ----------
@@ -105,7 +115,8 @@ public class BuildManager : MonoBehaviour
         ActualizarPreview();
 
         Debug.Log("Maquina seleccionada: " + indiceSeleccionado + " - precio actual: " + GetPrecioActual(indiceSeleccionado));
-        // TODO UI: enganchar aca el cartel que muestra la maquina seleccionada y su precio
+        if (txtMaquina != null) txtMaquina.gameObject.SetActive(true);
+        ActualizarUIMaquina();
     }
 
     private int Envolver(int indice)
@@ -145,6 +156,21 @@ public class BuildManager : MonoBehaviour
             return null;
 
         return maquinas[indice].prefab;
+    }
+
+    private void ActualizarUIMaquina()
+    {
+    if (txtMaquina == null || !IndiceValido(indiceSeleccionado))
+        return;
+
+    int precio = GetPrecioActual(indiceSeleccionado);
+    bool alcanza = economyManager != null && economyManager.TieneSuficiente(precio);
+
+    GameObject prefab = maquinas[indiceSeleccionado].prefab;
+    string nombre = prefab != null ? prefab.name : "Maquina " + (indiceSeleccionado + 1);
+
+    txtMaquina.text = nombre + "\n$" + precio;
+    txtMaquina.color = alcanza ? Color.white : Color.red;
     }
 
     // ---------- Precios ----------
@@ -229,6 +255,7 @@ public class BuildManager : MonoBehaviour
         Cursor.visible = true;
 
         indiceSeleccionado = 0;
+        if (txtMaquina != null) txtMaquina.gameObject.SetActive(false);
 
         GameObject prefab = GetPrefab(indiceSeleccionado);
         if (prefab != null)
@@ -261,6 +288,8 @@ public class BuildManager : MonoBehaviour
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+        if (txtMaquina != null) txtMaquina.gameObject.SetActive(false);
     }
 
     // Si el objeto se desactiva o se destruye estando en modo construccion,
@@ -269,4 +298,5 @@ public class BuildManager : MonoBehaviour
     {
         buildModeActivo = false;
     }
+
 }
