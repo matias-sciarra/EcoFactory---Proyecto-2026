@@ -24,9 +24,15 @@ public class machine : MonoBehaviour
     //Recibe la basura en la maquina y suma uno al contador
     public void ReceiveTrash(Trash beltItem)
     {
+        ReceiveTrash(beltItem.gameObject);
+    }
+
+    //Version que acepta cualquier objeto, asi paga aunque el objeto no tenga el componente Trash
+    public void ReceiveTrash(GameObject objeto)
+    {
         contador+=1;
         Debug.Log("llego bien");
-        Destroy(beltItem.gameObject);
+        Destroy(objeto);
 
         //Un pago por cada residuo destruido
         Pagar();

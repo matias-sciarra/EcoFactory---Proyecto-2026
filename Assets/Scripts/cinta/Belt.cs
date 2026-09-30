@@ -51,9 +51,16 @@ public class Belt : MonoBehaviour
         //referencias a objetos de la escena: hay que resolverlas aca
         if (manager == null) manager = FindObjectOfType<economymanager>();
         if (jugador == null) jugador = FindObjectOfType<PlayerGrabber>();   
-        if (beltInSequence == null && maquinadisponible == true); 
         if (txtcostomejora != null) txtcostomejora.text = costomejora.ToString();
         if (cartelmejora != null) cartelmejora.onClick.AddListener(mejorar);
+
+        //Si en el Inspector se arrastro un prefab (asset) en vez de un objeto de la escena,
+        //la cinta intentaria destruir el asset. Un objeto de la escena tiene scene valida, un prefab no
+        if (beltItem != null && !beltItem.gameObject.scene.IsValid())
+        {
+            Debug.LogWarning(name + ": beltItem apunta a un prefab, no a un objeto de la escena. Se ignora", this);
+            beltItem = null;
+        }
     }
 
     //Busca el BeltManager de la escena. Si no hay ninguno lo crea, porque sin el
@@ -129,7 +136,6 @@ public class Belt : MonoBehaviour
         Vector3 direccion = transform.forward;
         float distanciamax = 1f;
 
-        beltInSequence = null;
 
         Debug.DrawRay(inicio, direccion * distanciamax, Color.red);
         if(Physics.Raycast(inicio, direccion, out RaycastHit hit, distanciamax, capasconectadas))
@@ -230,13 +236,17 @@ public class Belt : MonoBehaviour
                     yield return null;
                 }
 
-                if (item != null)
+                //Nunca tocar un prefab (asset): solo objetos que estan en la escena
+                if (item != null && item.scene.IsValid())
                 {
-                    Trash trash = MachineInSequence != null ? item.GetComponent<Trash>() : null;
-
-                    if (trash != null)
+                    //Mismo orden que al elegir el destino: la maquina que recibe es la que paga
+                    if (moneyMachineInSequence != null)
                     {
-                        MachineInSequence.ReceiveTrash(trash);
+                        moneyMachineInSequence.RecibirObjeto(item);
+                    }
+                    else if (machineSlotInSequence == null && MachineInSequence != null)
+                    {
+                        MachineInSequence.ReceiveTrash(item);
                     }
                     else
                     {

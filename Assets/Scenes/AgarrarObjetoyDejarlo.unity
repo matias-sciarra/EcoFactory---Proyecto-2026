@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -455,13 +455,18 @@ MonoBehaviour:
   cantidad: 1
   actual: 0
   primeraCinta: {fileID: 1981827401}
-  radiodetection: 5
+  capasconectadas:
+    serializedVersion: 2
+    m_Bits: 0
+  distanciamax: 3
+  alturaRayo: 0.5
   cartelmejora: {fileID: 1983655903}
+  txtcostomejora: {fileID: 1664902884}
+  costomejora: 300
+  radiodetection: 5
   distanciacerca: 2
   manager: {fileID: 551986531}
   jugador: {fileID: 1043992960}
-  costomejora: 300
-  txtcostomejora: {fileID: 1664902884}
 --- !u!4 &824731628 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8301348219256438975, guid: d23a71d629ca2cb428e58efdcf5d4c1b,
@@ -1213,6 +1218,9 @@ MonoBehaviour:
   moneyMachineInSequence: {fileID: 0}
   machineSlotInSequence: {fileID: 737318883}
   isSpaceTaken: 0
+  capasconectadas:
+    serializedVersion: 2
+    m_Bits: 0
   radiodetection: 5
   cartelmejora: {fileID: 647580064}
   distanciacerca: 2
@@ -1220,6 +1228,8 @@ MonoBehaviour:
   jugador: {fileID: 1043992960}
   costomejora: 50
   txtcostomejora: {fileID: 954590348}
+  distanciamaximabelt: 2
+  maquinadisponible: 0
 --- !u!1 &1983655901
 GameObject:
   m_ObjectHideFlags: 0
@@ -1441,6 +1451,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1063099872, guid: 0dab40f6226a2db48b931e7f8a05161e, type: 3}
+      propertyPath: beltInSequence
+      value: 
+      objectReference: {fileID: 1063099872}
     - target: {fileID: 505293570557014398, guid: 0dab40f6226a2db48b931e7f8a05161e,
         type: 3}
       propertyPath: m_IsActive

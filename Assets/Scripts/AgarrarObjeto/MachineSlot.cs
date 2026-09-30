@@ -1,29 +1,34 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-
 
 public class MachineSlot : MonoBehaviour
 {
     public string acceptedItemId = "";
     public GameObject outputPrefab;
     public float processTime = 1.5f;
-    private bool isProcessing;
     public int cantidad = 3;
     public int actual = 0;
+    private bool isProcessing;
+
     public Belt primeraCinta;
-    public float radiodetection = 5f;
-    private bool jugadorcerca = false;
+    public LayerMask capasconectadas;
+    public float distanciamax = 123f;
+    public float alturaRayo = 0.5f;
+
     public Button cartelmejora;
-    public float distanciacerca = 2f;
-    public economymanager manager;
-    public PlayerGrabber jugador;
+    public TextMeshProUGUI txtcostomejora;
     public float costomejora = 300f;
     private const float MULTIPLICADOR_MEJORA = 1.6f;
     private int cantidadMejoras = 0;
-    public TextMeshProUGUI txtcostomejora;
-    public LayerMask capasconectadas;
-    public float distanciamax = 3f;
+
+    public float radiodetection = 5f;
+    public float distanciacerca = 2f;
+    private bool jugadorcerca = false;
+
+    public economymanager manager;
+    public PlayerGrabber jugador;
 
 
     void Start()
@@ -31,21 +36,18 @@ public class MachineSlot : MonoBehaviour
         if (manager == null) manager = FindObjectOfType<economymanager>();
         if (jugador == null) jugador = FindObjectOfType<PlayerGrabber>();
 
-        if (manager == null) Debug.LogError("No se encontró el economymanager", this);
-        if (jugador == null) Debug.LogError("No se encontró el PlayerGrabber", this);
+        if (manager == null) Debug.LogError($"[{name}] No se encontró el economymanager", this);
+        if (jugador == null) Debug.LogError($"[{name}] No se encontró el PlayerGrabber", this);
 
-        if (txtcostomejora != null) txtcostomejora.text = costomejora.ToString();
+        if (txtcostomejora != null) txtcostomejora.text = GetCostoMejora(cantidadMejoras).ToString();
         if (cartelmejora != null) cartelmejora.onClick.AddListener(mejorar);
-    
     }
 
     void Update()
     {
         detectar();
-        detectarbelt();
     }
 
-    //Funcion para poner el objeto en la maquina
     public bool TryInsert(Grabbable item)
     {
         if (item == null)
@@ -66,7 +68,8 @@ public class MachineSlot : MonoBehaviour
 
         item.OnConsumedByMachine();
         actual++;
-        if(actual >= cantidad){
+        if (actual >= cantidad)
+        {
             actual = 0;
             StartCoroutine(ProcessRoutine());
         }
@@ -74,101 +77,110 @@ public class MachineSlot : MonoBehaviour
         return true;
     }
 
-    //Proceso de transformacion de objeto mas tiempo de proceso
-    private System.Collections.IEnumerator ProcessRoutine()
+    private IEnumerator ProcessRoutine()
     {
         isProcessing = true;
         yield return new WaitForSeconds(processTime);
+
+        detectarbelt();
+        while (!CintaLibre())
+        {
+            yield return null;
+            detectarbelt();
+        }
 
         SpawnOutput();
         isProcessing = false;
     }
 
-    //Funcion de spawn del objeto procesado
+    private bool CintaLibre()
+    {
+        return primeraCinta != null
+            && !primeraCinta.isSpaceTaken
+            && primeraCinta.beltItem == null;
+    }
+
     private void SpawnOutput()
     {
-        if (outputPrefab == null || primeraCinta == null) return;
-        Vector3 position = primeraCinta.GetItemPosition();
-        Quaternion rotacion = Quaternion.identity;
-        GameObject nueva = Instantiate(outputPrefab, position, rotacion);
+        if (outputPrefab == null)
+        {
+            Debug.LogError($"[{name}] No hay outputPrefab asignado", this);
+            return;
+        }
+
+        GameObject nueva = Instantiate(outputPrefab, primeraCinta.GetItemPosition(), Quaternion.identity);
 
         BeltItem itemcomponent = nueva.GetComponent<BeltItem>();
+        if (itemcomponent == null)
+            Debug.LogError($"[{name}] El outputPrefab no tiene BeltItem, la cinta no lo va a mover", this);
+
         primeraCinta.beltItem = itemcomponent;
+        primeraCinta.isSpaceTaken = true;
     }
 
     public void detectar()
     {
-        Vector3 inicio = transform.position;
+        if (jugador == null) return;
 
-        Collider[] objetosdetectados = Physics.OverlapSphere(inicio, radiodetection);
+        bool cerca = false;
+        Collider[] objetosdetectados = Physics.OverlapSphere(transform.position, radiodetection);
 
-
-        foreach (Collider col in  objetosdetectados)
+        foreach (Collider col in objetosdetectados)
         {
-            if(col.CompareTag("Player"))
+            if (col.CompareTag("Player"))
             {
                 float distancia = Vector3.Distance(transform.position, col.transform.position);
-                if(distancia < distanciacerca && !jugador.IsHolding)
-                {
-                    jugadorcerca = true;
-                    cartelmejora.gameObject.SetActive(true);
-                }
-                else
-                {
-                    jugadorcerca = false;
-                    cartelmejora.gameObject.SetActive(false);
-                }
-
-                if(jugadorcerca && !BuildManager.BuildModeActivo && Input.GetKeyDown(KeyCode.Q))
-                {
-                    mejorar();
-                }
-            }
-        };
-
-    }
-
-        public void detectarbelt()
-
-    {
-        float altura = 0.5f;
-        Vector3 inicio = transform.position + Vector3.up * altura;
-        Vector3 direccion = transform.forward;
-
-        primeraCinta = null;
-
-        Debug.DrawRay(inicio, direccion * distanciamax, Color.red);
-        if(Physics.Raycast(inicio, direccion, out RaycastHit hit, distanciamax, capasconectadas))
-        {
-            Belt siguienteBelt = hit.collider.GetComponent<Belt>();
-            if(primeraCinta != null)
-            {
-                primeraCinta = siguienteBelt;
+                if (distancia < distanciacerca && !jugador.IsHolding)
+                    cerca = true;
             }
         }
 
+        jugadorcerca = cerca;
 
+        if (cartelmejora != null)
+            cartelmejora.gameObject.SetActive(jugadorcerca);
+
+        if (jugadorcerca && !BuildManager.BuildModeActivo && Input.GetKeyDown(KeyCode.Q))
+            mejorar();
+    }
+
+    public void detectarbelt()
+    {
+
+        Vector3 inicio = transform.position + Vector3.up * alturaRayo;
+        Vector3 direccion = transform.forward;
+
+        Debug.DrawRay(inicio, direccion * distanciamax, Color.red, 0.5f);
+
+        RaycastHit hit;
+        if (Physics.Raycast(inicio, direccion, out hit, distanciamax, capasconectadas))
+        {
+            primeraCinta = hit.collider.GetComponentInParent<Belt>();
+        }
     }
 
     public void mejorar()
     {
+        if (manager == null)
+        {
+            Debug.LogWarning($"[{name}] No hay economymanager, no se puede comprar la mejora", this);
+            return;
+        }
+
         int costoActual = GetCostoMejora(cantidadMejoras);
 
-        // Gastar descuenta la plata y refresca el texto del dinero; devuelve false si no alcanza
         if (manager.Gastar(costoActual))
         {
             cantidadMejoras += 1;
             processTime = Mathf.Max(0f, processTime - 1f / 3f);
 
-            txtcostomejora.text = GetCostoMejora(cantidadMejoras).ToString();
+            if (txtcostomejora != null)
+                txtcostomejora.text = GetCostoMejora(cantidadMejoras).ToString();
         }
     }
 
-    // Lo que sale la mejora numero "mejoras": costomejora * 1.6 ^ mejoras.
-    // Se cobra y se muestra con esta misma cuenta para que no se desfasen.
     private int GetCostoMejora(int mejoras)
     {
         return Mathf.RoundToInt(costomejora * Mathf.Pow(MULTIPLICADOR_MEJORA, mejoras));
     }
-
 }

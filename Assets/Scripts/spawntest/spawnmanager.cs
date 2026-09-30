@@ -36,7 +36,7 @@ public class spawnmanager : MonoBehaviour
         Bounds b = Plano.GetComponent<Renderer>().bounds;
         float x = Random.Range(b.min.x, b.max.x);
         float z = Random.Range(b.min.z, b.max.z);
-        float y = 0;
+        float y = 1f;
 
         Instantiate(prefab, new Vector3(x, y, z), Quaternion.identity);
     }
