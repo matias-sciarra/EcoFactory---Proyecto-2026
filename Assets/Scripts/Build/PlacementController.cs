@@ -100,14 +100,23 @@ public class PlacementController : MonoBehaviour
 
         GameObject building = Instantiate(buildingPrefab, position, rotation);
         currentCell.Occupy(building);
+
+        BuildManager.NotificarConstruccionCambiada();
     }
 
     void RemoveBuilding()
     {
         if (currentCell.PlacedObject != null)
+        {
+            foreach (Collider col in currentCell.PlacedObject.GetComponentsInChildren<Collider>())
+                col.enabled = false;
+
             Destroy(currentCell.PlacedObject);
+        }
 
         currentCell.Clear();
+
+        BuildManager.NotificarConstruccionCambiada();
     }
 
     public void StartPlacement(GameObject prefab)

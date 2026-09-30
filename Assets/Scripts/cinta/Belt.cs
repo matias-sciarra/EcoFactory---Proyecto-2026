@@ -1,11 +1,7 @@
-﻿
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using System.Linq;
 
 public class Belt : MonoBehaviour
 {
@@ -33,13 +29,39 @@ public class Belt : MonoBehaviour
     private const float MULTIPLICADOR_MEJORA = 2.1f;
     private int cantidadMejoras = 0;
     public TextMeshProUGUI txtcostomejora;
-    public float distanciamaximabelt = 2f;
-    public bool maquinadisponible = false;
+
+    public bool autoConectar = true;
+    public Transform puntoSalida;
+    public float alturaRayo = 0.5f;
+    public float distanciaRayo = 1f;
+    public float intervaloRedSeguridad = 2f;
+    public bool debugConexiones = false;
+
+    private Belt destinoReservado;
+    private bool recalculoPendiente;
+    private bool avisoCapasVacias;
+    private bool avisoSinGrabbable;
+    private float proximoChequeo;
 
     //Velocidad de la cinta. Si por lo que sea no hay BeltManager no rompe ni devuelve 0
     private float Velocidad
     {
         get { return _beltManager != null ? _beltManager.speed : 2f; }
+    }
+
+    private void OnEnable()
+    {
+        BuildManager.OnConstruccionCambiada += PedirRecalculo;
+        PedirRecalculo();
+    }
+
+    private void OnDisable()
+    {
+        BuildManager.OnConstruccionCambiada -= PedirRecalculo;
+        StopAllCoroutines();
+        recalculoPendiente = false;
+        isMoving = false;
+        LiberarReserva();
     }
 
     private void Start()
@@ -50,7 +72,7 @@ public class Belt : MonoBehaviour
         //Las cintas colocadas en runtime salen de un prefab, y un prefab no puede guardar
         //referencias a objetos de la escena: hay que resolverlas aca
         if (manager == null) manager = FindObjectOfType<economymanager>();
-        if (jugador == null) jugador = FindObjectOfType<PlayerGrabber>();   
+        if (jugador == null) jugador = FindObjectOfType<PlayerGrabber>();
         if (txtcostomejora != null) txtcostomejora.text = costomejora.ToString();
         if (cartelmejora != null) cartelmejora.onClick.AddListener(mejorar);
 
@@ -61,6 +83,9 @@ public class Belt : MonoBehaviour
             Debug.LogWarning(name + ": beltItem apunta a un prefab, no a un objeto de la escena. Se ignora", this);
             beltItem = null;
         }
+
+        detectarbelt();
+        proximoChequeo = Time.time + Random.Range(0f, Mathf.Max(0f, intervaloRedSeguridad));
     }
 
     //Busca el BeltManager de la escena. Si no hay ninguno lo crea, porque sin el
@@ -86,14 +111,17 @@ public class Belt : MonoBehaviour
     private void Update()
     {
         detectar();
-        detectarbelt();
+
+        if (autoConectar && intervaloRedSeguridad > 0f && Time.time >= proximoChequeo)
+        {
+            proximoChequeo = Time.time + intervaloRedSeguridad;
+            detectarbelt();
+        }
 
         if (beltItem != null && beltItem.item != null && !isMoving)
         {
             StartCoroutine(StartBeltMove());
         }
-
-        
     }
 
     //Detecta si el jugador esta cerca (y sin nada agarrado) para mostrar el cartel de mejora
@@ -128,26 +156,73 @@ public class Belt : MonoBehaviour
         };
     }
 
-    public void detectarbelt()
-
+    private void PedirRecalculo()
     {
-        float altura = 0.5f;
-        Vector3 inicio = transform.position + Vector3.up * altura;
-        Vector3 direccion = transform.forward;
-        float distanciamax = 1f;
+        if (recalculoPendiente || !isActiveAndEnabled)
+            return;
 
+        recalculoPendiente = true;
+        StartCoroutine(RecalcularFrameSiguiente());
+    }
 
-        Debug.DrawRay(inicio, direccion * distanciamax, Color.red);
-        if(Physics.Raycast(inicio, direccion, out RaycastHit hit, distanciamax, capasconectadas))
-        {
-            Belt siguienteBelt = hit.collider.GetComponent<Belt>();
-            if(siguienteBelt != null)
-            {
-                beltInSequence = siguienteBelt;
-            }
-        }
+    private IEnumerator RecalcularFrameSiguiente()
+    {
+        yield return null;
+        recalculoPendiente = false;
+        detectarbelt();
+    }
 
+    public void detectarbelt()
+    {
+        if (!autoConectar)
+            return;
 
+        Object anterior = ObjetivoActual();
+
+        beltInSequence = null;
+        machineSlotInSequence = null;
+        MachineInSequence = null;
+        moneyMachineInSequence = null;
+
+        ResultadoConexion r = DetectarSalida();
+        beltInSequence = r.belt;
+        machineSlotInSequence = r.machineSlot;
+        MachineInSequence = r.maquina;
+        moneyMachineInSequence = r.moneyMachine;
+
+        DetectorConexion.LogCambio(this, anterior, ObjetivoActual(), debugConexiones);
+    }
+
+    private ResultadoConexion DetectarSalida()
+    {
+        Vector3 inicio, direccion;
+        DetectorConexion.CalcularRayo(transform, puntoSalida, alturaRayo, out inicio, out direccion);
+        return DetectorConexion.Detectar(this, inicio, direccion, distanciaRayo, capasconectadas, ref avisoCapasVacias);
+    }
+
+    private Object ObjetivoActual()
+    {
+        if (!ReferenceEquals(beltInSequence, null)) return beltInSequence;
+        if (!ReferenceEquals(moneyMachineInSequence, null)) return moneyMachineInSequence;
+        if (!ReferenceEquals(machineSlotInSequence, null)) return machineSlotInSequence;
+        if (!ReferenceEquals(MachineInSequence, null)) return MachineInSequence;
+        return null;
+    }
+
+    private void LiberarReserva()
+    {
+        if (destinoReservado != null && destinoReservado.beltItem == null)
+            destinoReservado.isSpaceTaken = false;
+
+        destinoReservado = null;
+    }
+
+    private void OnDrawGizmos()
+    {
+        Vector3 inicio, direccion;
+        DetectorConexion.CalcularRayo(transform, puntoSalida, alturaRayo, out inicio, out direccion);
+        ResultadoConexion r = DetectorConexion.Detectar(this, inicio, direccion, distanciaRayo, capasconectadas, ref avisoCapasVacias);
+        DetectorConexion.DibujarRayo(inicio, direccion, distanciaRayo, r, r.EsValido);
     }
 
     public void mejorar()
@@ -198,90 +273,126 @@ public class Belt : MonoBehaviour
             if (beltItem == null || beltItem.item == null)
                 yield break;
 
-            if (beltInSequence != null && beltInSequence.isSpaceTaken == false)
+            BeltItem itemActual = beltItem;
+            GameObject item = beltItem.item;
+
+            //Nunca tocar un prefab (asset): solo objetos que estan en la escena
+            if (!item.scene.IsValid())
             {
-                Vector3 toPosition = beltInSequence.GetItemPosition();
-                beltInSequence.isSpaceTaken = true;
-                var step = Velocidad * Time.deltaTime;
-
-                while (beltItem.item.transform.position != toPosition)
-                {
-                    beltItem.item.transform.position =
-                        Vector3.MoveTowards(beltItem.item.transform.position, toPosition, step);
-                    yield return null;
-                }
-
-                isSpaceTaken = false;
-                beltInSequence.beltItem = beltItem;
                 beltItem = null;
+                yield break;
             }
-            else if (beltInSequence == null &&
-                (moneyMachineInSequence != null || machineSlotInSequence != null || MachineInSequence != null))
+
+            Belt destinoBelt = beltInSequence;
+            moneymachine destinoMoney = moneyMachineInSequence;
+            MachineSlot destinoSlot = machineSlotInSequence;
+            machine destinoMaquina = MachineInSequence;
+
+            if (destinoBelt != null)
             {
-                Transform machineTransform = moneyMachineInSequence != null
-                    ? moneyMachineInSequence.transform
-                    : machineSlotInSequence != null
-                        ? machineSlotInSequence.transform
-                        : MachineInSequence.transform;
+                if (destinoBelt.isSpaceTaken)
+                    yield break;
 
-                Vector3 toPosition = machineTransform.position;
-                GameObject item = beltItem.item;
-                var step = Velocidad * Time.deltaTime;
+                Vector3 toPosition = destinoBelt.GetItemPosition();
+                destinoBelt.isSpaceTaken = true;
+                destinoReservado = destinoBelt;
 
-                //Igual que el movimiento hacia otra cinta, pero el destino es la maquina
-                while (item != null && item.transform.position != toPosition)
+                while (item != null && destinoBelt != null && item.transform.position != toPosition)
                 {
                     item.transform.position =
-                        Vector3.MoveTowards(item.transform.position, toPosition, step);
+                        Vector3.MoveTowards(item.transform.position, toPosition, Velocidad * Time.deltaTime);
                     yield return null;
                 }
 
-                //Nunca tocar un prefab (asset): solo objetos que estan en la escena
-                if (item != null && item.scene.IsValid())
+                destinoReservado = null;
+
+                if (item == null)
                 {
-                    //Mismo orden que al elegir el destino: la maquina que recibe es la que paga
-                    if (moneyMachineInSequence != null)
-                    {
-                        moneyMachineInSequence.RecibirObjeto(item);
-                    }
-                    else if (machineSlotInSequence == null && MachineInSequence != null)
-                    {
-                        MachineInSequence.ReceiveTrash(item);
-                    }
-                    else
-                    {
-                        //Si la maquina no lo destruyo por colision (ej: no tiene Rigidbody), lo destruimos igual al llegar
-                        Destroy(item);
-                    }
+                    beltItem = null;
+                    isSpaceTaken = false;
+                    if (destinoBelt != null && destinoBelt.beltItem == null)
+                        destinoBelt.isSpaceTaken = false;
+                    yield break;
                 }
 
+                if (destinoBelt == null)
+                    yield break;
+
+                isSpaceTaken = false;
+                destinoBelt.beltItem = itemActual;
                 beltItem = null;
+            }
+            else if (destinoMoney != null || destinoSlot != null || destinoMaquina != null)
+            {
+                Grabbable grabbable = null;
+
+                if (destinoMoney == null && destinoSlot != null)
+                {
+                    grabbable = item.GetComponent<Grabbable>();
+                    if (grabbable == null)
+                    {
+                        if (!avisoSinGrabbable)
+                        {
+                            avisoSinGrabbable = true;
+                            Debug.LogWarning(name + ": el item " + item.name + " no tiene Grabbable, no se puede meter en " + destinoSlot.name, this);
+                        }
+                        yield break;
+                    }
+
+                    if (!destinoSlot.PuedeAceptar(grabbable))
+                        yield break;
+                }
+
+                Transform machineTransform = destinoMoney != null
+                    ? destinoMoney.transform
+                    : destinoSlot != null
+                        ? destinoSlot.transform
+                        : destinoMaquina.transform;
+
+                Vector3 toPosition = machineTransform.position;
+
+                //Igual que el movimiento hacia otra cinta, pero el destino es la maquina
+                while (item != null && machineTransform != null && item.transform.position != toPosition)
+                {
+                    item.transform.position =
+                        Vector3.MoveTowards(item.transform.position, toPosition, Velocidad * Time.deltaTime);
+                    yield return null;
+                }
+
+                if (item == null)
+                {
+                    beltItem = null;
+                    isSpaceTaken = false;
+                    yield break;
+                }
+
+                if (machineTransform == null)
+                    yield break;
+
+                //Mismo orden que al elegir el destino: la maquina que recibe es la que paga
+                bool entregado = true;
+
+                if (destinoMoney != null)
+                    destinoMoney.RecibirObjeto(item);
+                else if (destinoSlot != null)
+                    entregado = destinoSlot.TryInsert(grabbable);
+                else
+                    destinoMaquina.ReceiveTrash(item);
+
+                if (entregado)
+                {
+                    beltItem = null;
+                    isSpaceTaken = false;
+                }
+                else
+                {
+                    item.transform.position = GetItemPosition();
+                }
             }
         }
         finally
         {
             isMoving = false;
         }
-    }
-
-    //Pasa el objeto de un objeto a otra, (ya que no es toda una cinta en conjunto, son varias partes)
-    private Belt FindNextBelt()
-    {
-        Transform currentBeltTransform = transform;
-        RaycastHit hit;
-
-        var forward = transform.forward;
-
-        Ray ray = new Ray(currentBeltTransform.position, forward);
-
-        if (Physics.Raycast(ray, out hit, 1f))
-        {
-            Belt belt = hit.collider.GetComponent<Belt>();
-
-            if (belt != null)
-                return belt;
-        }
-
-        return null;
     }
 }
