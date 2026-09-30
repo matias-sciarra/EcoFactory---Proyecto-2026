@@ -38,6 +38,14 @@ public class BuildManager : MonoBehaviour
     private static bool buildModeActivo;
     public static bool BuildModeActivo { get { return buildModeActivo; } }
 
+    public static event System.Action OnConstruccionCambiada;
+
+    public static void NotificarConstruccionCambiada()
+    {
+        if (OnConstruccionCambiada != null)
+            OnConstruccionCambiada();
+    }
+
     private CharacterController characterController;
 
     private Vector3 oldPlayerPosition;

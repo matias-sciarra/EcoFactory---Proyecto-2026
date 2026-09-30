@@ -16,6 +16,10 @@ public class MachineSlot : MonoBehaviour
     public LayerMask capasconectadas;
     public float distanciamax = 123f;
     public float alturaRayo = 0.5f;
+    public Transform puntoSalida;
+    public bool autoConectar = true;
+    public float intervaloRedSeguridad = 2f;
+    public bool debugConexiones = false;
 
     public Button cartelmejora;
     public TextMeshProUGUI txtcostomejora;
@@ -30,6 +34,21 @@ public class MachineSlot : MonoBehaviour
     public economymanager manager;
     public PlayerGrabber jugador;
 
+    private bool recalculoPendiente;
+    private bool avisoCapasVacias;
+    private float proximoChequeo;
+
+    void OnEnable()
+    {
+        BuildManager.OnConstruccionCambiada += PedirRecalculo;
+        PedirRecalculo();
+    }
+
+    void OnDisable()
+    {
+        BuildManager.OnConstruccionCambiada -= PedirRecalculo;
+        recalculoPendiente = false;
+    }
 
     void Start()
     {
@@ -41,28 +60,44 @@ public class MachineSlot : MonoBehaviour
 
         if (txtcostomejora != null) txtcostomejora.text = GetCostoMejora(cantidadMejoras).ToString();
         if (cartelmejora != null) cartelmejora.onClick.AddListener(mejorar);
+
+        detectarbelt();
+        proximoChequeo = Time.time + Random.Range(0f, Mathf.Max(0f, intervaloRedSeguridad));
     }
 
     void Update()
     {
         detectar();
+
+        if (autoConectar && intervaloRedSeguridad > 0f && Time.time >= proximoChequeo)
+        {
+            proximoChequeo = Time.time + intervaloRedSeguridad;
+            detectarbelt();
+        }
+    }
+
+    public bool PuedeAceptar(Grabbable item)
+    {
+        return MotivoRechazo(item) == null;
+    }
+
+    private string MotivoRechazo(Grabbable item)
+    {
+        if (item == null)
+            return "item es null";
+        if (isProcessing)
+            return "la máquina está procesando (isProcessing = true)";
+        if (!string.IsNullOrEmpty(acceptedItemId) && item.itemId != acceptedItemId)
+            return $"itemId '{item.itemId}' no coincide con acceptedItemId '{acceptedItemId}'";
+        return null;
     }
 
     public bool TryInsert(Grabbable item)
     {
-        if (item == null)
+        string motivo = MotivoRechazo(item);
+        if (motivo != null)
         {
-            Debug.Log("TryInsert: rechazado, item es null");
-            return false;
-        }
-        if (isProcessing)
-        {
-            Debug.Log("TryInsert: rechazado, la máquina está procesando (isProcessing = true)");
-            return false;
-        }
-        if (!string.IsNullOrEmpty(acceptedItemId) && item.itemId != acceptedItemId)
-        {
-            Debug.Log($"TryInsert: rechazado, itemId '{item.itemId}' no coincide con acceptedItemId '{acceptedItemId}'");
+            Debug.Log("TryInsert: rechazado, " + motivo);
             return false;
         }
 
@@ -83,10 +118,15 @@ public class MachineSlot : MonoBehaviour
         yield return new WaitForSeconds(processTime);
 
         detectarbelt();
-        while (!CintaLibre())
+        while (true)
         {
+            if (CintaLibre())
+            {
+                detectarbelt();
+                if (CintaLibre())
+                    break;
+            }
             yield return null;
-            detectarbelt();
         }
 
         SpawnOutput();
@@ -144,19 +184,48 @@ public class MachineSlot : MonoBehaviour
             mejorar();
     }
 
+    private void PedirRecalculo()
+    {
+        if (recalculoPendiente || !isActiveAndEnabled)
+            return;
+
+        recalculoPendiente = true;
+        StartCoroutine(RecalcularFrameSiguiente());
+    }
+
+    private IEnumerator RecalcularFrameSiguiente()
+    {
+        yield return null;
+        recalculoPendiente = false;
+        detectarbelt();
+    }
+
     public void detectarbelt()
     {
+        if (!autoConectar)
+            return;
 
-        Vector3 inicio = transform.position + Vector3.up * alturaRayo;
-        Vector3 direccion = transform.forward;
+        Belt anterior = primeraCinta;
+        primeraCinta = null;
 
-        Debug.DrawRay(inicio, direccion * distanciamax, Color.red, 0.5f);
+        primeraCinta = DetectarSalida().belt;
 
-        RaycastHit hit;
-        if (Physics.Raycast(inicio, direccion, out hit, distanciamax, capasconectadas))
-        {
-            primeraCinta = hit.collider.GetComponentInParent<Belt>();
-        }
+        DetectorConexion.LogCambio(this, anterior, primeraCinta, debugConexiones);
+    }
+
+    private ResultadoConexion DetectarSalida()
+    {
+        Vector3 inicio, direccion;
+        DetectorConexion.CalcularRayo(transform, puntoSalida, alturaRayo, out inicio, out direccion);
+        return DetectorConexion.Detectar(this, inicio, direccion, distanciamax, capasconectadas, ref avisoCapasVacias);
+    }
+
+    private void OnDrawGizmos()
+    {
+        Vector3 inicio, direccion;
+        DetectorConexion.CalcularRayo(transform, puntoSalida, alturaRayo, out inicio, out direccion);
+        ResultadoConexion r = DetectorConexion.Detectar(this, inicio, direccion, distanciamax, capasconectadas, ref avisoCapasVacias);
+        DetectorConexion.DibujarRayo(inicio, direccion, distanciamax, r, r.belt != null);
     }
 
     public void mejorar()
