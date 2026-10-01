@@ -33,9 +33,10 @@ public class Belt : MonoBehaviour
     public bool autoConectar = true;
     public Transform puntoSalida;
     public float alturaRayo = 0.5f;
-    public float distanciaRayo = 1f;
+    public float distanciaRayo = 7f;
     public float intervaloRedSeguridad = 2f;
     public bool debugConexiones = false;
+    public float angulorayo = 90f;
 
     private Belt destinoReservado;
     private bool recalculoPendiente;
@@ -197,6 +198,7 @@ public class Belt : MonoBehaviour
     {
         Vector3 inicio, direccion;
         DetectorConexion.CalcularRayo(transform, puntoSalida, alturaRayo, out inicio, out direccion);
+        direccion = Quaternion.AngleAxis(angulorayo, transform.up) * direccion;
         return DetectorConexion.Detectar(this, inicio, direccion, distanciaRayo, capasconectadas, ref avisoCapasVacias);
     }
 
@@ -221,6 +223,7 @@ public class Belt : MonoBehaviour
     {
         Vector3 inicio, direccion;
         DetectorConexion.CalcularRayo(transform, puntoSalida, alturaRayo, out inicio, out direccion);
+        direccion = Quaternion.AngleAxis(angulorayo, transform.up) * direccion;
         ResultadoConexion r = DetectorConexion.Detectar(this, inicio, direccion, distanciaRayo, capasconectadas, ref avisoCapasVacias);
         DetectorConexion.DibujarRayo(inicio, direccion, distanciaRayo, r, r.EsValido);
     }

@@ -15,11 +15,13 @@ public class MachineSlot : MonoBehaviour
     public Belt primeraCinta;
     public LayerMask capasconectadas;
     public float distanciamax = 123f;
-    public float alturaRayo = 0.5f;
+    public float alturaRayo = 0;
     public Transform puntoSalida;
     public bool autoConectar = true;
     public float intervaloRedSeguridad = 2f;
     public bool debugConexiones = false;
+    public float angulorayo = 90f;
+
 
     public Button cartelmejora;
     public TextMeshProUGUI txtcostomejora;
@@ -217,6 +219,7 @@ public class MachineSlot : MonoBehaviour
     {
         Vector3 inicio, direccion;
         DetectorConexion.CalcularRayo(transform, puntoSalida, alturaRayo, out inicio, out direccion);
+        direccion = Quaternion.AngleAxis(angulorayo, transform.up) * direccion;
         return DetectorConexion.Detectar(this, inicio, direccion, distanciamax, capasconectadas, ref avisoCapasVacias);
     }
 
@@ -225,6 +228,7 @@ public class MachineSlot : MonoBehaviour
         Vector3 inicio, direccion;
         DetectorConexion.CalcularRayo(transform, puntoSalida, alturaRayo, out inicio, out direccion);
         ResultadoConexion r = DetectorConexion.Detectar(this, inicio, direccion, distanciamax, capasconectadas, ref avisoCapasVacias);
+        direccion = Quaternion.AngleAxis(angulorayo, transform.up) * direccion;
         DetectorConexion.DibujarRayo(inicio, direccion, distanciamax, r, r.belt != null);
     }
 

@@ -56,6 +56,10 @@ public class PlacementController : MonoBehaviour
                     previewObject.SetActive(true);
                 }
             }
+            else if (previewObject != null)
+            {
+                previewObject.SetActive(false);
+            }
 
             if (Input.GetMouseButtonDown(0) && currentCell != null && !currentCell.IsOccupied)
                 PlaceBuilding();
@@ -94,7 +98,7 @@ public class PlacementController : MonoBehaviour
             return;
 
         Vector3 position = gridManager.GridToWorld(currentCell.GridPosition);
-        position.y = 0;
+        position.y = 2;
 
         Quaternion rotation = Quaternion.Euler(0, rotationSteps * 90f, 0);
 
@@ -126,15 +130,7 @@ public class PlacementController : MonoBehaviour
         buildMode = true;
         gridManager.SetBuildMode(true);
 
-        if (previewObject != null)
-            Destroy(previewObject);
-
-        previewObject = Instantiate(buildingPrefab);
-        previewObject.transform.rotation = Quaternion.identity;
-
-        // apaga colliders del preview para que no interfiera con el raycast
-        foreach (Collider col in previewObject.GetComponentsInChildren<Collider>())
-            col.enabled = false;
+        CrearPreview();
     }
 
     public void CancelPlacement()
@@ -156,19 +152,28 @@ public class PlacementController : MonoBehaviour
         }
     }
     public void ChangeBuilding(GameObject prefab)
-{
-    buildingPrefab = prefab;
+    {
+        buildingPrefab = prefab;
+        CrearPreview();
+    }
 
-    if (previewObject != null)
-        Destroy(previewObject);
+    // El preview nace escondido: si no, aparece en la posicion guardada en el prefab
+    // (cerca del centro del piso) hasta que el mouse pasa por una celda valida
+    void CrearPreview()
+    {
+        if (previewObject != null)
+            Destroy(previewObject);
 
-    previewObject = Instantiate(buildingPrefab);
-    previewObject.transform.rotation = Quaternion.Euler(0, rotationSteps * 90f, 0);
+        previewObject = Instantiate(buildingPrefab);
+        previewObject.transform.rotation = Quaternion.Euler(0, rotationSteps * 90f, 0);
 
-    foreach (Collider col in previewObject.GetComponentsInChildren<Collider>())
-        col.enabled = false;
+        // apaga colliders del preview para que no interfiera con el raycast
+        foreach (Collider col in previewObject.GetComponentsInChildren<Collider>())
+            col.enabled = false;
 
-    if (currentCell == null)
-        previewObject.SetActive(false);
-}
+        if (currentCell == null)
+            previewObject.SetActive(false);
+        else
+            previewObject.transform.position = gridManager.GridToWorld(currentCell.GridPosition);
+    }
 }

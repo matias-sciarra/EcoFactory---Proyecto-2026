@@ -5,11 +5,11 @@ using UnityEngine;
 public class spawnmanager : MonoBehaviour
 {
     public GameObject prefab;
-    private float spawnrate = 5f;
+    private float spawnrate = 10f;
     private float tiempo = 0f;
     private  int contadordedestroyables = 0;
     private int limitededestruibles = 5;
-    public float radiodetection = 15f;
+    public float radiodetection = 30f;
 
     void Start()
     {

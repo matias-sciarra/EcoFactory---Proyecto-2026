@@ -9,7 +9,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: 12c78cb1959888745a729a1e47f09d2f, type: 3}
       propertyPath: m_Name
-      value: Maquina Clasificadora de Metales
+      value: Maquina Clasificadora de Metales Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 12c78cb1959888745a729a1e47f09d2f, type: 3}
+      propertyPath: m_Layer
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 12c78cb1959888745a729a1e47f09d2f, type: 3}
       propertyPath: m_LocalPosition.x

@@ -8,6 +8,7 @@ TagManager:
   - spawnpoint
   - plano
   - belt
+  - coneeccioncapasd
   layers:
   - Default
   - TransparentFX
@@ -22,7 +23,7 @@ TagManager:
   - Grabbable
   - Ground
   - Machine
-  - 
+  - conexiones
   - 
   - 
   - 
