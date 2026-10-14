@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-
+using System.Collections.Generic;
 public class PlacementController : MonoBehaviour
 {
     public Camera playerCamera;
@@ -10,6 +10,15 @@ public class PlacementController : MonoBehaviour
     private GridCell currentCell;
     private int rotationSteps;
     private bool buildMode;
+
+    private class construida 
+    {
+        public GameObject objeto;
+        public int precio;
+        public int indice;
+    }
+
+    private List<construida> construidas = new List<construida>();
 
     private GameObject previewObject;
 
@@ -94,6 +103,12 @@ public class PlacementController : MonoBehaviour
     {
         // El BuildManager cobra la maquina seleccionada (precio escalado + descuento de plata).
         // Si no alcanza la plata devuelve false y no se coloca nada.
+
+        int indice = buildManager.indiceSeleccionado;
+        int preciopagado = buildManager.GetPrecioActual(indice);
+
+        if (!buildManager.TryComprarSeleccionada())
+            return;
         if (buildManager != null && !buildManager.TryComprarSeleccionada())
             return;
 
@@ -103,19 +118,36 @@ public class PlacementController : MonoBehaviour
         Quaternion rotation = Quaternion.Euler(0, rotationSteps * 90f, 0);
 
         GameObject building = Instantiate(buildingPrefab, position, rotation);
+        building.SetActive(true);
         currentCell.Occupy(building);
+
+        construidas.Add(new construida { objeto = building, precio = preciopagado, indice = indice });
 
         BuildManager.NotificarConstruccionCambiada();
     }
 
     void RemoveBuilding()
     {
-        if (currentCell.PlacedObject != null)
+        GameObject obj = currentCell.PlacedObject;
+
+        if (obj != null)
         {
-            foreach (Collider col in currentCell.PlacedObject.GetComponentsInChildren<Collider>())
+            for (int i = 0; i < construidas.Count; i++)
+            {
+                if (construidas[i].objeto == obj)
+                {
+                    if (buildManager != null)
+                        buildManager.Devolver(construidas[i].indice, construidas[i].precio);
+
+                    construidas.RemoveAt(i);
+                    break;
+                }
+            }
+
+            foreach (Collider col in obj.GetComponentsInChildren<Collider>())
                 col.enabled = false;
 
-            Destroy(currentCell.PlacedObject);
+            Destroy(obj);
         }
 
         currentCell.Clear();
