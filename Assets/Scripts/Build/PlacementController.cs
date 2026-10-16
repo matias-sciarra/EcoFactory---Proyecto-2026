@@ -11,14 +11,14 @@ public class PlacementController : MonoBehaviour
     private int rotationSteps;
     private bool buildMode;
 
-    private class construida 
+    private class Construida
     {
         public GameObject objeto;
         public int precio;
         public int indice;
     }
 
-    private List<construida> construidas = new List<construida>();
+    private List<Construida> construidas = new List<Construida>();
 
     private GameObject previewObject;
 
@@ -104,12 +104,16 @@ public class PlacementController : MonoBehaviour
         // El BuildManager cobra la maquina seleccionada (precio escalado + descuento de plata).
         // Si no alcanza la plata devuelve false y no se coloca nada.
 
+        if (buildManager == null)
+        {
+            Debug.LogError("PlacementController: falta la referencia al BuildManager, no se puede construir");
+            return;
+        }
+
         int indice = buildManager.indiceSeleccionado;
-        int preciopagado = buildManager.GetPrecioActual(indice);
+        int precioPagado = buildManager.GetPrecioActual(indice);
 
         if (!buildManager.TryComprarSeleccionada())
-            return;
-        if (buildManager != null && !buildManager.TryComprarSeleccionada())
             return;
 
         Vector3 position = gridManager.GridToWorld(currentCell.GridPosition);
@@ -121,7 +125,7 @@ public class PlacementController : MonoBehaviour
         building.SetActive(true);
         currentCell.Occupy(building);
 
-        construidas.Add(new construida { objeto = building, precio = preciopagado, indice = indice });
+        construidas.Add(new Construida { objeto = building, precio = precioPagado, indice = indice });
 
         BuildManager.NotificarConstruccionCambiada();
     }
