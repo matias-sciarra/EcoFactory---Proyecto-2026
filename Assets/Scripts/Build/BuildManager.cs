@@ -276,11 +276,23 @@ public class BuildManager : MonoBehaviour
         indiceSeleccionado = 0;
         if (txtMaquina != null) txtMaquina.gameObject.SetActive(false);
 
+        
         GameObject prefab = GetPrefab(indiceSeleccionado);
+
         if (prefab != null)
-            placementController.StartPlacement(prefab);
+        {
+        placementController.StartPlacement(prefab);
+
+        if (txtMaquina != null)
+        txtMaquina.gameObject.SetActive(true);
+
+         ActualizarUIMaquina();
+        }
         else
-            Debug.Log("BuildManager: la maquina " + indiceSeleccionado + " no tiene prefab asignado en el Inspector");
+        {
+        Debug.Log("BuildManager: la maquina " + indiceSeleccionado + " no tiene prefab asignado en el Inspector");
+        }
+
     }
 
     void ExitBuildMode()
