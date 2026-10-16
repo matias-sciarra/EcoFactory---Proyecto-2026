@@ -25,7 +25,7 @@ public class BuildManager : MonoBehaviour
     public economymanager economyManager;
     public TextMeshProUGUI txtMaquina;
     private int ultimoDinero = -1;
-    private const float porcentajedevolucion = 0.7f;
+    private const float PORCENTAJE_DEVOLUCION = 0.7f;
 
     // Array fijo de 3 maquinas, con sus precios base 100 / 150 / 200
     public MaquinaConstruible[] maquinas = new MaquinaConstruible[CANTIDAD_MAQUINAS]
@@ -51,14 +51,18 @@ public class BuildManager : MonoBehaviour
             OnConstruccionCambiada();
     }
 
-    public void Devolver(int indice, int preciopagado)
+    public void Devolver(int indice, int precioPagado)
     {
-        if(economyManager != null)
-        economyManager.Ganar(Mathf.RoundToInt(preciopagado * porcentajedevolucion));
+        int devolucion = Mathf.RoundToInt(precioPagado * PORCENTAJE_DEVOLUCION);
 
-        if (IndiceValido(indice)&& maquinas[indice] != null)
+        if (economyManager != null)
+            economyManager.Ganar(devolucion);
+
+        if (IndiceValido(indice) && maquinas[indice].vecesComprada > 0)
             maquinas[indice].vecesComprada--;
 
+        Debug.Log("Maquina " + indice + " vendida: se devuelven " + devolucion + ". Proximo precio: " + GetPrecioActual(indice));
+        ActualizarUIMaquina();
     }
 
     private CharacterController characterController;
