@@ -1,0 +1,100 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &114449733667654212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9125123692830692872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f33b5c8e7cfa6b24f984bd047dab6835, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  beltInSequence: {fileID: 0}
+  beltItem: {fileID: 0}
+  MachineInSequence: {fileID: 0}
+  moneyMachineInSequence: {fileID: 0}
+  machineSlotInSequence: {fileID: 0}
+  isSpaceTaken: 0
+  capasconectadas:
+    serializedVersion: 2
+    m_Bits: 0
+  radiodetection: 5
+  cartelmejora: {fileID: 0}
+  distanciacerca: 2
+  manager: {fileID: 0}
+  jugador: {fileID: 0}
+  costomejora: 50
+  txtcostomejora: {fileID: 0}
+  autoConectar: 1
+  puntoSalida: {fileID: 0}
+  alturaRayo: 0.5
+  distanciaRayo: 7
+  intervaloRedSeguridad: 2
+  debugConexiones: 0
+  angulorayo: 90
+--- !u!1001 &9125123692830724264
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 100000, guid: 9e930ca8b3a9c2f498b37cd085d807be, type: 3}
+      propertyPath: m_Name
+      value: cinta transportadora (medio) Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 9e930ca8b3a9c2f498b37cd085d807be, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.42614222
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 9e930ca8b3a9c2f498b37cd085d807be, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.0020189774
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 9e930ca8b3a9c2f498b37cd085d807be, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5.9025507
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 9e930ca8b3a9c2f498b37cd085d807be, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 9e930ca8b3a9c2f498b37cd085d807be, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 9e930ca8b3a9c2f498b37cd085d807be, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 9e930ca8b3a9c2f498b37cd085d807be, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 9e930ca8b3a9c2f498b37cd085d807be, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 9e930ca8b3a9c2f498b37cd085d807be, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 9e930ca8b3a9c2f498b37cd085d807be, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 9e930ca8b3a9c2f498b37cd085d807be, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9e930ca8b3a9c2f498b37cd085d807be, type: 3}
+--- !u!1 &9125123692830692872 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 9e930ca8b3a9c2f498b37cd085d807be,
+    type: 3}
+  m_PrefabInstance: {fileID: 9125123692830724264}
+  m_PrefabAsset: {fileID: 0}
