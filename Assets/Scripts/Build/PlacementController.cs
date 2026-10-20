@@ -1,5 +1,7 @@
-﻿using UnityEngine;
+﻿
+using UnityEngine;
 using System.Collections.Generic;
+
 public class PlacementController : MonoBehaviour
 {
     public Camera playerCamera;
@@ -11,18 +13,17 @@ public class PlacementController : MonoBehaviour
     private int rotationSteps;
     private bool buildMode;
 
-    private class Construida
+    private class construida
     {
         public GameObject objeto;
         public int precio;
         public int indice;
     }
 
-    private List<Construida> construidas = new List<Construida>();
+    private List<construida> construidas =
+        new List<construida>();
 
     private GameObject previewObject;
-
-    // Lo setea el BuildManager en su Awake, no hace falta arrastrarlo en el Inspector
     private BuildManager buildManager;
 
     public void SetBuildManager(BuildManager manager)
@@ -35,11 +36,16 @@ public class PlacementController : MonoBehaviour
         if (!buildMode)
             return;
 
+        if (playerCamera == null || gridManager == null)
+            return;
+
         Ray ray = playerCamera.ScreenPointToRay(Input.mousePosition);
 
         if (Physics.Raycast(ray, out RaycastHit hit, 100f, groundLayer))
         {
-            Vector3Int gridPosition = gridManager.WorldToGrid(hit.point);
+            Vector3Int gridPosition =
+                gridManager.WorldToGrid(hit.point);
+
             GridCell cell = gridManager.GetCell(gridPosition);
 
             if (cell != currentCell)
@@ -59,7 +65,9 @@ public class PlacementController : MonoBehaviour
 
                 if (previewObject != null)
                 {
-                    Vector3 previewPos = gridManager.GridToWorld(currentCell.GridPosition);
+                    Vector3 previewPos =
+                        gridManager.GridToWorld(currentCell.GridPosition);
+
                     previewPos.y = 0;
                     previewObject.transform.position = previewPos;
                     previewObject.SetActive(true);
@@ -70,11 +78,19 @@ public class PlacementController : MonoBehaviour
                 previewObject.SetActive(false);
             }
 
-            if (Input.GetMouseButtonDown(0) && currentCell != null && !currentCell.IsOccupied)
+            if (Input.GetMouseButtonDown(0) &&
+                currentCell != null &&
+                !currentCell.IsOccupied)
+            {
                 PlaceBuilding();
+            }
 
-            if (Input.GetMouseButtonDown(1) && currentCell != null && currentCell.IsOccupied)
+            if (Input.GetMouseButtonDown(1) &&
+                currentCell != null &&
+                currentCell.IsOccupied)
+            {
                 RemoveBuilding();
+            }
         }
         else
         {
@@ -90,47 +106,65 @@ public class PlacementController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.R))
         {
-            rotationSteps++;
-            if (rotationSteps >= 4)
-                rotationSteps = 0;
+            rotationSteps = (rotationSteps + 1) % 4;
 
             if (previewObject != null)
-                previewObject.transform.rotation = Quaternion.Euler(0, rotationSteps * 90f, 0);
+            {
+                previewObject.transform.rotation =
+                    Quaternion.Euler(0, rotationSteps * 90f, 0);
+            }
         }
     }
 
-    void PlaceBuilding()
-    {
-        // El BuildManager cobra la maquina seleccionada (precio escalado + descuento de plata).
-        // Si no alcanza la plata devuelve false y no se coloca nada.
+    // ---------------- COLOCAR MÁQUINA ----------------
 
-        if (buildManager == null)
+    private void PlaceBuilding()
+    {
+        if (buildManager == null ||
+            currentCell == null ||
+            buildingPrefab == null)
         {
-            Debug.LogError("PlacementController: falta la referencia al BuildManager, no se puede construir");
+            Debug.LogWarning(
+                "No se puede construir: falta el manager, " +
+                "la celda o el prefab."
+            );
             return;
         }
 
         int indice = buildManager.indiceSeleccionado;
-        int precioPagado = buildManager.GetPrecioActual(indice);
+        int preciopagado = buildManager.GetPrecioActual(indice);
 
+        // Importante: cobrar una sola vez.
         if (!buildManager.TryComprarSeleccionada())
             return;
 
-        Vector3 position = gridManager.GridToWorld(currentCell.GridPosition);
+        Vector3 position =
+            gridManager.GridToWorld(currentCell.GridPosition);
+
         position.y = 2;
 
-        Quaternion rotation = Quaternion.Euler(0, rotationSteps * 90f, 0);
+        Quaternion rotation =
+            Quaternion.Euler(0, rotationSteps * 90f, 0);
 
-        GameObject building = Instantiate(buildingPrefab, position, rotation);
+        GameObject building =
+            Instantiate(buildingPrefab, position, rotation);
+
         building.SetActive(true);
         currentCell.Occupy(building);
 
-        construidas.Add(new Construida { objeto = building, precio = precioPagado, indice = indice });
+        construidas.Add(new construida
+        {
+            objeto = building,
+            precio = preciopagado,
+            indice = indice
+        });
 
         BuildManager.NotificarConstruccionCambiada();
     }
 
-    void RemoveBuilding()
+    // ---------------- ELIMINAR MÁQUINA ----------------
+
+    private void RemoveBuilding()
     {
         GameObject obj = currentCell.PlacedObject;
 
@@ -141,15 +175,23 @@ public class PlacementController : MonoBehaviour
                 if (construidas[i].objeto == obj)
                 {
                     if (buildManager != null)
-                        buildManager.Devolver(construidas[i].indice, construidas[i].precio);
+                    {
+                        buildManager.Devolver(
+                            construidas[i].indice,
+                            construidas[i].precio
+                        );
+                    }
 
                     construidas.RemoveAt(i);
                     break;
                 }
             }
 
-            foreach (Collider col in obj.GetComponentsInChildren<Collider>())
+            foreach (Collider col in
+                     obj.GetComponentsInChildren<Collider>())
+            {
                 col.enabled = false;
+            }
 
             Destroy(obj);
         }
@@ -159,11 +201,20 @@ public class PlacementController : MonoBehaviour
         BuildManager.NotificarConstruccionCambiada();
     }
 
+    // ---------------- ACTIVAR CONSTRUCCIÓN ----------------
+
     public void StartPlacement(GameObject prefab)
     {
+        if (prefab == null)
+        {
+            Debug.LogError("StartPlacement recibió un prefab nulo.");
+            return;
+        }
+
         buildingPrefab = prefab;
         rotationSteps = 0;
         buildMode = true;
+
         gridManager.SetBuildMode(true);
 
         CrearPreview();
@@ -179,7 +230,9 @@ public class PlacementController : MonoBehaviour
 
         rotationSteps = 0;
         buildMode = false;
-        gridManager.SetBuildMode(false);
+
+        if (gridManager != null)
+            gridManager.SetBuildMode(false);
 
         if (previewObject != null)
         {
@@ -187,29 +240,60 @@ public class PlacementController : MonoBehaviour
             previewObject = null;
         }
     }
+
+    // ---------------- CAMBIAR MÁQUINA ----------------
+
     public void ChangeBuilding(GameObject prefab)
     {
+        if (prefab == null)
+        {
+            Debug.LogWarning(
+                "ChangeBuilding recibió un prefab nulo."
+            );
+            return;
+        }
+
         buildingPrefab = prefab;
         CrearPreview();
     }
 
-    // El preview nace escondido: si no, aparece en la posicion guardada en el prefab
-    // (cerca del centro del piso) hasta que el mouse pasa por una celda valida
-    void CrearPreview()
+    // ---------------- PREVISUALIZACIÓN ----------------
+
+    private void CrearPreview()
     {
         if (previewObject != null)
+        {
             Destroy(previewObject);
+            previewObject = null;
+        }
+
+        if (buildingPrefab == null)
+            return;
 
         previewObject = Instantiate(buildingPrefab);
-        previewObject.transform.rotation = Quaternion.Euler(0, rotationSteps * 90f, 0);
 
-        // apaga colliders del preview para que no interfiera con el raycast
-        foreach (Collider col in previewObject.GetComponentsInChildren<Collider>())
+        previewObject.transform.rotation =
+            Quaternion.Euler(0, rotationSteps * 90f, 0);
+
+        foreach (Collider col in
+                 previewObject.GetComponentsInChildren<Collider>())
+        {
             col.enabled = false;
+        }
 
         if (currentCell == null)
+        {
             previewObject.SetActive(false);
+        }
         else
-            previewObject.transform.position = gridManager.GridToWorld(currentCell.GridPosition);
+        {
+            Vector3 position =
+                gridManager.GridToWorld(currentCell.GridPosition);
+
+            position.y = 0;
+
+            previewObject.transform.position = position;
+            previewObject.SetActive(true);
+        }
     }
 }
