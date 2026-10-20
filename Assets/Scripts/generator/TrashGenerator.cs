@@ -36,11 +36,11 @@ public class TrashGenerator : MonoBehaviour
 
     }
 
-    void cintralibre()
+    bool CintaLibre()
     {
         return primeraCinta != null
-            &&!primeraCinta.isSpaceTaken()
-            &&primeraCinta.beltItem == null;
+            && !primeraCinta.isSpaceTaken
+            && primeraCinta.beltItem == null;
     }
 
     //Genera la basura arriba de la cinta para que se pueda ir hacia otra maquina u otro lugar
