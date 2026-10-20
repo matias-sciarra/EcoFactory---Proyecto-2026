@@ -256,4 +256,6 @@ public class MachineSlot : MonoBehaviour
     {
         return Mathf.RoundToInt(costomejora * Mathf.Pow(MULTIPLICADOR_MEJORA, mejoras));
     }
+
+
 }

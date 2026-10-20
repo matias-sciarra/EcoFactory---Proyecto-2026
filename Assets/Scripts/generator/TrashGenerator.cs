@@ -1,6 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
+
 
 public class TrashGenerator : MonoBehaviour
 
@@ -18,9 +21,20 @@ public class TrashGenerator : MonoBehaviour
     public bool debugConexiones = false;
     public float angulorayo = 90f;
     private bool avisoCapasVacias;
+    public PlayerGrabber jugador;
+    public float radiodetection = 5f;
+    public float distanciacerca = 2f;
+    private bool jugadorcerca = false;
+    public Button cartelmejora;
 
 
-    //hace que se genere la basura despues de 2 segundos
+
+    void Start()
+    {
+        if (jugador == null) jugador = FindObjectOfType<PlayerGrabber>();
+        if (cartelmejora != null) cartelmejora.onClick.AddListener(mejorar);
+
+    }
     void Update()
     {
         temporizador+= Time.deltaTime;
@@ -88,9 +102,35 @@ public class TrashGenerator : MonoBehaviour
         DetectorConexion.LogCambio(this, anterior, primeraCinta, debugConexiones);
     }
 
-    void detectar()
+    public void detectar()
     {
-        
+        if (jugador == null) return;
+
+        bool cerca = false;
+        Collider[] objetosdetectados = Physics.OverlapSphere(transform.position, radiodetection);
+
+        foreach (Collider col in objetosdetectados)
+        {
+            if (col.CompareTag("Player"))
+            {
+                float distancia = Vector3.Distance(transform.position, col.transform.position);
+                if (distancia < distanciacerca && !jugador.IsHolding)
+                    cerca = true;
+            }
+        }
+
+        jugadorcerca = cerca;
+
+        if (cartelmejora != null)
+            cartelmejora.gameObject.SetActive(jugadorcerca);
+
+        if (jugadorcerca && !BuildManager.BuildModeActivo && Input.GetKeyDown(KeyCode.Q))
+            mejorar();
+    }
+
+    public void mejorar()
+    {
+        ///poner mejora bajando tiempo de intervalo aca
     }
 
 
