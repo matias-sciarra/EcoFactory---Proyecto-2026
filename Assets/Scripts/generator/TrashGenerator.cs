@@ -88,6 +88,11 @@ public class TrashGenerator : MonoBehaviour
         DetectorConexion.LogCambio(this, anterior, primeraCinta, debugConexiones);
     }
 
+    void detectar()
+    {
+        
+    }
+
 
 
 
