@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
-using TMPro; 
+using TMPro;
+using UnityEngine.UI;
 
 public class BuildManager : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class BuildManager : MonoBehaviour
     public class MaquinaConstruible
     {
         public GameObject prefab;
+        public Sprite imagenUI;
         public int precioBase = 100;
         public int vecesComprada = 0;
     }
@@ -16,7 +18,7 @@ public class BuildManager : MonoBehaviour
     public const int CANTIDAD_MAQUINAS = 2;
     private const float MULTIPLICADOR_PRECIO = 1.7f;
 
-    
+    public Image imgMaquina;
     public GameObject player;
     public Behaviour fpsController;
     public Transform fpsCamera;
@@ -325,7 +327,8 @@ void EnterBuildMode()
         buildModeActivo = false;
     }
 
-    private void ActualizarUIMaquina()
+    
+private void ActualizarUIMaquina()
 {
     if (!IndiceValido(indiceSeleccionado))
         return;
@@ -351,6 +354,22 @@ void EnterBuildMode()
             ? Color.white
             : Color.red;
     }
+
+    // Actualizar la imagen independientemente del texto del precio
+    if (imgMaquina != null)
+{
+    imgMaquina.sprite = maquinas[indiceSeleccionado].imagenUI;
+
+    Debug.Log("Índice seleccionado: " + indiceSeleccionado);
+    Debug.Log("Sprite asignado: " +
+        (imgMaquina.sprite != null
+            ? imgMaquina.sprite.name
+            : "NULL"));
+}
+else
+{
+    Debug.LogError("imgMaquina sigue siendo NULL");
+}
+}
 }
 
-}
