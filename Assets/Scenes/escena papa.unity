@@ -7994,7 +7994,7 @@ MonoBehaviour:
       type: 3}
     precioBase: 150
     vecesComprada: 0
-  - prefab: {fileID: 9125123692830692872, guid: 859a93991eb37b642aa8e013784b5445,
+  - prefab: {fileID: 5101516562357076041, guid: 27796d3b56802d34da0a82352219e654,
       type: 3}
     precioBase: 80
     vecesComprada: 0

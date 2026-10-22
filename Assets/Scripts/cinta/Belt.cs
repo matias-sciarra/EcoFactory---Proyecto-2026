@@ -70,6 +70,8 @@ public class Belt : MonoBehaviour
         _beltManager = ObtenerBeltManager();
         gameObject.name = $"Belt: {_beltID++}";
 
+      
+        puntoSalida = transform.parent;
         //Las cintas colocadas en runtime salen de un prefab, y un prefab no puede guardar
         //referencias a objetos de la escena: hay que resolverlas aca
         if (manager == null) manager = FindObjectOfType<economymanager>();

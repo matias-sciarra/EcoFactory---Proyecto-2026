@@ -22,7 +22,10 @@ public class BuildManager : MonoBehaviour
     public Transform fpsCamera;
     public Transform buildPosition;
     public PlacementController placementController;
-    public economymanager economyManager;
+    public economymanager economyManager;   
+    public GameObject panelInfoMaquina;
+    public TextMeshProUGUI txtNombreMaquina;
+    public TextMeshProUGUI txtPrecioMaquina;
     public TextMeshProUGUI txtMaquina;
     private int ultimoDinero = -1;
     private const float PORCENTAJE_DEVOLUCION = 0.7f;
@@ -181,21 +184,6 @@ public class BuildManager : MonoBehaviour
         return maquinas[indice].prefab;
     }
 
-    private void ActualizarUIMaquina()
-    {
-    if (txtMaquina == null || !IndiceValido(indiceSeleccionado))
-        return;
-
-    int precio = GetPrecioActual(indiceSeleccionado);
-    bool alcanza = economyManager != null && economyManager.TieneSuficiente(precio);
-
-    GameObject prefab = maquinas[indiceSeleccionado].prefab;
-    string nombre = prefab != null ? prefab.name : "Maquina " + (indiceSeleccionado + 1);
-
-    txtMaquina.text = nombre + "\n$" + precio;
-    txtMaquina.color = alcanza ? Color.white : Color.red;
-    }
-
     // ---------- Precios ----------
 
     // precioActual = precioBase * 1.7 ^ vecesComprada  (la primera compra sale el precio base)
@@ -258,46 +246,49 @@ public class BuildManager : MonoBehaviour
 
     // ---------- Modo construccion ----------
 
-    void EnterBuildMode()
+    
+void EnterBuildMode()
+{
+    buildMode = true;
+    buildModeActivo = true;
+
+    oldPlayerPosition = player.transform.position;
+    oldPlayerRotation = player.transform.rotation;
+    oldCameraLocalPosition = fpsCamera.localPosition;
+    oldCameraLocalRotation = fpsCamera.localRotation;
+
+    fpsController.enabled = false;
+    player.transform.rotation = Quaternion.identity;
+
+    fpsCamera.position = buildPosition.position;
+    fpsCamera.rotation = Quaternion.Euler(90f, 0f, 0f);
+
+    Cursor.lockState = CursorLockMode.None;
+    Cursor.visible = true;
+
+    indiceSeleccionado = 0;
+
+    GameObject prefab = GetPrefab(indiceSeleccionado);
+
+    if (prefab != null)
     {
-        buildMode = true;
-        buildModeActivo = true;
-
-        oldPlayerPosition = player.transform.position;
-        oldPlayerRotation = player.transform.rotation;
-        oldCameraLocalPosition = fpsCamera.localPosition;
-        oldCameraLocalRotation = fpsCamera.localRotation;
-
-        fpsController.enabled = false;
-        player.transform.rotation = Quaternion.identity;
-
-        fpsCamera.position = buildPosition.position;
-        fpsCamera.rotation = Quaternion.Euler(90f, 0f, 0f);
-
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
-
-        indiceSeleccionado = 0;
-        if (txtMaquina != null) txtMaquina.gameObject.SetActive(false);
-
-        
-        GameObject prefab = GetPrefab(indiceSeleccionado);
-
-        if (prefab != null)
-        {
         placementController.StartPlacement(prefab);
 
-        if (txtMaquina != null)
-        txtMaquina.gameObject.SetActive(true);
-
-         ActualizarUIMaquina();
-        }
+        if (panelInfoMaquina != null)
+            panelInfoMaquina.SetActive(true);
         else
-        {
-        Debug.Log("BuildManager: la maquina " + indiceSeleccionado + " no tiene prefab asignado en el Inspector");
-        }
+            Debug.LogError("Falta asignar Panel Info Maquina en el Inspector.");
 
+        ActualizarUIMaquina();
     }
+    else
+    {
+        Debug.LogError(
+            "La primera máquina no tiene prefab asignado en el Inspector."
+        );
+    }
+}
+
 
     void ExitBuildMode()
     {
@@ -333,5 +324,33 @@ public class BuildManager : MonoBehaviour
     {
         buildModeActivo = false;
     }
+
+    private void ActualizarUIMaquina()
+{
+    if (!IndiceValido(indiceSeleccionado))
+        return;
+
+    int precio = GetPrecioActual(indiceSeleccionado);
+
+    bool alcanza = economyManager != null &&
+                   economyManager.TieneSuficiente(precio);
+
+    GameObject prefab = maquinas[indiceSeleccionado].prefab;
+
+    string nombre = prefab != null
+        ? prefab.name
+        : "Maquina " + (indiceSeleccionado + 1);
+
+    if (txtNombreMaquina != null)
+        txtNombreMaquina.text = nombre;
+
+    if (txtPrecioMaquina != null)
+    {
+        txtPrecioMaquina.text = "$" + precio;
+        txtPrecioMaquina.color = alcanza
+            ? Color.white
+            : Color.red;
+    }
+}
 
 }
