@@ -35,6 +35,19 @@ MonoBehaviour:
   intervaloRedSeguridad: 2
   debugConexiones: 0
   angulorayo: 0
+--- !u!65 &65409701709054024
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1742419586573036537}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.3071117, y: 18.098925, z: 2.0385659}
+  m_Center: {x: -0.07775545, y: 9.069425, z: -0.030121593}
 --- !u!1001 &1742419586573135193
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -44,7 +57,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: 9e930ca8b3a9c2f498b37cd085d807be, type: 3}
       propertyPath: m_Name
-      value: cinta transportadora (medio) Variant
+      value: cinta transportadora
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 9e930ca8b3a9c2f498b37cd085d807be, type: 3}
       propertyPath: m_Layer

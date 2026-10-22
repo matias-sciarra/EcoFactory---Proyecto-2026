@@ -141,7 +141,7 @@ public class PlacementController : MonoBehaviour
         Vector3 position =
             gridManager.GridToWorld(currentCell.GridPosition);
 
-        position.y = 0;
+        position.y = 0  ;
 
         Quaternion rotation =
             Quaternion.Euler(0, rotationSteps * 90f, 0);
@@ -153,7 +153,7 @@ public class PlacementController : MonoBehaviour
         currentCell.Occupy(building);
 
         construidas.Add(new construida
-        {
+        {   
             objeto = building,
             precio = preciopagado,
             indice = indice
