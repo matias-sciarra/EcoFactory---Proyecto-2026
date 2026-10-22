@@ -141,7 +141,7 @@ public class PlacementController : MonoBehaviour
         Vector3 position =
             gridManager.GridToWorld(currentCell.GridPosition);
 
-        position.y = 2;
+        position.y = 0;
 
         Quaternion rotation =
             Quaternion.Euler(0, rotationSteps * 90f, 0);
