@@ -26,12 +26,17 @@ public class TrashGenerator : MonoBehaviour
     public float distanciacerca = 2f;
     private bool jugadorcerca = false;
     public Button cartelmejora;
+    public economymanager manager;
+    public float costomejora = 50f;
+    private const float MULTIPLICADOR_MEJORA = 2.1f;
+    private int cantidadMejoras = 0;
 
 
 
     void Start()
     {
         if (jugador == null) jugador = FindObjectOfType<PlayerGrabber>();
+        if (manager == null) manager = FindObjectOfType<economymanager>();
         if (cartelmejora != null) cartelmejora.onClick.AddListener(mejorar);
 
     }
@@ -130,7 +135,26 @@ public class TrashGenerator : MonoBehaviour
 
     public void mejorar()
     {
-        ///poner mejora bajando tiempo de intervalo aca
+        ///poner mejora bajando tiempo de intervalo 
+        if (manager == null)
+        {
+            Debug.LogWarning(name + ": no hay economymanager, no se puede comprar la mejora");
+            return;
+        }
+        int costoActual = GetCostoMejora(cantidadMejoras);
+
+        if (manager.Gastar(costoActual))
+        {
+            cantidadMejoras++;
+            intervalo *= 0.8f;
+            Debug.Log(name + ": mejora comprada, nuevo intervalo: " + intervalo);
+        }
+
+    }
+
+    private int GetCostoMejora(int mejoras)
+    {
+        return Mathf.RoundToInt(costomejora * Mathf.Pow(MULTIPLICADOR_MEJORA, mejoras));
     }
 
 
