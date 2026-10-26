@@ -119,15 +119,11 @@ public class MachineSlot : MonoBehaviour
         isProcessing = true;
         yield return new WaitForSeconds(processTime);
 
-        detectarbelt();
-        while (true)
+        while(true)
         {
+            detectarbelt();
             if (CintaLibre())
-            {
-                detectarbelt();
-                if (CintaLibre())
-                    break;
-            }
+                break;
             yield return null;
         }
 
@@ -151,6 +147,7 @@ public class MachineSlot : MonoBehaviour
         }
 
         GameObject nueva = Instantiate(outputPrefab, primeraCinta.GetItemPosition(), Quaternion.identity);
+        nueva.SetActive(true);
 
         BeltItem itemcomponent = nueva.GetComponent<BeltItem>();
         if (itemcomponent == null)
@@ -215,20 +212,24 @@ public class MachineSlot : MonoBehaviour
         DetectorConexion.LogCambio(this, anterior, primeraCinta, debugConexiones);
     }
 
+    private void CalcularMiRayo(out Vector3 inicio, out Vector3 direccion)
+    {
+        DetectorConexion.CalcularRayo(transform, puntoSalida, alturaRayo, out inicio, out direccion);
+        direccion = Quaternion.AngleAxis(angulorayo, transform.up) * direccion;
+    }
+
     private ResultadoConexion DetectarSalida()
     {
         Vector3 inicio, direccion;
-        DetectorConexion.CalcularRayo(transform, puntoSalida, alturaRayo, out inicio, out direccion);
-        direccion = Quaternion.AngleAxis(angulorayo, transform.up) * direccion;
+        CalcularMiRayo(out inicio, out direccion);
         return DetectorConexion.Detectar(this, inicio, direccion, distanciamax, capasconectadas, ref avisoCapasVacias);
     }
 
     private void OnDrawGizmos()
     {
         Vector3 inicio, direccion;
-        DetectorConexion.CalcularRayo(transform, puntoSalida, alturaRayo, out inicio, out direccion);
+        CalcularMiRayo(out inicio, out direccion);
         ResultadoConexion r = DetectorConexion.Detectar(this, inicio, direccion, distanciamax, capasconectadas, ref avisoCapasVacias);
-        direccion = Quaternion.AngleAxis(angulorayo, transform.up) * direccion;
         DetectorConexion.DibujarRayo(inicio, direccion, distanciamax, r, r.belt != null);
     }
 
