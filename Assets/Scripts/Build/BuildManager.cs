@@ -318,6 +318,9 @@ void EnterBuildMode()
         Cursor.visible = false;
 
         if (txtMaquina != null) txtMaquina.gameObject.SetActive(false);
+
+        if (panelInfoMaquina != null)
+        panelInfoMaquina.SetActive(false);
     }
 
     // Si el objeto se desactiva o se destruye estando en modo construccion,
