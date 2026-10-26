@@ -2849,7 +2849,7 @@ MonoBehaviour:
     imagenUI: {fileID: 21300000, guid: 91c9bfbe1bb07f546a3be20e269f5c47, type: 3}
     precioBase: 150
     vecesComprada: 0
-  - prefab: {fileID: 5101516562357076041, guid: 27796d3b56802d34da0a82352219e654,
+  - prefab: {fileID: 1742419586573036537, guid: 301fd761215e0a140875db8fa6a6f812,
       type: 3}
     imagenUI: {fileID: 21300000, guid: 0a624599d0986034a8fcc36a7a1cca3b, type: 3}
     precioBase: 80
