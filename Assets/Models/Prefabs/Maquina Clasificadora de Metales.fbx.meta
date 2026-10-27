@@ -1,30 +1,25 @@
 fileFormatVersion: 2
-guid: ed11bf6291739c14090ffb7f38c396c0
+guid: bd6b948b26af8ad42a95916a05daa5e6
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: mATERIAL METALICO PRINCIPAL
-    2100002: mADERA tEXTURA
-    2100004: Material.001
-    2100006: Mtalico
-    2100008: Cables
-    2100010: Material.010
-    2100012: Material.012
-    2100014: Material.011
-    2100016: Material.003
-    2100018: Material.014
-    2100020: Material.013
-    2100022: Material.006
-    2100024: Box 1
-    2100026: Material.005
-    2100028: Vidrio
+    2100000: Gris.001
+    2100002: Cobre.001
+    2100004: Blanco Tabla.001
+    2100006: Gris Tabla.001
+    2100008: Blanco.001
+    2100010: Negro.001
+    2100012: Gris Cilindros.001
+    2100014: Boton Rojo.001
+    2100016: Boton Verde.001
+    2100018: Boton Blanco.001
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Cylinder
-    6400000: //RootNode
-    2186277476908879412: ImportLogs
+    4300000: Maquina Clasificadora
+    7400000: Maquina Clasificadora|Cube.005Action.003
+    9500000: //RootNode
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -58,7 +53,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 1
+    addColliders: 0
     useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1
@@ -77,8 +72,8 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 0
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -105,7 +100,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

@@ -2840,11 +2840,12 @@ MonoBehaviour:
   txtPrecioMaquina: {fileID: 281467035}
   txtMaquina: {fileID: 0}
   maquinas:
-  - prefab: {fileID: 734542906762854677, guid: b17596d974d27644181db0bd72d976fd, type: 3}
+  - prefab: {fileID: 2824027106502458815, guid: 674c3d313be94b7459a300fbcd4d8420,
+      type: 3}
     imagenUI: {fileID: 21300000, guid: 91c9bfbe1bb07f546a3be20e269f5c47, type: 3}
     precioBase: 100
     vecesComprada: 0
-  - prefab: {fileID: 6400934733816563192, guid: bd3f451eff726834ab4e51ff8264c634,
+  - prefab: {fileID: 4212581264570873418, guid: b0decc5a26158404c8fa44bc56aa8d33,
       type: 3}
     imagenUI: {fileID: 21300000, guid: 91c9bfbe1bb07f546a3be20e269f5c47, type: 3}
     precioBase: 150
@@ -2855,6 +2856,16 @@ MonoBehaviour:
     precioBase: 80
     vecesComprada: 0
   - prefab: {fileID: 6995605696558342912, guid: 5afbf714c6fc0f046813854632c45c54,
+      type: 3}
+    imagenUI: {fileID: 21300000, guid: 91c9bfbe1bb07f546a3be20e269f5c47, type: 3}
+    precioBase: 90
+    vecesComprada: 0
+  - prefab: {fileID: 8592584822726232981, guid: bd89bd67976ef0d488ad6202dac6cadf,
+      type: 3}
+    imagenUI: {fileID: 21300000, guid: 91c9bfbe1bb07f546a3be20e269f5c47, type: 3}
+    precioBase: 90
+    vecesComprada: 0
+  - prefab: {fileID: 3093451061530968607, guid: b9b56dabe9a44124fafe2816748339c6,
       type: 3}
     imagenUI: {fileID: 21300000, guid: 91c9bfbe1bb07f546a3be20e269f5c47, type: 3}
     precioBase: 90

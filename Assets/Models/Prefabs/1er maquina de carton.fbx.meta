@@ -1,25 +1,29 @@
 fileFormatVersion: 2
-guid: f6b73e7759c62624d93c064629795bfb
+guid: 230bdf76cdffe26408ad86c75397966b
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: Blanco Tabla
-    2100002: Gris Tabla
-    2100004: Gris
-    2100006: Blanco
-    2100008: Negro
-    2100010: Gris Cilindros
-    2100012: Boton Rojo
-    2100014: Boton Verde
-    2100016: Boton Blanco
-    2100018: Cobre
+    2100000: mATERIAL METALICO PRINCIPAL
+    2100002: mADERA tEXTURA
+    2100004: Material.001
+    2100006: Mtalico
+    2100008: Cables
+    2100010: Material.010
+    2100012: Material.012
+    2100014: Material.011
+    2100016: Material.003
+    2100018: Material.014
+    2100020: Material.013
+    2100022: Material.006
+    2100024: Box 1
+    2100026: Material.005
+    2100028: Vidrio
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Cube.005
-    7400000: Cube.005|Cube.005Action
-    9500000: //RootNode
+    4300000: Cylinder
+    2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -72,8 +76,8 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 0.01
-    hasPreviousCalculatedGlobalScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -100,7 +104,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
