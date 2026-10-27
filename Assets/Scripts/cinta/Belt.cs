@@ -29,7 +29,7 @@ public class Belt : MonoBehaviour
     private const float MULTIPLICADOR_MEJORA = 2.1f;
     private int cantidadMejoras = 0;
     public TextMeshProUGUI txtcostomejora;
-
+    public Transform puntoItem;
     public bool autoConectar = true;
     public Transform puntoSalida;
     public float alturaRayo = 0.5f;
@@ -37,12 +37,12 @@ public class Belt : MonoBehaviour
     public float intervaloRedSeguridad = 2f;
     public bool debugConexiones = false;
     public float angulorayo = 90f;
-
     private Belt destinoReservado;
     private bool recalculoPendiente;
     private bool avisoCapasVacias;
     private bool avisoSinGrabbable;
     private float proximoChequeo;
+    private bool avisosinpuntoitem;
 
     //Velocidad de la cinta. Si por lo que sea no hay BeltManager no rompe ni devuelve 0
     private float Velocidad
@@ -260,9 +260,18 @@ public class Belt : MonoBehaviour
     //Le da la posicion en la cinta al objeto salido de la maquina
     public Vector3 GetItemPosition()
     {
-        var padding = 0.3f;
-        var position = transform.position;
-        return new Vector3(position.x, position.y + padding, position.z);
+        if(puntoItem != null)
+            return puntoItem.position;
+        
+        if(!avisosinpuntoitem)
+        {
+            avisosinpuntoitem = true;
+            Debug.LogError(name + ": no hay puntoItem asignado, se devuelve la posicion de la cinta", this);
+        }
+
+        return transform.position;
+        
+
     }
 
     //Hace que la cinta empiece el movimiento de objetos
