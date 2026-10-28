@@ -13,6 +13,7 @@ public class BuildManager : MonoBehaviour
         public Sprite imagenUI;
         public int precioBase = 100;
         public int vecesComprada = 0;
+        public int nivelnecesario;
     }
 
     public const int CANTIDAD_MAQUINAS = 2;
