@@ -14,6 +14,7 @@ public class BuildManager : MonoBehaviour
         public int precioBase = 100;
         public int vecesComprada = 0;
         public int nivelnecesario;
+        public GameObject Botontienda;
     }
 
     public const int CANTIDAD_MAQUINAS = 2;
@@ -31,6 +32,7 @@ public class BuildManager : MonoBehaviour
     public TextMeshProUGUI txtPrecioMaquina;
     public TextMeshProUGUI txtMaquina;
     private int ultimoDinero = -1;
+    private int ultimonivel = -1;
     private const float PORCENTAJE_DEVOLUCION = 0.7f;
 
     // Array fijo de 3 maquinas, con sus precios base 100 / 150 / 200
@@ -375,5 +377,39 @@ else
     Debug.LogError("imgMaquina sigue siendo NULL");
 }
 }
+
+
+    private int level()
+    {
+        return levelmanager.instance != null ? levelmanager.instance.currentLevel : int.MaxValue;
+    }
+
+    private int desbloqueada(int indice)
+    {
+        return IndiceValido(indice) && maquinas[indice].nivelnecesario <= level();
+    }
+
+    private int siguientedesbloqueda(int desde, int paso)
+    {
+        for(int i = 0; i < maquinas.Length; i++)
+        {
+            desde = Envolver(desde);
+            if (desbloqueada(desde))
+                return desde;
+            desde += paso;
+        }
+        return -1;
+    }
+
+    void Actualizartienda()
+    {
+        for(int i = 0; i < maquinas.Length; i++)
+        {
+            if(maquinas[i] != null && maquinas[i].Botontienda != null)
+                maquinas[i].Botontienda.SetActive(desbloqueada(i));
+        }
+    }
+
+
 }
 

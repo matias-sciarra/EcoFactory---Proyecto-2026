@@ -6,6 +6,8 @@ public class levelmanager : MonoBehaviour
 {
     public int currentLevel = 1;
     public economymanager economymanager;
+    public int nivelpordinero;
+    public static levelmanager instance;
 
     [Header("estandares de niveles")]
     public int nivel1 = 0;
@@ -13,7 +15,10 @@ public class levelmanager : MonoBehaviour
     public int nivel3 = 10000;
     public int nivel4 = 50000;
 
-
+    void awake()
+    {
+        instance = this;
+    }
     void Start()
     {
         if(economymanager == null)
@@ -40,6 +45,12 @@ public class levelmanager : MonoBehaviour
         else if (economymanager.dinero >= nivel4)
         {
             currentLevel = 4;
+        }
+
+
+        if(currentLevel < nivelpordinero)
+        {
+            currentLevel = nivelpordinero;
         }
     }
 
