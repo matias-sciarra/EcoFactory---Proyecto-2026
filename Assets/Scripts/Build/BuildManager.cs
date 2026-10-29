@@ -109,6 +109,41 @@ public class BuildManager : MonoBehaviour
                 EnterBuildMode();
         }
 
+        if (!buildMode)
+            return;
+
+        int nivel = level();
+        if (nivel != ultimoNivel)
+        {
+            ultimoNivel = nivel;
+            Actualizartienda();
+            ActualizarUIMaquina();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            int i = SiguienteDesbloqueda(indiceSeleccionado - 1, -1);
+            if (i >= 0) SeleccionarMaquina(i);
+        }
+        else if (Input.GetKeyDown(KeyCode.E))
+        {
+            int i = SiguienteDesbloqueda(indiceSeleccionado + 1, 1);
+            if (i >= 0) SeleccionarMaquina(i);
+        }
+
+        for (int i = 0; i < maquinas.Length && i < 9; i++)
+        {
+            if (Input.GetKeyDown(KeyCode.Alpha1 + i) && desbloqueada(i))
+                SeleccionarMaquina(i);
+        }
+
+        if (economyManager != null && economyManager.dinero != ultimoDinero)
+        {
+            ultimoDinero = economyManager.dinero;
+            ActualizarUIMaquina();
+        }
+    }
+
         // Fuera del modo construccion Q y E no hacen nada aca:
         // los usa el resto del juego (E para agarrar basura, Q para mejorar cintas)
         if (!buildMode)
@@ -271,7 +306,8 @@ void EnterBuildMode()
     Cursor.lockState = CursorLockMode.None;
     Cursor.visible = true;
 
-    indiceSeleccionado = 0;
+    indiceSeleccionado = Mathf.Max(0, SiguienteDesbloqueda(0,1));
+    Actualizartienda();
 
     GameObject prefab = GetPrefab(indiceSeleccionado);
 
@@ -384,12 +420,12 @@ else
         return levelmanager.instance != null ? levelmanager.instance.currentLevel : int.MaxValue;
     }
 
-    private int desbloqueada(int indice)
+    private bool desbloqueada(int indice)
     {
         return IndiceValido(indice) && maquinas[indice].nivelnecesario <= level();
     }
 
-    private int siguientedesbloqueda(int desde, int paso)
+    private int SiguienteDesbloqueda(int desde, int paso)
     {
         for(int i = 0; i < maquinas.Length; i++)
         {
