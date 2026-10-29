@@ -32,7 +32,7 @@ public class BuildManager : MonoBehaviour
     public TextMeshProUGUI txtPrecioMaquina;
     public TextMeshProUGUI txtMaquina;
     private int ultimoDinero = -1;
-    private int ultimonivel = -1;
+    private int ultimoNivel = -1;
     private const float PORCENTAJE_DEVOLUCION = 0.7f;
 
     // Array fijo de 3 maquinas, con sus precios base 100 / 150 / 200
