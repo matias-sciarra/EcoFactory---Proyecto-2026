@@ -2953,7 +2953,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0925958495391724d8757f0a7547fd7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  imgMaquina: {fileID: 0}
+  imgMaquina: {fileID: 1763246281}
   player: {fileID: 993261869}
   fpsController: {fileID: 1048904823}
   fpsCamera: {fileID: 1048904821}
@@ -2974,14 +2974,14 @@ MonoBehaviour:
     Botontienda: {fileID: 0}
   - prefab: {fileID: 4212581264570873418, guid: b0decc5a26158404c8fa44bc56aa8d33,
       type: 3}
-    imagenUI: {fileID: 21300000, guid: 91c9bfbe1bb07f546a3be20e269f5c47, type: 3}
+    imagenUI: {fileID: 21300000, guid: 5c516a1b45a65334e9b9b45dbdb916f8, type: 3}
     precioBase: 150
     vecesComprada: 0
     nivelnecesario: 0
     Botontienda: {fileID: 0}
   - prefab: {fileID: 1742419586573036537, guid: 301fd761215e0a140875db8fa6a6f812,
       type: 3}
-    imagenUI: {fileID: 21300000, guid: 0a624599d0986034a8fcc36a7a1cca3b, type: 3}
+    imagenUI: {fileID: 21300000, guid: 6b28dd38b29106e488b4af2b9eefd993, type: 3}
     precioBase: 80
     vecesComprada: 0
     nivelnecesario: 0
@@ -2995,14 +2995,14 @@ MonoBehaviour:
     Botontienda: {fileID: 0}
   - prefab: {fileID: 8592584822726232981, guid: bd89bd67976ef0d488ad6202dac6cadf,
       type: 3}
-    imagenUI: {fileID: 21300000, guid: 91c9bfbe1bb07f546a3be20e269f5c47, type: 3}
+    imagenUI: {fileID: 21300000, guid: fcc274a05d1996b488a33e7f8f9376d9, type: 3}
     precioBase: 90
     vecesComprada: 0
     nivelnecesario: 0
     Botontienda: {fileID: 0}
   - prefab: {fileID: 3093451061530968607, guid: b9b56dabe9a44124fafe2816748339c6,
       type: 3}
-    imagenUI: {fileID: 21300000, guid: 91c9bfbe1bb07f546a3be20e269f5c47, type: 3}
+    imagenUI: {fileID: 21300000, guid: 152a94580b75ef24b802e33cb0f963f9, type: 3}
     precioBase: 90
     vecesComprada: 0
     nivelnecesario: 0
@@ -3618,8 +3618,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1, y: -2.8}
-  m_SizeDelta: {x: 60.04303, y: 44.3237}
+  m_AnchoredPosition: {x: 0.000019073, y: 0.00024986}
+  m_SizeDelta: {x: 101.15506, y: 97.92226}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2056191006
 MonoBehaviour:
@@ -3669,8 +3669,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 83.01
-  m_fontSizeBase: 83.01
+  m_fontSize: 83
+  m_fontSizeBase: 83
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3686,7 +3686,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 0
+  m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
