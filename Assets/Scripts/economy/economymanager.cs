@@ -19,7 +19,7 @@ public class economymanager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        ActualizarTexto();
     }
 
     // Devuelve true si la plata actual alcanza para pagar ese costo
