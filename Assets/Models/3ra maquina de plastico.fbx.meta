@@ -1,0 +1,190 @@
+fileFormatVersion: 2
+guid: 8852b1db8dae17a4eb304c3b16af97c2
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Armature
+    100004: Bone
+    100006: Conjunto de plastico
+    100008: conjunto plastico 1
+    100010: conjunto plastico 1_end
+    100012: Conjunto plastico 2
+    100014: Conjunto plastico 2_end
+    100016: Contenedor basura
+    100018: Contenedor basura.001
+    100020: Contenedor basura_end
+    100022: Cube.003
+    100024: derecha
+    100026: derecha.001
+    100028: derecha.001_end
+    100030: derecha.002
+    100032: derecha.002_end
+    100034: derecha_end
+    100036: Izquierda
+    100038: Izquierda.001
+    100040: Izquierda.001_end
+    100042: Izquierda.002
+    100044: Izquierda.002_end
+    100046: Izquierda_end
+    100048: medio
+    100050: medio.001
+    100052: medio.001_end
+    100054: medio.002
+    100056: medio.002_end
+    100058: medio.003
+    100060: medio.004
+    100062: medio.005
+    100064: medio_end
+    100066: Navaja abajo
+    100068: Navaja abajo_end
+    100070: navaja arriva
+    100072: navaja arriva_end
+    400000: //RootNode
+    400002: Armature
+    400004: Bone
+    400006: Conjunto de plastico
+    400008: conjunto plastico 1
+    400010: conjunto plastico 1_end
+    400012: Conjunto plastico 2
+    400014: Conjunto plastico 2_end
+    400016: Contenedor basura
+    400018: Contenedor basura.001
+    400020: Contenedor basura_end
+    400022: Cube.003
+    400024: derecha
+    400026: derecha.001
+    400028: derecha.001_end
+    400030: derecha.002
+    400032: derecha.002_end
+    400034: derecha_end
+    400036: Izquierda
+    400038: Izquierda.001
+    400040: Izquierda.001_end
+    400042: Izquierda.002
+    400044: Izquierda.002_end
+    400046: Izquierda_end
+    400048: medio
+    400050: medio.001
+    400052: medio.001_end
+    400054: medio.002
+    400056: medio.002_end
+    400058: medio.003
+    400060: medio.004
+    400062: medio.005
+    400064: medio_end
+    400066: Navaja abajo
+    400068: Navaja abajo_end
+    400070: navaja arriva
+    400072: navaja arriva_end
+    2100000: Material nuevo de azul
+    2100002: Nuevo material resaltante para plastico.001
+    2100004: Material.033
+    2100006: Material.039
+    2100008: Metal Cosas 3ra maquina .001
+    2100010: Material thrusters.001
+    2100012: Material.051
+    2100014: Material.040
+    2100016: Material.048
+    2100018: Material.038
+    2100020: Material.035
+    2100022: Mtalico.002
+    2100024: Pellet_BlancoOpaco.003
+    2100026: Pellet_AmarilloAlerta.003
+    2100028: Pellet_VerdeToxico.003
+    2100030: Pellet_GrisReciclado.003
+    2100032: Pellet_AzulOscuro.003
+    2100034: Metal_Seguridad_Amarillo.003
+    2100036: Metal_Seguridad_Negro.003
+    2100038: PET_Cristal_Limpio
+    2100040: Vidrio.002
+    4300000: Cube.003
+    7400000: Armature|ArmatureAction.001
+    9500000: //RootNode
+    13700000: Cube.003
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 1
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: Armature
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

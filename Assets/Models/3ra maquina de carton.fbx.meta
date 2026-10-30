@@ -1,0 +1,177 @@
+fileFormatVersion: 2
+guid: 8eac2589b47e0334a956382d4d1971ba
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: (abajo) girador
+    100002: (abajo) girador_end
+    100004: (arriva) girador
+    100006: (arriva) girador_end
+    100008: (medio) girador
+    100010: (medio) girador_end
+    100012: //RootNode
+    100014: _ coso que se abre izquierda
+    100016: _ coso que se abre izquierda_end
+    100018: Armature.001
+    100020: "bater\xEDa"
+    100022: "bater\xEDa_end"
+    100024: Caja
+    100026: caja root
+    100028: Caja_end
+    100030: Cube
+    100032: el que agarra la caja
+    100034: el que agarra la caja_end
+    100036: Empujador
+    100038: Empujador.001
+    100040: Empujador_end
+    100042: flecos de caja
+    100044: flecos de caja_end
+    100046: giratoria
+    100048: giratoria_end
+    100050: las cosas que se abren
+    100052: las cosas que se abren_end
+    100054: root
+    400000: (abajo) girador
+    400002: (abajo) girador_end
+    400004: (arriva) girador
+    400006: (arriva) girador_end
+    400008: (medio) girador
+    400010: (medio) girador_end
+    400012: //RootNode
+    400014: _ coso que se abre izquierda
+    400016: _ coso que se abre izquierda_end
+    400018: Armature.001
+    400020: "bater\xEDa"
+    400022: "bater\xEDa_end"
+    400024: Caja
+    400026: caja root
+    400028: Caja_end
+    400030: Cube
+    400032: el que agarra la caja
+    400034: el que agarra la caja_end
+    400036: Empujador
+    400038: Empujador.001
+    400040: Empujador_end
+    400042: flecos de caja
+    400044: flecos de caja_end
+    400046: giratoria
+    400048: giratoria_end
+    400050: las cosas que se abren
+    400052: las cosas que se abren_end
+    400054: root
+    2100000: Material.041
+    2100002: Material.042
+    2100004: Material.044
+    2100006: mATERIAL METALICO PRINCIPAL.001
+    2100008: Material.056
+    2100010: Material.039
+    2100012: Mtalico.001
+    2100014: Material.009
+    2100016: Material.021
+    2100018: Material.040
+    2100020: Material.036
+    2100022: Material.057
+    2100024: Material.051
+    2100026: mADERA tEXTURA.002
+    2100028: Material.048
+    2100030: Material.050
+    2100032: Material de carton moviendose
+    2100034: Material que cambia de color
+    2100036: Metal_Contenedor_Azul.001
+    2100038: Carton_Base2.001
+    2100040: Carton_Gris.001
+    2100042: Carton_Base3.001
+    2100044: Carton_Base1.001
+    2100046: mATERIAL METALICO PRINCIPAL.002
+    2100048: Material.043
+    4300000: Cube
+    7400000: Armature.001|Armature.001Action
+    9500000: //RootNode
+    13700000: Cube
+    2186277476908879412: ImportLogs
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 1
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
