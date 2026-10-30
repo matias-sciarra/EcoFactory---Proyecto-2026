@@ -387,7 +387,9 @@ private void ActualizarUIMaquina()
 }
 else
 {
-    Debug.LogError("imgMaquina sigue siendo NULL");
+    Debug.LogError(
+        "BuildManager sin Image asignada: " + gameObject.name,
+        this);
 }
 }
 
