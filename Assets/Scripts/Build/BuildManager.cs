@@ -144,29 +144,6 @@ public class BuildManager : MonoBehaviour
         }
     }
 
-        // Fuera del modo construccion Q y E no hacen nada aca:
-        // los usa el resto del juego (E para agarrar basura, Q para mejorar cintas)
-        if (!buildMode)
-            return;
-
-        if (Input.GetKeyDown(KeyCode.Q))
-            SeleccionarMaquina(indiceSeleccionado - 1);
-        else if (Input.GetKeyDown(KeyCode.E))
-            SeleccionarMaquina(indiceSeleccionado + 1);
-
-        // Atajos numericos 1 / 2 / 3 (los que ya estaban)
-        for (int i = 0; i < maquinas.Length && i < 9; i++)
-        {
-            if (Input.GetKeyDown(KeyCode.Alpha1 + i))
-                SeleccionarMaquina(i);
-        }
-        if (economyManager != null && economyManager.dinero != ultimoDinero)
-        {
-            ultimoDinero = economyManager.dinero;
-            ActualizarUIMaquina();
-        }
-    }
-
     // ---------- Seleccion de maquina ----------
 
     // Cambia la maquina seleccionada. El indice es circular: -1 pasa a la ultima
