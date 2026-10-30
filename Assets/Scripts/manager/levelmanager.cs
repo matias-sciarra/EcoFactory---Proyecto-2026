@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class levelmanager : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class levelmanager : MonoBehaviour
     public economymanager economymanager;
     public int nivelpordinero;
     public static levelmanager instance;
+    public TextMeshProUGUI txtnivel;
 
     [Header("estandares de niveles")]
     public int nivel1 = 0;
@@ -15,7 +17,7 @@ public class levelmanager : MonoBehaviour
     public int nivel3 = 10000;
     public int nivel4 = 50000;
 
-    void awake()
+    void Awake()
     {
         instance = this;
     }
@@ -52,7 +54,18 @@ public class levelmanager : MonoBehaviour
         {
             currentLevel = nivelpordinero;
         }
+
+        Actualizartexto();
     }
+
+    void Actualizartexto()
+    {
+        if(currentLevel != null && txtnivel != null)
+            txtnivel.text = currentLevel.ToString();
+
+    }
+
+    
 
     
 }

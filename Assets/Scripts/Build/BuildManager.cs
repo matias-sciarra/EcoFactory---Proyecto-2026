@@ -117,6 +117,14 @@ public class BuildManager : MonoBehaviour
         {
             ultimoNivel = nivel;
             Actualizartienda();
+
+            // Si el nivel baja (al gastar plata) y la maquina seleccionada se bloquea, saltar a la siguiente disponible
+            if (!desbloqueada(indiceSeleccionado))
+            {
+                int libre = SiguienteDesbloqueda(indiceSeleccionado, 1);
+                if (libre >= 0) SeleccionarMaquina(libre);
+            }
+
             ActualizarUIMaquina();
         }
 
@@ -414,12 +422,17 @@ else
         return -1;
     }
 
+    // Las maquinas bloqueadas no se ocultan: su boton queda visible pero deshabilitado
     void Actualizartienda()
     {
         for(int i = 0; i < maquinas.Length; i++)
         {
-            if(maquinas[i] != null && maquinas[i].Botontienda != null)
-                maquinas[i].Botontienda.SetActive(desbloqueada(i));
+            if (maquinas[i] == null || maquinas[i].Botontienda == null)
+                continue;
+
+            Button boton = maquinas[i].Botontienda.GetComponent<Button>();
+            if (boton != null)
+                boton.interactable = desbloqueada(i);
         }
     }
 
