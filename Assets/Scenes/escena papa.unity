@@ -3007,6 +3007,33 @@ MonoBehaviour:
     vecesComprada: 0
     nivelnecesario: 0
     Botontienda: {fileID: 0}
+  - prefab: {fileID: 7128346485260446514, guid: 3622188829d450a40aff8c2e5805653c,
+      type: 3}
+    imagenUI: {fileID: 21300000, guid: 152a94580b75ef24b802e33cb0f963f9, type: 3}
+    precioBase: 90
+    vecesComprada: 0
+    nivelnecesario: 0
+    Botontienda: {fileID: 0}
+  - prefab: {fileID: 3833663958449313625, guid: 3a29a2580a27deb459f8e5ad8ee19dce,
+      type: 3}
+    imagenUI: {fileID: 21300000, guid: 152a94580b75ef24b802e33cb0f963f9, type: 3}
+    precioBase: 90
+    vecesComprada: 0
+    nivelnecesario: 0
+    Botontienda: {fileID: 0}
+  - prefab: {fileID: 8988840256470619056, guid: 806a45e18a67bdc4a866900b6fb46622,
+      type: 3}
+    imagenUI: {fileID: 21300000, guid: 152a94580b75ef24b802e33cb0f963f9, type: 3}
+    precioBase: 90
+    vecesComprada: 0
+    nivelnecesario: 0
+    Botontienda: {fileID: 0}
+  - prefab: {fileID: 142565973421850979, guid: 70e0fc960647f544e950018e756933ef, type: 3}
+    imagenUI: {fileID: 21300000, guid: 152a94580b75ef24b802e33cb0f963f9, type: 3}
+    precioBase: 90
+    vecesComprada: 0
+    nivelnecesario: 0
+    Botontienda: {fileID: 0}
   indiceSeleccionado: 0
 --- !u!4 &1847342026
 Transform:
