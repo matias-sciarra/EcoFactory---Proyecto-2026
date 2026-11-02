@@ -112,63 +112,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &151585113
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 100012, guid: 8eac2589b47e0334a956382d4d1971ba, type: 3}
-      propertyPath: m_Name
-      value: 3ra maquina de carton
-      objectReference: {fileID: 0}
-    - target: {fileID: 400012, guid: 8eac2589b47e0334a956382d4d1971ba, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 7.28
-      objectReference: {fileID: 0}
-    - target: {fileID: 400012, guid: 8eac2589b47e0334a956382d4d1971ba, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 400012, guid: 8eac2589b47e0334a956382d4d1971ba, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 2.3197548
-      objectReference: {fileID: 0}
-    - target: {fileID: 400012, guid: 8eac2589b47e0334a956382d4d1971ba, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400012, guid: 8eac2589b47e0334a956382d4d1971ba, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400012, guid: 8eac2589b47e0334a956382d4d1971ba, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400012, guid: 8eac2589b47e0334a956382d4d1971ba, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 400012, guid: 8eac2589b47e0334a956382d4d1971ba, type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 400012, guid: 8eac2589b47e0334a956382d4d1971ba, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400012, guid: 8eac2589b47e0334a956382d4d1971ba, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400012, guid: 8eac2589b47e0334a956382d4d1971ba, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 8eac2589b47e0334a956382d4d1971ba, type: 3}
 --- !u!1 &482132483
 GameObject:
   m_ObjectHideFlags: 0
@@ -259,179 +202,8 @@ Transform:
   m_LocalScale: {x: 4.4631, y: 4.4631, z: 4.4631}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &547695426
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 100000, guid: 8852b1db8dae17a4eb304c3b16af97c2, type: 3}
-      propertyPath: m_Name
-      value: 3ra maquina de plastico
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 8852b1db8dae17a4eb304c3b16af97c2, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 3.0367851
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 8852b1db8dae17a4eb304c3b16af97c2, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2.2043101e-16
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 8852b1db8dae17a4eb304c3b16af97c2, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -9.927329
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 8852b1db8dae17a4eb304c3b16af97c2, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 8852b1db8dae17a4eb304c3b16af97c2, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 8852b1db8dae17a4eb304c3b16af97c2, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 8852b1db8dae17a4eb304c3b16af97c2, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 8852b1db8dae17a4eb304c3b16af97c2, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 8852b1db8dae17a4eb304c3b16af97c2, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 8852b1db8dae17a4eb304c3b16af97c2, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 8852b1db8dae17a4eb304c3b16af97c2, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 8852b1db8dae17a4eb304c3b16af97c2, type: 3}
---- !u!1001 &1260791176
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 100000, guid: 58078e14c361b5643a77e91b548d9a24, type: 3}
-      propertyPath: m_Name
-      value: '1ra maquina de plastico '
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 58078e14c361b5643a77e91b548d9a24, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -2.16897
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 58078e14c361b5643a77e91b548d9a24, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.0012081861
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 58078e14c361b5643a77e91b548d9a24, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -3.2549875
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 58078e14c361b5643a77e91b548d9a24, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 58078e14c361b5643a77e91b548d9a24, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 58078e14c361b5643a77e91b548d9a24, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 58078e14c361b5643a77e91b548d9a24, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 58078e14c361b5643a77e91b548d9a24, type: 3}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 58078e14c361b5643a77e91b548d9a24, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 58078e14c361b5643a77e91b548d9a24, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 58078e14c361b5643a77e91b548d9a24, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 58078e14c361b5643a77e91b548d9a24, type: 3}
---- !u!1001 &1503703353
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 100000, guid: 2b3f3d95a9f88494cae57b5e56cdfe85, type: 3}
-      propertyPath: m_Name
-      value: 3ra maquina de carton(maquina de pulpa sin texturas moviendose)
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 2b3f3d95a9f88494cae57b5e56cdfe85, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -8.64
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 2b3f3d95a9f88494cae57b5e56cdfe85, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.0470507
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 2b3f3d95a9f88494cae57b5e56cdfe85, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 9.17
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 2b3f3d95a9f88494cae57b5e56cdfe85, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 2b3f3d95a9f88494cae57b5e56cdfe85, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 2b3f3d95a9f88494cae57b5e56cdfe85, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 2b3f3d95a9f88494cae57b5e56cdfe85, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 2b3f3d95a9f88494cae57b5e56cdfe85, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 2b3f3d95a9f88494cae57b5e56cdfe85, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 2b3f3d95a9f88494cae57b5e56cdfe85, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 2b3f3d95a9f88494cae57b5e56cdfe85, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 2b3f3d95a9f88494cae57b5e56cdfe85, type: 3}
 --- !u!1001 &1937359517
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -477,7 +249,7 @@ PrefabInstance:
     - target: {fileID: 8301348219256438973, guid: d23a71d629ca2cb428e58efdcf5d4c1b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8301348219256438973, guid: d23a71d629ca2cb428e58efdcf5d4c1b,
         type: 3}
@@ -568,62 +340,281 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1001 &2144623005
+--- !u!1001 &142565973952212097
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 100000, guid: 50a68453d43dd274a82c44568419f766, type: 3}
-      propertyPath: m_Name
-      value: "2da maquina de pl\xE1stico"
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 50a68453d43dd274a82c44568419f766, type: 3}
+    - target: {fileID: 142565973421563203, guid: 70e0fc960647f544e950018e756933ef,
+        type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.1736994
+      value: 3.0367851
       objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 50a68453d43dd274a82c44568419f766, type: 3}
+    - target: {fileID: 142565973421563203, guid: 70e0fc960647f544e950018e756933ef,
+        type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.9269993e-17
+      value: 2.2043101e-16
       objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 50a68453d43dd274a82c44568419f766, type: 3}
+    - target: {fileID: 142565973421563203, guid: 70e0fc960647f544e950018e756933ef,
+        type: 3}
       propertyPath: m_LocalPosition.z
-      value: 14.03
+      value: -9.927329
       objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 50a68453d43dd274a82c44568419f766, type: 3}
+    - target: {fileID: 142565973421563203, guid: 70e0fc960647f544e950018e756933ef,
+        type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 50a68453d43dd274a82c44568419f766, type: 3}
+    - target: {fileID: 142565973421563203, guid: 70e0fc960647f544e950018e756933ef,
+        type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 50a68453d43dd274a82c44568419f766, type: 3}
+    - target: {fileID: 142565973421563203, guid: 70e0fc960647f544e950018e756933ef,
+        type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 50a68453d43dd274a82c44568419f766, type: 3}
+    - target: {fileID: 142565973421563203, guid: 70e0fc960647f544e950018e756933ef,
+        type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 50a68453d43dd274a82c44568419f766, type: 3}
+    - target: {fileID: 142565973421563203, guid: 70e0fc960647f544e950018e756933ef,
+        type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 50a68453d43dd274a82c44568419f766, type: 3}
+    - target: {fileID: 142565973421563203, guid: 70e0fc960647f544e950018e756933ef,
+        type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 50a68453d43dd274a82c44568419f766, type: 3}
+    - target: {fileID: 142565973421563203, guid: 70e0fc960647f544e950018e756933ef,
+        type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 50a68453d43dd274a82c44568419f766, type: 3}
+    - target: {fileID: 142565973421563203, guid: 70e0fc960647f544e950018e756933ef,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 142565973421850979, guid: 70e0fc960647f544e950018e756933ef,
+        type: 3}
+      propertyPath: m_Name
+      value: 3ra maquina de plastico
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 70e0fc960647f544e950018e756933ef, type: 3}
+--- !u!1001 &3833663956313114724
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3833663958448950137, guid: 3a29a2580a27deb459f8e5ad8ee19dce,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.1736994
+      objectReference: {fileID: 0}
+    - target: {fileID: 3833663958448950137, guid: 3a29a2580a27deb459f8e5ad8ee19dce,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.9269993e-17
+      objectReference: {fileID: 0}
+    - target: {fileID: 3833663958448950137, guid: 3a29a2580a27deb459f8e5ad8ee19dce,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 14.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 3833663958448950137, guid: 3a29a2580a27deb459f8e5ad8ee19dce,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3833663958448950137, guid: 3a29a2580a27deb459f8e5ad8ee19dce,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3833663958448950137, guid: 3a29a2580a27deb459f8e5ad8ee19dce,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3833663958448950137, guid: 3a29a2580a27deb459f8e5ad8ee19dce,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3833663958448950137, guid: 3a29a2580a27deb459f8e5ad8ee19dce,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3833663958448950137, guid: 3a29a2580a27deb459f8e5ad8ee19dce,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3833663958448950137, guid: 3a29a2580a27deb459f8e5ad8ee19dce,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3833663958448950137, guid: 3a29a2580a27deb459f8e5ad8ee19dce,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3833663958449313625, guid: 3a29a2580a27deb459f8e5ad8ee19dce,
+        type: 3}
+      propertyPath: m_Name
+      value: "2da maquina de pl\xE1stico"
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3a29a2580a27deb459f8e5ad8ee19dce, type: 3}
+--- !u!1001 &7128346484071581722
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7128346485260446514, guid: 3622188829d450a40aff8c2e5805653c,
+        type: 3}
+      propertyPath: m_Name
+      value: '1ra maquina de plastico '
+      objectReference: {fileID: 0}
+    - target: {fileID: 7128346485260678930, guid: 3622188829d450a40aff8c2e5805653c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.16897
+      objectReference: {fileID: 0}
+    - target: {fileID: 7128346485260678930, guid: 3622188829d450a40aff8c2e5805653c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.0012081861
+      objectReference: {fileID: 0}
+    - target: {fileID: 7128346485260678930, guid: 3622188829d450a40aff8c2e5805653c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3.2549875
+      objectReference: {fileID: 0}
+    - target: {fileID: 7128346485260678930, guid: 3622188829d450a40aff8c2e5805653c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7128346485260678930, guid: 3622188829d450a40aff8c2e5805653c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7128346485260678930, guid: 3622188829d450a40aff8c2e5805653c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7128346485260678930, guid: 3622188829d450a40aff8c2e5805653c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7128346485260678930, guid: 3622188829d450a40aff8c2e5805653c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7128346485260678930, guid: 3622188829d450a40aff8c2e5805653c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7128346485260678930, guid: 3622188829d450a40aff8c2e5805653c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7128346485260678930, guid: 3622188829d450a40aff8c2e5805653c,
+        type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 50a68453d43dd274a82c44568419f766, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 3622188829d450a40aff8c2e5805653c, type: 3}
+--- !u!1001 &8988840256319067205
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8988840256470619056, guid: 806a45e18a67bdc4a866900b6fb46622,
+        type: 3}
+      propertyPath: m_Name
+      value: 3ra maquina de carton
+      objectReference: {fileID: 0}
+    - target: {fileID: 8988840256470912912, guid: 806a45e18a67bdc4a866900b6fb46622,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 7.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 8988840256470912912, guid: 806a45e18a67bdc4a866900b6fb46622,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8988840256470912912, guid: 806a45e18a67bdc4a866900b6fb46622,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.3197548
+      objectReference: {fileID: 0}
+    - target: {fileID: 8988840256470912912, guid: 806a45e18a67bdc4a866900b6fb46622,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8988840256470912912, guid: 806a45e18a67bdc4a866900b6fb46622,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8988840256470912912, guid: 806a45e18a67bdc4a866900b6fb46622,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8988840256470912912, guid: 806a45e18a67bdc4a866900b6fb46622,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8988840256470912912, guid: 806a45e18a67bdc4a866900b6fb46622,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8988840256470912912, guid: 806a45e18a67bdc4a866900b6fb46622,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8988840256470912912, guid: 806a45e18a67bdc4a866900b6fb46622,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8988840256470912912, guid: 806a45e18a67bdc4a866900b6fb46622,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 806a45e18a67bdc4a866900b6fb46622, type: 3}
