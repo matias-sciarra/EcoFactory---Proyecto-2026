@@ -1,0 +1,34 @@
+{
+	"folders": [
+		{
+			"path": "../AgarrarObjeto"
+		},
+		{
+			"path": "../Build"
+		},
+		{
+			"path": "../Camera"
+		},
+		{
+			"path": "."
+		},
+		{
+			"path": "../economy"
+		},
+		{
+			"path": "../generator"
+		},
+		{
+			"path": "../Machine"
+		},
+		{
+			"path": "../manager"
+		},
+		{
+			"path": "../spawntest"
+		},
+		{
+			"path": "../Trash"
+		}
+	]
+}
