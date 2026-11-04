@@ -31,6 +31,7 @@ public class savemanager : MonoBehaviour
 
     private string ruta;
     private float proximoGuardado;
+    private bool cargaCompleta;
 
 
 
@@ -68,6 +69,12 @@ public class savemanager : MonoBehaviour
 
     public void guardar()
     {
+        if (!cargaCompleta)
+        {
+            Debug.LogWarning("No se guarda la partida: la carga inicial no termino, para no pisar el archivo.");
+            return;
+        }
+
         if(economia == null || buildManager == null || placement == null)
         {
             Debug.LogWarning("No se puede guardar la partida, faltan referencias.");
@@ -93,6 +100,7 @@ public class savemanager : MonoBehaviour
         if (!File.Exists(ruta))
         {
             Debug.Log("No hay partida guardada, se arranca de cero");
+            cargaCompleta = true;
             return;
         }
  
@@ -103,6 +111,12 @@ public class savemanager : MonoBehaviour
         }
  
         Partida p = JsonUtility.FromJson<Partida>(File.ReadAllText(ruta));
+
+        if (p == null)
+        {
+            Debug.LogError("SaveManager: el archivo de partida esta vacio o roto, no se sobrescribe.", this);
+            return;
+        }
  
         economia.dinero = p.dinero;
  
@@ -122,6 +136,7 @@ public class savemanager : MonoBehaviour
         }
  
         BuildManager.NotificarConstruccionCambiada();
+        cargaCompleta = true;
         Debug.Log("Partida cargada desde " + ruta);
     }
 

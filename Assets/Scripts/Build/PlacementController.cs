@@ -18,6 +18,8 @@ public class PlacementController : MonoBehaviour
         public GameObject objeto;
         public int precio;
         public int indice;
+        public Vector3Int celda;
+        public int rotacion;
     }
 
     private List<construida> construidas =
@@ -138,28 +140,35 @@ public class PlacementController : MonoBehaviour
         if (!buildManager.TryComprarSeleccionada())
             return;
 
-        Vector3 position =
-            gridManager.GridToWorld(currentCell.GridPosition);
-
-        position.y = 0  ;
-
-        Quaternion rotation =
-            Quaternion.Euler(0, rotationSteps * 90f, 0);
-
         GameObject building =
-            Instantiate(buildingPrefab, position, rotation);
-
-        building.SetActive(true);
-        currentCell.Occupy(building);
+            Construir(buildingPrefab, currentCell, rotationSteps);
 
         construidas.Add(new construida
         {   
             objeto = building,
             precio = preciopagado,
-            indice = indice
+            indice = indice,
+            celda = currentCell.GridPosition,
+            rotacion = rotationSteps
         });
 
         BuildManager.NotificarConstruccionCambiada();
+    }
+
+    private GameObject Construir(GameObject prefab, GridCell cell, int rot)
+    {
+        Vector3 position = gridManager.GridToWorld(cell.GridPosition);
+
+        position.y = 0;
+
+        Quaternion rotation = Quaternion.Euler(0, rot * 90f, 0);
+
+        GameObject building = Instantiate(prefab, position, rotation);
+
+        building.SetActive(true);
+        cell.Occupy(building);
+
+        return building;
     }
 
     // ---------------- ELIMINAR MÁQUINA ----------------
@@ -295,5 +304,58 @@ public class PlacementController : MonoBehaviour
             previewObject.transform.position = position;
             previewObject.SetActive(true);
         }
+    }
+
+    public List<MaquinaGuardada> ExportarConstrucciones()
+    {
+        List<MaquinaGuardada> lista = new List<MaquinaGuardada>();
+
+        foreach (construida c in construidas)
+        {
+            if (c.objeto == null)
+                continue;
+
+            lista.Add(new MaquinaGuardada
+            {
+                tipo = c.indice,
+                x = c.celda.x,
+                y = c.celda.y,
+                z = c.celda.z,
+                rotacion = c.rotacion,
+                precio = c.precio
+            });
+        }
+
+        return lista;
+    }
+
+    public void ColocarSinCobrar(MaquinaGuardada m)
+    {
+        if (m == null || buildManager == null || gridManager == null)
+            return;
+
+        GameObject prefab = buildManager.GetPrefab(m.tipo);
+        GridCell cell = gridManager.GetCell(new Vector3Int(m.x, m.y, m.z));
+
+        if (prefab == null || cell == null || cell.IsOccupied)
+        {
+            Debug.LogWarning(
+                "No se restaura la maquina tipo " + m.tipo +
+                " en la celda " + m.x + ", " + m.z +
+                ": falta el prefab, no hay celda o esta ocupada."
+            );
+            return;
+        }
+
+        GameObject building = Construir(prefab, cell, m.rotacion);
+
+        construidas.Add(new construida
+        {
+            objeto = building,
+            precio = m.precio,
+            indice = m.tipo,
+            celda = cell.GridPosition,
+            rotacion = m.rotacion
+        });
     }
 }
