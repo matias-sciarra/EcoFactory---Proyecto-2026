@@ -40,6 +40,11 @@ public class MachineSlot : MonoBehaviour
     private bool avisoCapasVacias;
     private float proximoChequeo;
 
+    [Header("Animations")]
+    public Animator animator;
+    public AnimationClip animacion;
+    public string estadoAnimacion = "Procesar";
+
     void OnEnable()
     {
         BuildManager.OnConstruccionCambiada += PedirRecalculo;
@@ -117,9 +122,18 @@ public class MachineSlot : MonoBehaviour
     private IEnumerator ProcessRoutine()
     {
         isProcessing = true;
-        yield return new WaitForSeconds(processTime);
 
-        while(true)
+        float duracion = processTime;
+
+        if (animator != null && animacion != null)
+        {
+            animator.Play(estadoAnimacion);
+            duracion = animacion.length;
+        }
+
+        yield return new WaitForSeconds(duracion);
+
+        while (true)
         {
             detectarbelt();
             if (CintaLibre())
@@ -129,6 +143,7 @@ public class MachineSlot : MonoBehaviour
 
         SpawnOutput();
         isProcessing = false;
+        
     }
 
     private bool CintaLibre()
