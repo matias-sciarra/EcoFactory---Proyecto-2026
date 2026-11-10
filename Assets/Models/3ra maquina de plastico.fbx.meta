@@ -102,7 +102,112 @@ ModelImporter:
     7400000: Armature|ArmatureAction.001
     9500000: //RootNode
     13700000: Cube.003
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material nuevo de azul
+    second: {fileID: 2100000, guid: 9b8a0b1b13a13ca4288b2ebe76596a60, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material thrusters.001
+    second: {fileID: 2100000, guid: 0981a578e493b1c4ca8d20e7be654446, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.033
+    second: {fileID: 2100000, guid: 7b973ad7871ae53409fb9348825c6f2c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.035
+    second: {fileID: 2100000, guid: 8df163206673d574380fd6ebb878df55, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.038
+    second: {fileID: 2100000, guid: c061021cb9ab974488a9973475b69022, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.039
+    second: {fileID: 2100000, guid: e59557ead8156b54992e039d7282b101, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.040
+    second: {fileID: 2100000, guid: 7a40663289b050b46a51d3821ddfd992, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.048
+    second: {fileID: 2100000, guid: 08a6f77ba3b2efe40bff605d9c6867e4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.051
+    second: {fileID: 2100000, guid: bc6343a8344f6bd458f9e096b9452fba, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal Cosas 3ra maquina .001
+    second: {fileID: 2100000, guid: c2a64d33939d7c942a85fb71e4092c19, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal_Seguridad_Amarillo.003
+    second: {fileID: 2100000, guid: ce9e8d23a2ebdd34a94029121ce7f07a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal_Seguridad_Negro.003
+    second: {fileID: 2100000, guid: 8e451822045d170429c0404e52776f77, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mtalico.002
+    second: {fileID: 2100000, guid: 1d07cdccb98870e44b89f4bb6c676cff, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Nuevo material resaltante para plastico.001
+    second: {fileID: 2100000, guid: 9da5af27179d1bd4bacf1f619ebe343b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PET_Cristal_Limpio
+    second: {fileID: 2100000, guid: 1eb0bdcd9e7a37f4699b545e4c01ab3a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pellet_AmarilloAlerta.003
+    second: {fileID: 2100000, guid: 8b2ad2a9f38465f40aa7500456151d21, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pellet_AzulOscuro.003
+    second: {fileID: 2100000, guid: 2da5a0100fce0014e875f9c4e475393c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pellet_BlancoOpaco.003
+    second: {fileID: 2100000, guid: d1dda395b6bcb1f42b104b80f67f0b41, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pellet_GrisReciclado.003
+    second: {fileID: 2100000, guid: 317659aa0a1f1af43b0273e60c227aa9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pellet_VerdeToxico.003
+    second: {fileID: 2100000, guid: cd5f6f409862fb94f939b1920cd23667, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Vidrio.002
+    second: {fileID: 2100000, guid: fe470ab9c98c13b4ebe4b9421c1b51cc, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
