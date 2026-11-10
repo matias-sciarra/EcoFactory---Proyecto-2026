@@ -44,6 +44,8 @@ public class MachineSlot : MonoBehaviour
     public Animator animator;
     public AnimationClip animacion;
     public string estadoAnimacion = "Procesar";
+    public string estadoReposo = "Idle";
+    private bool avisoEstadoFaltante;
 
     void OnEnable()
     {
@@ -68,8 +70,25 @@ public class MachineSlot : MonoBehaviour
         if (txtcostomejora != null) txtcostomejora.text = GetCostoMejora(cantidadMejoras).ToString();
         if (cartelmejora != null) cartelmejora.onClick.AddListener(mejorar);
 
+        if (animator != null)
+            VolverAReposo();
+
         detectarbelt();
         proximoChequeo = Time.time + Random.Range(0f, Mathf.Max(0f, intervaloRedSeguridad));
+    }
+
+    private bool TieneEstado(string estado)
+    {
+        return animator != null
+            && !string.IsNullOrEmpty(estado)
+            && animator.HasState(0, Animator.StringToHash(estado));
+    }
+
+    private void VolverAReposo()
+    {
+        animator.speed = 1f;
+        if (TieneEstado(estadoReposo))
+            animator.Play(estadoReposo, 0, 0f);
     }
 
     void Update()
@@ -123,15 +142,28 @@ public class MachineSlot : MonoBehaviour
     {
         isProcessing = true;
 
-        float duracion = processTime;
+        bool animando = false;
 
         if (animator != null && animacion != null)
         {
-            animator.Play(estadoAnimacion);
-            duracion = animacion.length;
+            if (TieneEstado(estadoAnimacion))
+            {
+                if (processTime > 0f)
+                    animator.speed = animacion.length / processTime;
+                animator.Play(estadoAnimacion, 0, 0f);
+                animando = true;
+            }
+            else if (!avisoEstadoFaltante)
+            {
+                avisoEstadoFaltante = true;
+                Debug.LogWarning($"[{name}] El Animator no tiene el estado '{estadoAnimacion}', se procesa sin animación", this);
+            }
         }
 
-        yield return new WaitForSeconds(duracion);
+        yield return new WaitForSeconds(processTime);
+
+        if (animando)
+            VolverAReposo();
 
         while (true)
         {
