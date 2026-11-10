@@ -1,0 +1,283 @@
+fileFormatVersion: 2
+guid: e3d7c69d862177140b812a1705a310ee
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Cube
+    100002: Cube.001
+    100004: Cube.017
+    100006: dustbin
+    100008: dustbin.001
+    100010: dustbin.002
+    100012: //RootNode
+    100014: Icosphere
+    100016: Icosphere.001
+    100018: Icosphere.002
+    100020: Icosphere.003
+    100022: Plane
+    100024: Plane.001
+    100026: Plane.002
+    100028: Plane.003
+    100030: Rejas.006
+    400000: Cube
+    400002: Cube.001
+    400004: Cube.017
+    400006: dustbin
+    400008: dustbin.001
+    400010: dustbin.002
+    400012: //RootNode
+    400014: Icosphere
+    400016: Icosphere.001
+    400018: Icosphere.002
+    400020: Icosphere.003
+    400022: Plane
+    400024: Plane.001
+    400026: Plane.002
+    400028: Plane.003
+    400030: Rejas.006
+    2100000: Material.005
+    2100002: Material
+    2100004: Material.013
+    2100006: Material.007
+    2100008: Material.011
+    2100010: Material.010
+    2100012: Material de techo
+    2100014: Material.009
+    2100016: No Name
+    2100018: Material.001
+    2100020: Material.002
+    2100022: Material.003
+    2100024: Material.004
+    2100026: Material.006
+    2100028: Material.008
+    2100030: ecofactory logo
+    2100032: Negro.002
+    2100034: Negro.001
+    2100036: matel
+    2300000: Cube
+    2300002: Cube.001
+    2300004: Cube.017
+    2300006: dustbin
+    2300008: dustbin.001
+    2300010: dustbin.002
+    2300012: Icosphere
+    2300014: Icosphere.001
+    2300016: Icosphere.002
+    2300018: Icosphere.003
+    2300020: Plane
+    2300022: Plane.001
+    2300024: Plane.002
+    2300026: Plane.003
+    2300028: Rejas.006
+    3300000: Cube
+    3300002: Cube.001
+    3300004: Cube.017
+    3300006: dustbin
+    3300008: dustbin.001
+    3300010: dustbin.002
+    3300012: Icosphere
+    3300014: Icosphere.001
+    3300016: Icosphere.002
+    3300018: Icosphere.003
+    3300020: Plane
+    3300022: Plane.001
+    3300024: Plane.002
+    3300026: Plane.003
+    3300028: Rejas.006
+    4300000: Cube
+    4300002: Cube.001
+    4300004: Cube.017
+    4300006: Icosphere
+    4300008: Icosphere.001
+    4300010: Icosphere.002
+    4300012: Icosphere.003
+    4300014: Plane
+    4300016: Plane.001
+    4300018: Plane.002
+    4300020: Plane.003
+    4300022: Rejas.006
+    4300024: dustbin
+    4300026: dustbin.001
+    4300028: dustbin.002
+    2186277476908879412: ImportLogs
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: 4bb4c503c741c324fa9ad8e4f2f71468, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material de techo
+    second: {fileID: 2100000, guid: f3918044da032f142a3487b0a33d09fd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.001
+    second: {fileID: 2100000, guid: 4c90c5b35994df142bc002e65f824ec3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.002
+    second: {fileID: 2100000, guid: 3835fb20a13e7db4e963c327c95beb6f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.003
+    second: {fileID: 2100000, guid: bb10837a80e12aa4ebee92965e610543, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.004
+    second: {fileID: 2100000, guid: 4bead48e684cd1b47a4547d1ed71aed5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.005
+    second: {fileID: 2100000, guid: b7ba69a77fce736499edf8fe99dc8b32, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.006
+    second: {fileID: 2100000, guid: 5b372c070d41735449ff12e3b821141d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.007
+    second: {fileID: 2100000, guid: 5a56d611e39d2424ea00e4b58dd30667, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.008
+    second: {fileID: 2100000, guid: b2350301523e38943bc3999fb09b47a3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.009
+    second: {fileID: 2100000, guid: 99bfa0cc59f265946bde79ced58dcab5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.010
+    second: {fileID: 2100000, guid: 8106870182c9f77478c99e143e9a981f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.011
+    second: {fileID: 2100000, guid: b95284b01108039449a26e499b1f124a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.013
+    second: {fileID: 2100000, guid: 727fdc03a70eca744bc18787498c16a9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Negro.001
+    second: {fileID: 2100000, guid: 96efb8666bc5cd74eadd8a5915383ceb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Negro.002
+    second: {fileID: 2100000, guid: 9e02dd6690b7da34a8c84a16e324f985, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: 5cca0caf22d67de45b0e0eabfb89430f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ecofactory logo
+    second: {fileID: 2100000, guid: 0872a7628920bf244b84989ab24b7246, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: matel
+    second: {fileID: 2100000, guid: 032400bfd885a3941a312f3212a4b1cc, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
