@@ -781,7 +781,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a7e230f2919e1146ac6d7bb26d54f53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Prefabtrash: {fileID: 0}
+  Prefabtrash: {fileID: 3490963828292567112, guid: a429f50e21c121a4da0405b66dc1de6b, type: 3}
   intervalo: 2
   primeraCinta: {fileID: 1570410576}
 --- !u!1 &1976217673

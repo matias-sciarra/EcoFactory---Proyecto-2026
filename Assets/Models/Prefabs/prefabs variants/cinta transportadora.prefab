@@ -25,7 +25,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f33b5c8e7cfa6b24f984bd047dab6835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  beltInSequence: {fileID: 0}
+  beltInSequence: {fileID: 114962919869905896}
   beltItem: {fileID: 0}
   MachineInSequence: {fileID: 0}
   moneyMachineInSequence: {fileID: 0}
