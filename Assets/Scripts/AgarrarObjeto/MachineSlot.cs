@@ -129,6 +129,7 @@ public class MachineSlot : MonoBehaviour
 
         item.OnConsumedByMachine();
         actual++;
+        reproduciranimacion();
         if (actual >= cantidad)
         {
             actual = 0;
@@ -140,41 +141,19 @@ public class MachineSlot : MonoBehaviour
 
     private IEnumerator ProcessRoutine()
     {
-        isProcessing = true;
+    isProcessing = true;
+    yield return new WaitForSeconds(processTime);
 
-        bool animando = false;
+    while (true)
+    {
+        detectarbelt();
+        if (CintaLibre())
+            break;
+        yield return null;
+    }
 
-        if (animator != null && animacion != null)
-        {
-            if (TieneEstado(estadoAnimacion))
-            {
-                if (processTime > 0f)
-                    animator.speed = animacion.length / processTime;
-                animator.Play(estadoAnimacion, 0, 0f);
-                animando = true;
-            }
-            else if (!avisoEstadoFaltante)
-            {
-                avisoEstadoFaltante = true;
-                Debug.LogWarning($"[{name}] El Animator no tiene el estado '{estadoAnimacion}', se procesa sin animación", this);
-            }
-        }
-
-        yield return new WaitForSeconds(processTime);
-
-        if (animando)
-            VolverAReposo();
-
-        while (true)
-        {
-            detectarbelt();
-            if (CintaLibre())
-                break;
-            yield return null;
-        }
-
-        SpawnOutput();
-        isProcessing = false;
+    SpawnOutput();
+    isProcessing = false;
         
     }
 
@@ -303,6 +282,22 @@ public class MachineSlot : MonoBehaviour
     private int GetCostoMejora(int mejoras)
     {
         return Mathf.RoundToInt(costomejora * Mathf.Pow(MULTIPLICADOR_MEJORA, mejoras));
+    }
+
+    public void reproduciranimacion()
+    {
+        if(!TieneEstado(estadoAnimacion))
+        {
+            if (!avisoEstadoFaltante)
+            {
+                avisoEstadoFaltante = true;
+                Debug.LogWarning($"[{name}] No se encontró el estado de animación '{estadoAnimacion}' en el Animator", this);
+            }
+            return;
+        }
+
+        animator.speed = 1f;
+        animator.Play(estadoAnimacion, 0, 0f);
     }
 
 
