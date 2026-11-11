@@ -34,6 +34,8 @@ public class BuildManager : MonoBehaviour
     private int ultimoDinero = -1;
     private int ultimoNivel = -1;
     private const float PORCENTAJE_DEVOLUCION = 0.7f;
+    public GameObject techo;
+    private Renderer techoRenderer;
 
     // Array fijo de 3 maquinas, con sus precios base 100 / 150 / 200
     public MaquinaConstruible[] maquinas = new MaquinaConstruible[CANTIDAD_MAQUINAS]
@@ -94,6 +96,8 @@ public class BuildManager : MonoBehaviour
 
         if (player != null)
             characterController = player.GetComponent<CharacterController>();
+        if(techo != null)
+            techoRenderer = techo.GetComponent<Renderer>();
 
         buildModeActivo = false;
         if (txtMaquina != null) txtMaquina.gameObject.SetActive(false);
@@ -281,6 +285,8 @@ void EnterBuildMode()
     oldPlayerRotation = player.transform.rotation;
     oldCameraLocalPosition = fpsCamera.localPosition;
     oldCameraLocalRotation = fpsCamera.localRotation;
+    techoRenderer.enabled = false;
+    
 
     fpsController.enabled = false;
     player.transform.rotation = Quaternion.identity;
