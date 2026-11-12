@@ -1,0 +1,224 @@
+fileFormatVersion: 2
+guid: 4c5df7aaa01c8c748abb6e5e11584a02
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Lava
+    100002: Maquina Fundidora de Metales
+    100004: Maquina Fundidora de Metales.002
+    100006: Maquina Fundidora de Metales.003
+    100008: Maquina Fundidora de Metales.004
+    100010: Maquina Fundidora de Metales.005
+    100012: Maquina Fundidora de Metales.007
+    100014: Maquina Fundidora de Metales.009
+    100016: Maquina Fundidora de Metales.010
+    100018: Maquina Fundidora de Metales.011
+    100020: Maquina Fundidora de Metales.012
+    100022: Maquina Fundidora de Metales.014
+    100024: Maquina Fundidora de Metales.015
+    100026: Maquina Fundidora de Metales.016
+    100028: Maquina Fundidora de Metales.017
+    100030: Maquina Fundidora de Metales.018
+    100032: Maquina Fundidora de Metales.019
+    100034: Maquina Fundidora de Metales.020
+    100036: Maquina Fundidora de Metales.021
+    100038: Maquina Fundidora de Metales.022
+    100040: //RootNode
+    100042: Vidrio
+    400000: Lava
+    400002: Maquina Fundidora de Metales
+    400004: Maquina Fundidora de Metales.002
+    400006: Maquina Fundidora de Metales.003
+    400008: Maquina Fundidora de Metales.004
+    400010: Maquina Fundidora de Metales.005
+    400012: Maquina Fundidora de Metales.007
+    400014: Maquina Fundidora de Metales.009
+    400016: Maquina Fundidora de Metales.010
+    400018: Maquina Fundidora de Metales.011
+    400020: Maquina Fundidora de Metales.012
+    400022: Maquina Fundidora de Metales.014
+    400024: Maquina Fundidora de Metales.015
+    400026: Maquina Fundidora de Metales.016
+    400028: Maquina Fundidora de Metales.017
+    400030: Maquina Fundidora de Metales.018
+    400032: Maquina Fundidora de Metales.019
+    400034: Maquina Fundidora de Metales.020
+    400036: Maquina Fundidora de Metales.021
+    400038: Maquina Fundidora de Metales.022
+    400040: //RootNode
+    400042: Vidrio
+    2100000: Lava
+    2100002: Cable.003
+    2100004: Metal Rejilla
+    2100006: Negro.001
+    2100008: Negro Entrada
+    2100010: Material.004
+    2100012: Metal Barra
+    2100014: Negro Tubos
+    2100016: Tubos
+    2100018: Metal
+    2100020: Piso Fundidora
+    2100022: Techo Fundidora
+    2100024: Negro Salida
+    2100026: No Name
+    2100028: Puertita.001
+    2100030: Manijita.001
+    2100032: Boton rojo.001
+    2100034: Boton Verde.002
+    2100036: Boton Amarillo.001
+    2100038: Puertita electricidad.001
+    2100040: Manijita Electricidad.001
+    2100042: Cable.002
+    2100044: VidrioVerde
+    2300000: Lava
+    2300002: Maquina Fundidora de Metales
+    2300004: Maquina Fundidora de Metales.002
+    2300006: Maquina Fundidora de Metales.003
+    2300008: Maquina Fundidora de Metales.004
+    2300010: Maquina Fundidora de Metales.005
+    2300012: Maquina Fundidora de Metales.007
+    2300014: Maquina Fundidora de Metales.009
+    2300016: Maquina Fundidora de Metales.010
+    2300018: Maquina Fundidora de Metales.011
+    2300020: Maquina Fundidora de Metales.012
+    2300022: Maquina Fundidora de Metales.014
+    2300024: Maquina Fundidora de Metales.015
+    2300026: Maquina Fundidora de Metales.016
+    2300028: Maquina Fundidora de Metales.017
+    2300030: Maquina Fundidora de Metales.018
+    2300032: Maquina Fundidora de Metales.019
+    2300034: Maquina Fundidora de Metales.020
+    2300036: Maquina Fundidora de Metales.021
+    2300038: Maquina Fundidora de Metales.022
+    2300040: Vidrio
+    3300000: Lava
+    3300002: Maquina Fundidora de Metales
+    3300004: Maquina Fundidora de Metales.002
+    3300006: Maquina Fundidora de Metales.003
+    3300008: Maquina Fundidora de Metales.004
+    3300010: Maquina Fundidora de Metales.005
+    3300012: Maquina Fundidora de Metales.007
+    3300014: Maquina Fundidora de Metales.009
+    3300016: Maquina Fundidora de Metales.010
+    3300018: Maquina Fundidora de Metales.011
+    3300020: Maquina Fundidora de Metales.012
+    3300022: Maquina Fundidora de Metales.014
+    3300024: Maquina Fundidora de Metales.015
+    3300026: Maquina Fundidora de Metales.016
+    3300028: Maquina Fundidora de Metales.017
+    3300030: Maquina Fundidora de Metales.018
+    3300032: Maquina Fundidora de Metales.019
+    3300034: Maquina Fundidora de Metales.020
+    3300036: Maquina Fundidora de Metales.021
+    3300038: Maquina Fundidora de Metales.022
+    3300040: Vidrio
+    4300000: Lava
+    4300002: Maquina Fundidora de Metales
+    4300004: Maquina Fundidora de Metales.002
+    4300006: Maquina Fundidora de Metales.003
+    4300008: Maquina Fundidora de Metales.004
+    4300010: Maquina Fundidora de Metales.005
+    4300012: Maquina Fundidora de Metales.007
+    4300014: Maquina Fundidora de Metales.009
+    4300016: Maquina Fundidora de Metales.010
+    4300018: Maquina Fundidora de Metales.011
+    4300020: Maquina Fundidora de Metales.012
+    4300022: Maquina Fundidora de Metales.014
+    4300024: Maquina Fundidora de Metales.015
+    4300026: Maquina Fundidora de Metales.016
+    4300028: Maquina Fundidora de Metales.017
+    4300030: Maquina Fundidora de Metales.018
+    4300032: Maquina Fundidora de Metales.019
+    4300034: Maquina Fundidora de Metales.020
+    4300036: Maquina Fundidora de Metales.021
+    4300038: Maquina Fundidora de Metales.022
+    4300040: Vidrio
+    7400000: Lava|Cube|CubeAction
+    7400002: Lava|LavaAction
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

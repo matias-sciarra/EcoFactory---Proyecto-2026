@@ -1,0 +1,243 @@
+fileFormatVersion: 2
+guid: b210935ccc656d94d8f249a6134b4150
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: "Animaci\xF3n Aplastador"
+    100002: Base
+    100004: Base_end
+    100006: Cube.001
+    100008: Cylinder.001
+    100010: Cylinder.002
+    100012: Duro
+    100014: Duro.001
+    100016: Duro.001_end
+    100018: //RootNode
+    100020: Maquina Compactadora de Metales.002
+    100022: Palos
+    100024: Palos_end
+    400000: "Animaci\xF3n Aplastador"
+    400002: Base
+    400004: Base_end
+    400006: Cube.001
+    400008: Cylinder.001
+    400010: Cylinder.002
+    400012: Duro
+    400014: Duro.001
+    400016: Duro.001_end
+    400018: //RootNode
+    400020: Maquina Compactadora de Metales.002
+    400022: Palos
+    400024: Palos_end
+    2100000: Metal Aplastador
+    2100002: Cobre aplastador
+    2100004: Metal Tubos
+    2100006: Metal Derretido
+    2100008: Cartel
+    2100010: Metal Entrada
+    2100012: Negro
+    2100014: Negro tubo
+    2100016: Tubo.001
+    2100018: Metal Circulitos
+    2100020: Metal Cubos
+    2100022: Negro.001
+    2100024: metal Cilindros
+    2100026: Metal Rejiilla
+    2100028: Metal Cuadradito.001
+    2100030: Metal Cuadradito
+    2100032: Metal Base
+    2100034: Negro Base
+    2100036: Metal Base.001
+    2300000: Maquina Compactadora de Metales.002
+    3300000: Maquina Compactadora de Metales.002
+    4300000: Cube.001
+    4300002: Cylinder.001
+    4300004: Cylinder.002
+    4300006: Maquina Compactadora de Metales.002
+    7400000: "Animaci\xF3n Aplastador|ArmatureAction"
+    7400002: Maquina Compactadora de Metales.002|Cube.005Action.003
+    9500000: //RootNode
+    13700000: Cube.001
+    13700002: Cylinder.001
+    13700004: Cylinder.002
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cartel
+    second: {fileID: 2100000, guid: 1639c4319829d454dbc199655dd3ffa0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cobre aplastador
+    second: {fileID: 2100000, guid: 6da7b648475726d4bb8d585eda4df6b3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal Aplastador
+    second: {fileID: 2100000, guid: b92c5b7e176a5014a87f1dbbc115a8ac, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal Base
+    second: {fileID: 2100000, guid: 35b7b87220d98da4e9b5f58d93204df7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal Base.001
+    second: {fileID: 2100000, guid: b67d07da5b4c00b4bb83fd8c85911098, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal Circulitos
+    second: {fileID: 2100000, guid: 08407591ff582af44b347a1d49e1a19e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal Cuadradito
+    second: {fileID: 2100000, guid: 27707ed9101feff4b8eb1eb65c99cf0e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal Cuadradito.001
+    second: {fileID: 2100000, guid: 6d553f29e9e7e9f4f866c7c07dde6659, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal Cubos
+    second: {fileID: 2100000, guid: d8b7593775ad3914fb028ee8e9aa018e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal Derretido
+    second: {fileID: 2100000, guid: 4a7639c72637c5c48ba7ccaf33d13a28, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal Entrada
+    second: {fileID: 2100000, guid: d849888d0dd60614cb35719b9cd282ef, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal Rejiilla
+    second: {fileID: 2100000, guid: 492eddd64750ab846a071085e7dd0f55, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal Tubos
+    second: {fileID: 2100000, guid: 3b34d087db0a92d4f9121e62eea83bce, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Negro
+    second: {fileID: 2100000, guid: 68559dd750eeb9340825970741f8879e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Negro Base
+    second: {fileID: 2100000, guid: 0091dcf186b0d574195a30e06954e81d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Negro tubo
+    second: {fileID: 2100000, guid: c36df4507660efa42aeecb4c09871c6d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Negro.001
+    second: {fileID: 2100000, guid: c2ca4addc16881a4e8d115de57301cf6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tubo.001
+    second: {fileID: 2100000, guid: 941f2d047a0395546a8277875d1f78b8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metal Cilindros
+    second: {fileID: 2100000, guid: e1ae9cda256153d489afcf36e9bc6ea0, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

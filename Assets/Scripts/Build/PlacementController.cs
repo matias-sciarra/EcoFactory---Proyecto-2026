@@ -78,7 +78,7 @@ public class PlacementController : MonoBehaviour
                     Vector3 previewPos =
                         gridManager.GridToWorld(currentCell.GridPosition);
 
-                    previewPos.y = 0;
+                    previewPos.y = hit.point.y;
                     previewObject.transform.position = previewPos;
                     previewObject.SetActive(true);
                 }

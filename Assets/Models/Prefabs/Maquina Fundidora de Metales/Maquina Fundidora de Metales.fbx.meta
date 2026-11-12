@@ -1,0 +1,261 @@
+fileFormatVersion: 2
+guid: 6fcaf667523e17e498a02e64e57c2aff
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Lava
+    100002: //RootNode
+    100004: Maquina Fundidora de Metales
+    100006: Metal
+    400000: Lava
+    400002: //RootNode
+    400004: Maquina Fundidora de Metales
+    400006: Metal
+    2100000: Lava
+    2100002: Gris Circulos.004
+    2100004: Metal Rejilla
+    2100006: Negro.001
+    2100008: Negro Entrada
+    2100010: Material.004
+    2100012: Gris Circulos.003
+    2100014: Metal Barra
+    2100016: Metal Barra.001
+    2100018: Gris Circulos.005
+    2100020: Negro Tubos
+    2100022: Tubos
+    2100024: Metal
+    2100026: Negro Salida
+    2100028: Fundidora
+    2100030: Puertita.001
+    2100032: Manijita.001
+    2100034: Boton rojo.001
+    2100036: Boton Verde.002
+    2100038: Boton Amarillo.001
+    2100040: Puertita electricidad.001
+    2100042: Manijita Electricidad.001
+    2100044: Cable.002
+    2100046: Cable.003
+    2100048: Metal No Ferroso
+    2300000: Lava
+    2300002: Maquina Fundidora de Metales
+    2300004: Metal
+    3300000: Lava
+    3300002: Maquina Fundidora de Metales
+    3300004: Metal
+    4300000: Lava
+    4300002: Maquina Fundidora de Metales
+    4300004: Metal
+    7400000: Lava|Cube|CubeAction
+    7400002: Lava|LavaAction
+    9500000: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Boton Amarillo.001
+    second: {fileID: 2100000, guid: 938447d9ae6889b4b8f3fe89f1b46898, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Boton Verde.002
+    second: {fileID: 2100000, guid: 9b2f4df5302fc2347a7a10d508275e9d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Boton rojo.001
+    second: {fileID: 2100000, guid: 0f7c700ac30d00a4e9ea7cad71bb920b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cable.002
+    second: {fileID: 2100000, guid: 7b5a6299f62058d48a82967f9b66c476, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cable.003
+    second: {fileID: 2100000, guid: 62fac85f5d8a38f4c92987b32754e2f3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Fundidora
+    second: {fileID: 2100000, guid: 34730d5f96b17a04c96e41803d57b0a6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Gris Circulos.003
+    second: {fileID: 2100000, guid: 388e294fa47910742a966346455bb2ce, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Gris Circulos.004
+    second: {fileID: 2100000, guid: 15554c9b5c56e8b438ac327042ac1b85, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Gris Circulos.005
+    second: {fileID: 2100000, guid: bdee393e937b4794a88541b7d641bb59, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lava
+    second: {fileID: 2100000, guid: 679f31e32e4836840818c92a837f106f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Manijita Electricidad.001
+    second: {fileID: 2100000, guid: 292d363b5c9de5f4995112350069d071, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Manijita.001
+    second: {fileID: 2100000, guid: e6779cb94b84aa748829fc7bc87ef6b1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.004
+    second: {fileID: 2100000, guid: 388164456f6ea6742a50758d5902b67e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal
+    second: {fileID: 2100000, guid: 51fd8c1e3eaab794cbe2443369671f53, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal Barra
+    second: {fileID: 2100000, guid: 98daa5db2f6672842902d393b8e81ab3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal Barra.001
+    second: {fileID: 2100000, guid: 317382313a78c5240a18466a10cbb0a7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal No Ferroso
+    second: {fileID: 2100000, guid: 03cdf62f0a703b44d90f80f47457fc82, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal Rejilla
+    second: {fileID: 2100000, guid: b4a4915baa6f83946a33d3c5be44893c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Negro Entrada
+    second: {fileID: 2100000, guid: 24b73f7c43e786646b7c8d0e96fea704, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Negro Salida
+    second: {fileID: 2100000, guid: 2c2379df3584cb1479edf119a1892866, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Negro Tubos
+    second: {fileID: 2100000, guid: 6999f66f8a10d3d4f8cad259cde29bec, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Negro.001
+    second: {fileID: 2100000, guid: 2dab303e1d966b846a1f86c39004034e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Puertita electricidad.001
+    second: {fileID: 2100000, guid: 85f198cdfb6e7fc468342be5da534c49, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Puertita.001
+    second: {fileID: 2100000, guid: 2967270afe9778f42946e703275eb2d2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tubos
+    second: {fileID: 2100000, guid: 58b635325d29a854ebaa982c08e63e85, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

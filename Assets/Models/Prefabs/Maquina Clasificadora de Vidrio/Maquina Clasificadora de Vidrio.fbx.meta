@@ -1,0 +1,302 @@
+fileFormatVersion: 2
+guid: 6394bb5c682600742998d9876aed5b06
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Animacion Clasificadora Vidrio
+    100002: Bone
+    100004: Bone 1
+    100006: Bone 2
+    100008: Bone 3
+    100010: Bone 4
+    100012: Bone 5
+    100014: Bone 6
+    100016: Bone_end
+    100018: Bone_end 1
+    100020: Bone_end 2
+    100022: Bone_end 3
+    100024: Bone_end 4
+    100026: Bone_end 5
+    100028: Bone_end 6
+    100030: Impureza
+    100032: Impureza.001
+    100034: Impureza.002
+    100036: Impureza.003
+    100038: Impureza.004
+    100040: Impureza.005
+    100042: Maquina Clasificadora
+    100044: //RootNode
+    100046: Tacho de Basura
+    100048: Tapa
+    100050: Vidrio_019_impureza_0
+    100052: Vidrio_019_impureza_0.001
+    100054: Vidrio_019_impureza_0.003
+    100056: Vidrio_019_impureza_0.006
+    100058: Vidrio_019_impureza_0.008
+    100060: Vidrio_019_impureza_0.009
+    400000: Animacion Clasificadora Vidrio
+    400002: Bone
+    400004: Bone 1
+    400006: Bone 2
+    400008: Bone 3
+    400010: Bone 4
+    400012: Bone 5
+    400014: Bone 6
+    400016: Bone_end
+    400018: Bone_end 1
+    400020: Bone_end 2
+    400022: Bone_end 3
+    400024: Bone_end 4
+    400026: Bone_end 5
+    400028: Bone_end 6
+    400030: Impureza
+    400032: Impureza.001
+    400034: Impureza.002
+    400036: Impureza.003
+    400038: Impureza.004
+    400040: Impureza.005
+    400042: Maquina Clasificadora
+    400044: //RootNode
+    400046: Tacho de Basura
+    400048: Tapa
+    400050: Vidrio_019_impureza_0
+    400052: Vidrio_019_impureza_0.001
+    400054: Vidrio_019_impureza_0.003
+    400056: Vidrio_019_impureza_0.006
+    400058: Vidrio_019_impureza_0.008
+    400060: Vidrio_019_impureza_0.009
+    2100000: Metal Verde Clarito
+    2100002: Metal Verde Medio
+    2100004: Blanco.001
+    2100006: Blanco Tabla.001
+    2100008: Gris Tabla.001
+    2100010: Negro.001
+    2100012: Boton Rojo.001
+    2100014: Boton Verde.001
+    2100016: Tacho
+    2100018: Tapa Tacho
+    2100020: Impureza.001
+    2100022: Impureza.003
+    2100024: Impureza.006
+    2100026: Impureza.008
+    2100028: Impureza.009
+    2300000: Maquina Clasificadora
+    2300002: Tacho de Basura
+    2300004: Tapa
+    3300000: Maquina Clasificadora
+    3300002: Tacho de Basura
+    3300004: Tapa
+    4300000: Maquina Clasificadora
+    4300002: Tacho de Basura
+    4300004: Tapa
+    4300006: Vidrio_019_impureza_0
+    4300008: Vidrio_019_impureza_0.001
+    4300010: Vidrio_019_impureza_0.003
+    4300012: Vidrio_019_impureza_0.006
+    4300014: Vidrio_019_impureza_0.008
+    4300016: Vidrio_019_impureza_0.009
+    7400000: Impureza|Impureza.001Action
+    7400002: Impureza|Impureza.002Action
+    7400004: Impureza|Impureza.003Action
+    7400006: Impureza|Impureza.004Action
+    7400008: Impureza|Impureza.005Action
+    7400010: Impureza|ImpurezaAction
+    7400012: Impureza.001|Impureza.001Action
+    7400014: Impureza.001|Impureza.002Action
+    7400016: Impureza.001|Impureza.003Action
+    7400018: Impureza.001|Impureza.004Action
+    7400020: Impureza.001|Impureza.005Action
+    7400022: Impureza.001|ImpurezaAction
+    7400024: Impureza.002|Impureza.001Action
+    7400026: Impureza.002|Impureza.002Action
+    7400028: Impureza.002|Impureza.003Action
+    7400030: Impureza.002|Impureza.004Action
+    7400032: Impureza.002|Impureza.005Action
+    7400034: Impureza.002|ImpurezaAction
+    7400036: Impureza.003|Impureza.001Action
+    7400038: Impureza.003|Impureza.002Action
+    7400040: Impureza.003|Impureza.003Action
+    7400042: Impureza.003|Impureza.004Action
+    7400044: Impureza.003|Impureza.005Action
+    7400046: Impureza.003|ImpurezaAction
+    7400048: Impureza.004|Impureza.001Action
+    7400050: Impureza.004|Impureza.002Action
+    7400052: Impureza.004|Impureza.003Action
+    7400054: Impureza.004|Impureza.004Action
+    7400056: Impureza.004|Impureza.005Action
+    7400058: Impureza.004|ImpurezaAction
+    7400060: Impureza.005|Impureza.001Action
+    7400062: Impureza.005|Impureza.002Action
+    7400064: Impureza.005|Impureza.003Action
+    7400066: Impureza.005|Impureza.004Action
+    7400068: Impureza.005|Impureza.005Action
+    7400070: Impureza.005|ImpurezaAction
+    7400072: Maquina Clasificadora|Cube.005Action.016
+    9500000: //RootNode
+    13700000: Vidrio_019_impureza_0
+    13700002: Vidrio_019_impureza_0.001
+    13700004: Vidrio_019_impureza_0.003
+    13700006: Vidrio_019_impureza_0.006
+    13700008: Vidrio_019_impureza_0.008
+    13700010: Vidrio_019_impureza_0.009
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Blanco Tabla.001
+    second: {fileID: 2100000, guid: de578e970e8f6c14dbf4b9ba9854513c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Blanco.001
+    second: {fileID: 2100000, guid: 7224c49176fcff74d8ccfcde5dc5856c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Boton Rojo.001
+    second: {fileID: 2100000, guid: 6d10177181987e14ba41161e7fcdfc9a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Boton Verde.001
+    second: {fileID: 2100000, guid: f4832748f769ec04dbea8698d0b2218b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Gris Tabla.001
+    second: {fileID: 2100000, guid: 3967f324f2dccbf4f84982ba33d37d71, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Impureza.001
+    second: {fileID: 2100000, guid: 1c96d81fb5e3cab4c8ec824da2e0fa86, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Impureza.003
+    second: {fileID: 2100000, guid: 2d122fad7d774c24ebcdad1873ce43b5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Impureza.006
+    second: {fileID: 2100000, guid: 4ba4e5b43d4394f4b80ca241772e9f26, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Impureza.008
+    second: {fileID: 2100000, guid: 450e27f59b4fa2b46afb5d6edd24bb5f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Impureza.009
+    second: {fileID: 2100000, guid: ffb1a8ed8fcb80e40a7a266acf621ae9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal Verde Clarito
+    second: {fileID: 2100000, guid: 454a255031ff3ca4aa31649eaa91857c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal Verde Medio
+    second: {fileID: 2100000, guid: 8dc751e7bc62e3047a59a5cf54175de6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Negro.001
+    second: {fileID: 2100000, guid: 8b71eaebc20ad404bac4921f3ccfdbd3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tacho
+    second: {fileID: 2100000, guid: d3a3bb8711707f14a9069701324db449, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tapa Tacho
+    second: {fileID: 2100000, guid: b2767926db40ddf46968b0bc2ad1b55d, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
