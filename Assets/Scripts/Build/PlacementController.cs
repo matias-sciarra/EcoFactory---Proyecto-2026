@@ -42,6 +42,14 @@ public class PlacementController : MonoBehaviour
             return;
 
         Ray ray = playerCamera.ScreenPointToRay(Input.mousePosition);
+        if (Input.GetMouseButtonDown(0))
+{
+    RaycastHit prueba;
+    if (Physics.Raycast(ray, out prueba, 1000f))
+        Debug.Log($"El mouse apunta a {prueba.collider.name}, capa {LayerMask.LayerToName(prueba.collider.gameObject.layer)}, a {prueba.distance} de distancia");
+    else
+        Debug.Log("El rayo del mouse no toca nada");
+}
 
         if (Physics.Raycast(ray, out RaycastHit hit, 100f, groundLayer))
         {
@@ -159,7 +167,7 @@ public class PlacementController : MonoBehaviour
     {
         Vector3 position = gridManager.GridToWorld(cell.GridPosition);
 
-        position.y = 0;
+        position.y = AlturaPisoEn(position);
 
         Quaternion rotation = Quaternion.Euler(0, rot * 90f, 0);
 
@@ -299,7 +307,7 @@ public class PlacementController : MonoBehaviour
             Vector3 position =
                 gridManager.GridToWorld(currentCell.GridPosition);
 
-            position.y = 0;
+            position.y = AlturaPisoEn(position);
 
             previewObject.transform.position = position;
             previewObject.SetActive(true);
@@ -357,5 +365,13 @@ public class PlacementController : MonoBehaviour
             celda = cell.GridPosition,
             rotacion = m.rotacion
         });
+    }
+
+    private float AlturaPisoEn(Vector3 pos)
+    {
+        RaycastHit h;
+        if (Physics.Raycast(pos + Vector3.up * 50f, Vector3.down, out h, 100f, groundLayer))
+            return h.point.y;
+        return pos.y;
     }
 }
