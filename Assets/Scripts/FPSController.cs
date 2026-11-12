@@ -3,7 +3,7 @@ using UnityEngine;
 /// <summary>
 /// Controlador FPS en primera persona para Unity 2018.
 /// Requiere un CharacterController en el mismo GameObject.
-/// La cámara debe ser hija del jugador (ver instrucciones abajo).
+/// La cámara debe ser hija del jugador.
 /// </summary>
 [RequireComponent(typeof(CharacterController))]
 public class FPSController : MonoBehaviour
@@ -12,7 +12,7 @@ public class FPSController : MonoBehaviour
     public float walkSpeed = 5f;
     public float runSpeed = 8f;
     public float jumpHeight = 1.5f;
-    public float gravity = -19.62f; // -9.81 * 2, se siente mejor en juegos
+    public float gravity = -19.62f;
 
     [Header("Mirada / Cámara")]
     public Camera playerCamera;
@@ -32,103 +32,105 @@ public class FPSController : MonoBehaviour
 
     private CharacterController controller;
     private Vector3 velocity;
-    private float verticalRotation = 0f;
+    private float verticalRotation;
     private bool isGrounded;
     private float defaultCameraY;
-    private float bobTimer = 0f;
+    private float bobTimer;
+    private bool controlEnabled;
 
-    void Start()
+    private void Awake()
     {
         controller = GetComponent<CharacterController>();
+    }
 
-        // Bloquear y ocultar el cursor
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-
+    private void Start()
+    {
         if (playerCamera != null)
-        {
             defaultCameraY = playerCamera.transform.localPosition.y;
+
+        // El menú decide cuándo activar el control y capturar el cursor.
+        SetControlEnabled(false);
+    }
+
+    public void SetControlEnabled(bool enabled)
+    {
+        controlEnabled = enabled;
+
+        if (controlEnabled)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
     }
 
-    void Update()
+    private void Update()
     {
+        if (!controlEnabled)
+            return;
+
         HandleGroundCheck();
         HandleMouseLook();
         HandleMovement();
         HandleHeadBob();
 
-        // Permitir liberar el cursor con Escape (útil para pausar/testear)
+        // Escape libera el cursor. Pulsarlo otra vez lo vuelve a capturar.
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Cursor.lockState = Cursor.lockState == CursorLockMode.Locked
-                ? CursorLockMode.None
-                : CursorLockMode.Locked;
-            Cursor.visible = !Cursor.visible;
+            bool shouldLock = Cursor.lockState != CursorLockMode.Locked;
+            Cursor.lockState = shouldLock ? CursorLockMode.Locked : CursorLockMode.None;
+            Cursor.visible = !shouldLock;
         }
     }
 
-    void HandleGroundCheck()
+    private void HandleGroundCheck()
     {
-        if (groundCheck != null)
-        {
-            isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
-        }
-        else
-        {
-            isGrounded = controller.isGrounded;
-        }
+        isGrounded = groundCheck != null
+            ? Physics.CheckSphere(groundCheck.position, groundDistance, groundMask)
+            : controller.isGrounded;
 
         if (isGrounded && velocity.y < 0)
-        {
-            velocity.y = -2f; // pequeña fuerza para mantenerlo pegado al suelo
-        }
+            velocity.y = -2f;
     }
 
-    void HandleMouseLook()
+    private void HandleMouseLook()
     {
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * (invertY ? 1f : -1f);
 
-        // Rotar el cuerpo del jugador en el eje horizontal (Y)
         transform.Rotate(Vector3.up * mouseX);
-
-        // Rotar la cámara en el eje vertical (X), con límite
         verticalRotation += mouseY;
         verticalRotation = Mathf.Clamp(verticalRotation, -maxLookAngle, maxLookAngle);
 
         if (playerCamera != null)
-        {
             playerCamera.transform.localRotation = Quaternion.Euler(verticalRotation, 0f, 0f);
-        }
     }
 
-    void HandleMovement()
+    private void HandleMovement()
     {
-        float horizontal = Input.GetAxis("Horizontal"); // A/D
-        float vertical = Input.GetAxis("Vertical");     // W/S
-
+        float horizontal = Input.GetAxis("Horizontal");
+        float vertical = Input.GetAxis("Vertical");
         Vector3 move = transform.right * horizontal + transform.forward * vertical;
-
         bool isRunning = Input.GetKey(KeyCode.LeftShift);
         float currentSpeed = isRunning ? runSpeed : walkSpeed;
 
         controller.Move(move * currentSpeed * Time.deltaTime);
 
-        // Salto
         if (Input.GetButtonDown("Jump") && isGrounded)
-        {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
-        }
 
-        // Gravedad
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
     }
 
-    void HandleHeadBob()
+    private void HandleHeadBob()
     {
-        if (!enableHeadBob || playerCamera == null) return;
+        if (!enableHeadBob || playerCamera == null)
+            return;
 
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
@@ -137,10 +139,8 @@ public class FPSController : MonoBehaviour
         if (isMoving)
         {
             bobTimer += Time.deltaTime * bobFrequency;
-            float bobOffset = Mathf.Sin(bobTimer) * bobAmplitude;
-
             Vector3 camPos = playerCamera.transform.localPosition;
-            camPos.y = defaultCameraY + bobOffset;
+            camPos.y = defaultCameraY + Mathf.Sin(bobTimer) * bobAmplitude;
             playerCamera.transform.localPosition = camPos;
         }
         else
@@ -152,7 +152,7 @@ public class FPSController : MonoBehaviour
         }
     }
 
-    void OnDrawGizmosSelected()
+    private void OnDrawGizmosSelected()
     {
         if (groundCheck != null)
         {
