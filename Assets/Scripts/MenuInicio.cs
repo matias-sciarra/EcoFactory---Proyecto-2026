@@ -1,9 +1,11 @@
-﻿using UnityEngine;
+﻿
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
-/// <summary>
-/// Controla el paso del menú inicial al juego en la misma escena.
-/// En esta primera etapa solo implementa Nueva partida.
-/// </summary>
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
+
 public class MenuInicio : MonoBehaviour
 {
     [SerializeField] private GameObject panelMenu;
@@ -17,7 +19,7 @@ public class MenuInicio : MonoBehaviour
         if (raizJugador != null)
             raizJugador.SetActive(false);
         else
-            Debug.LogError("MenuInicio: asigna el objeto raíz Player al campo Raiz Jugador.");
+            Debug.LogError("MenuInicio: asigna el objeto raíz Player.");
 
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
@@ -27,7 +29,27 @@ public class MenuInicio : MonoBehaviour
     {
         if (raizJugador == null)
         {
-            Debug.LogError("MenuInicio: asigna el objeto raíz Player al campo Raiz Jugador.");
+            Debug.LogError("MenuInicio: asigna el objeto raíz Player.");
+            return;
+        }
+
+        // Borra el progreso anterior
+        PlayerPrefs.DeleteKey("PartidaGuardada");
+
+        if (panelMenu != null)
+            panelMenu.SetActive(false);
+
+        raizJugador.SetActive(true);
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
+
+    public void Continuar()
+    {
+        if (PlayerPrefs.GetInt("PartidaGuardada", 0) == 0)
+        {
+            Debug.Log("No hay ninguna partida guardada.");
             return;
         }
 
@@ -35,7 +57,22 @@ public class MenuInicio : MonoBehaviour
             panelMenu.SetActive(false);
 
         raizJugador.SetActive(true);
+
+        // Aquí posteriormente cargaremos la posición
+        // y el progreso de la partida.
+
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+    }
+
+    public void Salir()
+    {
+        Debug.Log("Saliendo del juego...");
+
+        #if UNITY_EDITOR
+        EditorApplication.isPlaying = false;
+        #else
+        Application.Quit();
+        #endif
     }
 }
