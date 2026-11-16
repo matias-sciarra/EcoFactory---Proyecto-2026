@@ -356,6 +356,11 @@ public class Belt : MonoBehaviour
                     if (!destinoSlot.PuedeAceptar(grabbable))
                         yield break;
                 }
+                else if (destinoMoney == null && destinoMaquina != null)
+                {
+                    if (!destinoMaquina.PuedeRecibir())
+                        yield break;
+                }
 
                 Transform machineTransform = destinoMoney != null
                     ? destinoMoney.transform
@@ -391,7 +396,7 @@ public class Belt : MonoBehaviour
                 else if (destinoSlot != null)
                     entregado = destinoSlot.TryInsert(grabbable);
                 else
-                    destinoMaquina.ReceiveTrash(item);
+                    entregado = destinoMaquina.ReceiveTrash(item);
 
                 if (entregado)
                 {

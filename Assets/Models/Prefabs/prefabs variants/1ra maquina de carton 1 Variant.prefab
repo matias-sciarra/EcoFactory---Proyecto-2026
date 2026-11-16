@@ -1,0 +1,104 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &114270806584790664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2742158258148557992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d039e9effc427ea4e91d5a350740bdd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  acceptedItemId: 
+  outputPrefab: {fileID: 0}
+  processTime: 1.5
+  cantidad: 3
+  actual: 0
+  primeraCinta: {fileID: 0}
+  capasconectadas:
+    serializedVersion: 2
+    m_Bits: 0
+  distanciamax: 123
+  alturaRayo: 0
+  puntoSalida: {fileID: 0}
+  autoConectar: 1
+  intervaloRedSeguridad: 2
+  debugConexiones: 0
+  angulorayo: 90
+  cartelmejora: {fileID: 0}
+  txtcostomejora: {fileID: 0}
+  costomejora: 300
+  radiodetection: 5
+  distanciacerca: 2
+  manager: {fileID: 0}
+  jugador: {fileID: 0}
+  animator: {fileID: 0}
+  animacion: {fileID: 0}
+  estadoAnimacion: Procesar
+  estadoReposo: Idle
+--- !u!1001 &2742158258148524552
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 100000, guid: fed8c813dbf4f864eb1ba1986235536f, type: 3}
+      propertyPath: m_Name
+      value: 1ra maquina de carton 1 Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: fed8c813dbf4f864eb1ba1986235536f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -11.636724
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: fed8c813dbf4f864eb1ba1986235536f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: fed8c813dbf4f864eb1ba1986235536f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 8.820761
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: fed8c813dbf4f864eb1ba1986235536f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: fed8c813dbf4f864eb1ba1986235536f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: fed8c813dbf4f864eb1ba1986235536f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: fed8c813dbf4f864eb1ba1986235536f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: fed8c813dbf4f864eb1ba1986235536f, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: fed8c813dbf4f864eb1ba1986235536f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: fed8c813dbf4f864eb1ba1986235536f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: fed8c813dbf4f864eb1ba1986235536f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fed8c813dbf4f864eb1ba1986235536f, type: 3}
+--- !u!1 &2742158258148557992 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: fed8c813dbf4f864eb1ba1986235536f,
+    type: 3}
+  m_PrefabInstance: {fileID: 2742158258148524552}
+  m_PrefabAsset: {fileID: 0}

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: cfb03f834fc6d49408bfc6d5ea143c8f
+guid: 0d6aa46d0e840a84cb4e6b04dd74573c
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -89,7 +89,132 @@ ModelImporter:
     9500000: //RootNode
     13700000: Cube
     2186277476908879412: ImportLogs
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Carton_Base1.001
+    second: {fileID: 2100000, guid: 77d0e23788602d841b062bfafbe83eec, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Carton_Base2.001
+    second: {fileID: 2100000, guid: 0562f22d78cb13b4cbce820c7232e19d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Carton_Base3.001
+    second: {fileID: 2100000, guid: 8f39cb4c6c8ae4f46a65a77fdf5c8cc0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Carton_Gris.001
+    second: {fileID: 2100000, guid: c344773500951e943859cf58c68cf9ab, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material de carton moviendose
+    second: {fileID: 2100000, guid: a1b556ae744f99643a74e594087f3ec0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material que cambia de color
+    second: {fileID: 2100000, guid: 9b3f068c1a558fc4298128143a2f7b65, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.009
+    second: {fileID: 2100000, guid: 299cd3b3e79fb1b468adb05f5afc4118, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.021
+    second: {fileID: 2100000, guid: 9dee9b1ac8ea8524fa74ab2769f1ed0c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.036
+    second: {fileID: 2100000, guid: 5338d04a04bf6a74ca1d8246217f45d4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.039
+    second: {fileID: 2100000, guid: ed502b3fe5b90db469eb921730a624af, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.040
+    second: {fileID: 2100000, guid: 68864ae9b2f955242a56cba93e3767a4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.041
+    second: {fileID: 2100000, guid: f9575b11567e1024ca35737d5422a895, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.042
+    second: {fileID: 2100000, guid: d758bfa53a0bdb24f937c61f65795c96, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.043
+    second: {fileID: 2100000, guid: 01469bf88837a54428eff85c84e371c4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.044
+    second: {fileID: 2100000, guid: bd3b034d38b8fde47921fdb701108101, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.048
+    second: {fileID: 2100000, guid: 9512f3b6414c52942a03afb498561450, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.050
+    second: {fileID: 2100000, guid: 94765288616a9d24eb25d47c091d8468, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.051
+    second: {fileID: 2100000, guid: 2575c8b37f345074eb67f5509e177fae, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.056
+    second: {fileID: 2100000, guid: 1704c8497c2ce7541be36f707673268b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.057
+    second: {fileID: 2100000, guid: 7899665606f03c148bb61ea04b842b8c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal_Contenedor_Azul.001
+    second: {fileID: 2100000, guid: 241336522c245b048815ffa36beaa32b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mtalico.001
+    second: {fileID: 2100000, guid: 745268bb1f753ec4aa70e0293a12c5d9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mADERA tEXTURA.002
+    second: {fileID: 2100000, guid: da2683f9ae88f4b4ba90f224e19a19a2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mATERIAL METALICO PRINCIPAL.001
+    second: {fileID: 2100000, guid: f1b9f4bcfa812574b8881fedcff26bb6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mATERIAL METALICO PRINCIPAL.002
+    second: {fileID: 2100000, guid: 31111d740236a80448baea954b6d12ce, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -122,7 +247,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1

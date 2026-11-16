@@ -1,0 +1,314 @@
+fileFormatVersion: 2
+guid: ca4c430d87179864e9580667938ad7ad
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Maquina Clasificadora.001
+    100004: Maquina Clasificadora.002
+    100006: Maquina Clasificadora.003
+    100008: Maquina Clasificadora.004
+    100010: Maquina Clasificadora.005
+    100012: Maquina Clasificadora.006
+    100014: Maquina Clasificadora.007
+    100016: Maquina Clasificadora.008
+    100018: Maquina Clasificadora.009
+    100020: Maquina Clasificadora.010
+    400000: //RootNode
+    400002: Maquina Clasificadora.001
+    400004: Maquina Clasificadora.002
+    400006: Maquina Clasificadora.003
+    400008: Maquina Clasificadora.004
+    400010: Maquina Clasificadora.005
+    400012: Maquina Clasificadora.006
+    400014: Maquina Clasificadora.007
+    400016: Maquina Clasificadora.008
+    400018: Maquina Clasificadora.009
+    400020: Maquina Clasificadora.010
+    2100000: Boton Blanco.001
+    2100002: Metal Cilindros
+    2100004: Metal
+    2100006: Cobre.001
+    2100008: Blanco Tabla.001
+    2100010: Gris Tabla.001
+    2100012: Blanco.001
+    2100014: Negro.001
+    2100016: Boton Rojo.001
+    2100018: Boton Verde.001
+    2300000: Maquina Clasificadora.001
+    2300002: Maquina Clasificadora.002
+    2300004: Maquina Clasificadora.003
+    2300006: Maquina Clasificadora.004
+    2300008: Maquina Clasificadora.005
+    2300010: Maquina Clasificadora.006
+    2300012: Maquina Clasificadora.007
+    2300014: Maquina Clasificadora.008
+    2300016: Maquina Clasificadora.009
+    2300018: Maquina Clasificadora.010
+    3300000: Maquina Clasificadora.001
+    3300002: Maquina Clasificadora.002
+    3300004: Maquina Clasificadora.003
+    3300006: Maquina Clasificadora.004
+    3300008: Maquina Clasificadora.005
+    3300010: Maquina Clasificadora.006
+    3300012: Maquina Clasificadora.007
+    3300014: Maquina Clasificadora.008
+    3300016: Maquina Clasificadora.009
+    3300018: Maquina Clasificadora.010
+    4300000: Maquina Clasificadora.001
+    4300002: Maquina Clasificadora.002
+    4300004: Maquina Clasificadora.003
+    4300006: Maquina Clasificadora.004
+    4300008: Maquina Clasificadora.005
+    4300010: Maquina Clasificadora.006
+    4300012: Maquina Clasificadora.007
+    4300014: Maquina Clasificadora.008
+    4300016: Maquina Clasificadora.009
+    4300018: Maquina Clasificadora.010
+    6400000: Maquina Clasificadora.001
+    6400002: Maquina Clasificadora.002
+    6400004: Maquina Clasificadora.003
+    6400006: Maquina Clasificadora.004
+    6400008: Maquina Clasificadora.005
+    6400010: Maquina Clasificadora.006
+    6400012: Maquina Clasificadora.007
+    6400014: Maquina Clasificadora.008
+    6400016: Maquina Clasificadora.009
+    6400018: Maquina Clasificadora.010
+    7400000: Maquina Clasificadora.001|Cube.005Action.001
+    7400002: Maquina Clasificadora.001|Cube.005Action.002
+    7400004: Maquina Clasificadora.001|Cube.005Action.004
+    7400006: Maquina Clasificadora.001|Cube.005Action.005
+    7400008: Maquina Clasificadora.001|Cube.005Action.006
+    7400010: Maquina Clasificadora.001|Cube.005Action.007
+    7400012: Maquina Clasificadora.001|Cube.005Action.008
+    7400014: Maquina Clasificadora.001|Cube.005Action.009
+    7400016: Maquina Clasificadora.001|Cube.005Action.010
+    7400018: Maquina Clasificadora.001|Cube.005Action.011
+    7400020: Maquina Clasificadora.002|Cube.005Action.001
+    7400022: Maquina Clasificadora.002|Cube.005Action.002
+    7400024: Maquina Clasificadora.002|Cube.005Action.004
+    7400026: Maquina Clasificadora.002|Cube.005Action.005
+    7400028: Maquina Clasificadora.002|Cube.005Action.006
+    7400030: Maquina Clasificadora.002|Cube.005Action.007
+    7400032: Maquina Clasificadora.002|Cube.005Action.008
+    7400034: Maquina Clasificadora.002|Cube.005Action.009
+    7400036: Maquina Clasificadora.002|Cube.005Action.010
+    7400038: Maquina Clasificadora.002|Cube.005Action.011
+    7400040: Maquina Clasificadora.003|Cube.005Action.001
+    7400042: Maquina Clasificadora.003|Cube.005Action.002
+    7400044: Maquina Clasificadora.003|Cube.005Action.004
+    7400046: Maquina Clasificadora.003|Cube.005Action.005
+    7400048: Maquina Clasificadora.003|Cube.005Action.006
+    7400050: Maquina Clasificadora.003|Cube.005Action.007
+    7400052: Maquina Clasificadora.003|Cube.005Action.008
+    7400054: Maquina Clasificadora.003|Cube.005Action.009
+    7400056: Maquina Clasificadora.003|Cube.005Action.010
+    7400058: Maquina Clasificadora.003|Cube.005Action.011
+    7400060: Maquina Clasificadora.004|Cube.005Action.001
+    7400062: Maquina Clasificadora.004|Cube.005Action.002
+    7400064: Maquina Clasificadora.004|Cube.005Action.004
+    7400066: Maquina Clasificadora.004|Cube.005Action.005
+    7400068: Maquina Clasificadora.004|Cube.005Action.006
+    7400070: Maquina Clasificadora.004|Cube.005Action.007
+    7400072: Maquina Clasificadora.004|Cube.005Action.008
+    7400074: Maquina Clasificadora.004|Cube.005Action.009
+    7400076: Maquina Clasificadora.004|Cube.005Action.010
+    7400078: Maquina Clasificadora.004|Cube.005Action.011
+    7400080: Maquina Clasificadora.005|Cube.005Action.001
+    7400082: Maquina Clasificadora.005|Cube.005Action.002
+    7400084: Maquina Clasificadora.005|Cube.005Action.004
+    7400086: Maquina Clasificadora.005|Cube.005Action.005
+    7400088: Maquina Clasificadora.005|Cube.005Action.006
+    7400090: Maquina Clasificadora.005|Cube.005Action.007
+    7400092: Maquina Clasificadora.005|Cube.005Action.008
+    7400094: Maquina Clasificadora.005|Cube.005Action.009
+    7400096: Maquina Clasificadora.005|Cube.005Action.010
+    7400098: Maquina Clasificadora.005|Cube.005Action.011
+    7400100: Maquina Clasificadora.006|Cube.005Action.001
+    7400102: Maquina Clasificadora.006|Cube.005Action.002
+    7400104: Maquina Clasificadora.006|Cube.005Action.004
+    7400106: Maquina Clasificadora.006|Cube.005Action.005
+    7400108: Maquina Clasificadora.006|Cube.005Action.006
+    7400110: Maquina Clasificadora.006|Cube.005Action.007
+    7400112: Maquina Clasificadora.006|Cube.005Action.008
+    7400114: Maquina Clasificadora.006|Cube.005Action.009
+    7400116: Maquina Clasificadora.006|Cube.005Action.010
+    7400118: Maquina Clasificadora.006|Cube.005Action.011
+    7400120: Maquina Clasificadora.007|Cube.005Action.001
+    7400122: Maquina Clasificadora.007|Cube.005Action.002
+    7400124: Maquina Clasificadora.007|Cube.005Action.004
+    7400126: Maquina Clasificadora.007|Cube.005Action.005
+    7400128: Maquina Clasificadora.007|Cube.005Action.006
+    7400130: Maquina Clasificadora.007|Cube.005Action.007
+    7400132: Maquina Clasificadora.007|Cube.005Action.008
+    7400134: Maquina Clasificadora.007|Cube.005Action.009
+    7400136: Maquina Clasificadora.007|Cube.005Action.010
+    7400138: Maquina Clasificadora.007|Cube.005Action.011
+    7400140: Maquina Clasificadora.008|Cube.005Action.001
+    7400142: Maquina Clasificadora.008|Cube.005Action.002
+    7400144: Maquina Clasificadora.008|Cube.005Action.004
+    7400146: Maquina Clasificadora.008|Cube.005Action.005
+    7400148: Maquina Clasificadora.008|Cube.005Action.006
+    7400150: Maquina Clasificadora.008|Cube.005Action.007
+    7400152: Maquina Clasificadora.008|Cube.005Action.008
+    7400154: Maquina Clasificadora.008|Cube.005Action.009
+    7400156: Maquina Clasificadora.008|Cube.005Action.010
+    7400158: Maquina Clasificadora.008|Cube.005Action.011
+    7400160: Maquina Clasificadora.009|Cube.005Action.001
+    7400162: Maquina Clasificadora.009|Cube.005Action.002
+    7400164: Maquina Clasificadora.009|Cube.005Action.004
+    7400166: Maquina Clasificadora.009|Cube.005Action.005
+    7400168: Maquina Clasificadora.009|Cube.005Action.006
+    7400170: Maquina Clasificadora.009|Cube.005Action.007
+    7400172: Maquina Clasificadora.009|Cube.005Action.008
+    7400174: Maquina Clasificadora.009|Cube.005Action.009
+    7400176: Maquina Clasificadora.009|Cube.005Action.010
+    7400178: Maquina Clasificadora.009|Cube.005Action.011
+    7400180: Maquina Clasificadora.010|Cube.005Action.001
+    7400182: Maquina Clasificadora.010|Cube.005Action.002
+    7400184: Maquina Clasificadora.010|Cube.005Action.004
+    7400186: Maquina Clasificadora.010|Cube.005Action.005
+    7400188: Maquina Clasificadora.010|Cube.005Action.006
+    7400190: Maquina Clasificadora.010|Cube.005Action.007
+    7400192: Maquina Clasificadora.010|Cube.005Action.008
+    7400194: Maquina Clasificadora.010|Cube.005Action.009
+    7400196: Maquina Clasificadora.010|Cube.005Action.010
+    7400198: Maquina Clasificadora.010|Cube.005Action.011
+    9500000: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Blanco Tabla.001
+    second: {fileID: 2100000, guid: c00ee5338b8300940a40feeccf74a217, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Blanco.001
+    second: {fileID: 2100000, guid: ad5ebc4670f659e4c9a9b8ff9e14f7be, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Boton Blanco.001
+    second: {fileID: 2100000, guid: 314ab7300af52f64cb69d168666d3ee0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Boton Rojo.001
+    second: {fileID: 2100000, guid: ef2babe8696aa4b47927cbf893a6f39c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Boton Verde.001
+    second: {fileID: 2100000, guid: 623e93cf56dc856428511464812400b1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cobre.001
+    second: {fileID: 2100000, guid: a32ee1ec79a5376498525a9d04003328, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Gris Tabla.001
+    second: {fileID: 2100000, guid: cb400c937c01d434d8be65d446eb5922, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal
+    second: {fileID: 2100000, guid: bf4ac4363007da04cb53d28f45221fbe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal Cilindros
+    second: {fileID: 2100000, guid: b7372964efe25404290b75f05b20f282, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Negro.001
+    second: {fileID: 2100000, guid: 0f11b22a1f46b424aa09d3204efd65b2, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 1
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

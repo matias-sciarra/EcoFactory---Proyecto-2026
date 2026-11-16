@@ -13,6 +13,44 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.5462136, y: 3.1306586, z: 2.540967}
   m_Center: {x: -0.06368902, y: 1.5665376, z: -0.033605278}
+--- !u!114 &114336606837819974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7128346485260446514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbf404f7d0153044ba55b4761d11d65b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  residuoproscesado: {fileID: 0}
+  primeraCinta: {fileID: 0}
+  manager: {fileID: 0}
+  dineroPorResiduo: 100
+  capasconectadas:
+    serializedVersion: 2
+    m_Bits: 0
+  distanciamax: 7
+  alturaRayo: 0
+  puntoSalida: {fileID: 0}
+  autoConectar: 1
+  intervaloRedSeguridad: 2
+  debugConexiones: 0
+  angulorayo: 90
+  cartelmejora: {fileID: 0}
+  txtcostomejora: {fileID: 0}
+  costomejora: 300
+  aumentoVelocidadPorMejora: 0.25
+  radiodetection: 5
+  distanciacerca: 2
+  jugador: {fileID: 0}
+  animator: {fileID: 0}
+  animacion: {fileID: 0}
+  estadoAnimacion: Procesar
+  estadoReposo: Idle
+  tiempoSinAnimacion: 0.5
 --- !u!1001 &7128346485260545426
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22,7 +60,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: 58078e14c361b5643a77e91b548d9a24, type: 3}
       propertyPath: m_Name
-      value: '1ra maquina de plastico '
+      value: 1ra maquina de plastico  Variant
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 58078e14c361b5643a77e91b548d9a24, type: 3}
       propertyPath: m_LocalPosition.x

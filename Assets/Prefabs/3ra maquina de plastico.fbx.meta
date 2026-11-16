@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a794669a4a54a414a98cf96079b09b38
+guid: 61c15ecc36c64324dbf66cbe711adeca
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -102,7 +102,112 @@ ModelImporter:
     7400000: Armature|ArmatureAction.001
     9500000: //RootNode
     13700000: Cube.003
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material nuevo de azul
+    second: {fileID: 2100000, guid: c42137f9918cce9429b7e8cdcf7becbe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material thrusters.001
+    second: {fileID: 2100000, guid: 998cf9cc23c5a724cb2d0519804ddebd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.033
+    second: {fileID: 2100000, guid: 8ec71a694a1599b43931de0c9efd148f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.035
+    second: {fileID: 2100000, guid: 136f205f55d96af4597c44fe1d9b1556, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.038
+    second: {fileID: 2100000, guid: 7899c5e1f4417cb4a91e49907da4927c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.039
+    second: {fileID: 2100000, guid: 9edafdb56cb6b274da86a0355d8861c2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.040
+    second: {fileID: 2100000, guid: 62d1ad61231c9d541a5499fce9681af2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.048
+    second: {fileID: 2100000, guid: 30d4ae53b66ab8046a7a0c1882bb2c23, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.051
+    second: {fileID: 2100000, guid: 1c752ab9d4f504743b9bab3e5f603159, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal Cosas 3ra maquina .001
+    second: {fileID: 2100000, guid: 09e286551d9a4d94e89f6e0d4d9d52e7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal_Seguridad_Amarillo.003
+    second: {fileID: 2100000, guid: 65a7eefda00d8854180952945b98dc74, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal_Seguridad_Negro.003
+    second: {fileID: 2100000, guid: b5ff155449feca344a5ee49940282bc3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mtalico.002
+    second: {fileID: 2100000, guid: 13995832983f9af4f8f620058a8a9a54, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Nuevo material resaltante para plastico.001
+    second: {fileID: 2100000, guid: d6c28d6091287c04bae1dad4b6d604d1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PET_Cristal_Limpio
+    second: {fileID: 2100000, guid: 2fc4be20f10698643aa97379adc34061, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pellet_AmarilloAlerta.003
+    second: {fileID: 2100000, guid: 767a42f7ff6e03e46b4ce8f8c0dc7d62, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pellet_AzulOscuro.003
+    second: {fileID: 2100000, guid: 27366783cf6079f4f8662a1298be2ce1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pellet_BlancoOpaco.003
+    second: {fileID: 2100000, guid: 0b3b6d1ee4ff13b478e14357d1dddf72, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pellet_GrisReciclado.003
+    second: {fileID: 2100000, guid: cfa6e4a22e417244fb400ac3d21e544a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pellet_VerdeToxico.003
+    second: {fileID: 2100000, guid: 8cd20747e14e85f4f988a7872fc22de2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Vidrio.002
+    second: {fileID: 2100000, guid: abe0bdf7bdb9e6e449ded417b9dfb7f3, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -135,7 +240,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1

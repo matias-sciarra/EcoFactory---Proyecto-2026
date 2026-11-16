@@ -78,7 +78,7 @@ public class PlacementController : MonoBehaviour
                     Vector3 previewPos =
                         gridManager.GridToWorld(currentCell.GridPosition);
 
-                    previewPos.y = hit.point.y;
+                    previewPos.y = hit.point.y; // Altura del piso en la posición del mouse
                     previewObject.transform.position = previewPos;
                     previewObject.SetActive(true);
                 }

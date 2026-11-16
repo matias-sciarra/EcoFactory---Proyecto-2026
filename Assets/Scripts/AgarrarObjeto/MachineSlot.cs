@@ -67,28 +67,14 @@ public class MachineSlot : MonoBehaviour
         if (manager == null) Debug.LogError($"[{name}] No se encontró el economymanager", this);
         if (jugador == null) Debug.LogError($"[{name}] No se encontró el PlayerGrabber", this);
 
-        if (txtcostomejora != null) txtcostomejora.text = GetCostoMejora(cantidadMejoras).ToString();
+        MaquinaUtil.MostrarCosto(txtcostomejora, costomejora, MULTIPLICADOR_MEJORA, cantidadMejoras);
         if (cartelmejora != null) cartelmejora.onClick.AddListener(mejorar);
 
         if (animator != null)
-            VolverAReposo();
+            MaquinaUtil.VolverAReposo(animator, estadoReposo);
 
         detectarbelt();
         proximoChequeo = Time.time + Random.Range(0f, Mathf.Max(0f, intervaloRedSeguridad));
-    }
-
-    private bool TieneEstado(string estado)
-    {
-        return animator != null
-            && !string.IsNullOrEmpty(estado)
-            && animator.HasState(0, Animator.StringToHash(estado));
-    }
-
-    private void VolverAReposo()
-    {
-        animator.speed = 1f;
-        if (TieneEstado(estadoReposo))
-            animator.Play(estadoReposo, 0, 0f);
     }
 
     void Update()
@@ -141,71 +127,29 @@ public class MachineSlot : MonoBehaviour
 
     private IEnumerator ProcessRoutine()
     {
-    isProcessing = true;
-    yield return new WaitForSeconds(processTime);
+        isProcessing = true;
+        yield return new WaitForSeconds(processTime);
 
-    while (true)
-    {
-        detectarbelt();
-        if (CintaLibre())
-            break;
-        yield return null;
-    }
-
-    SpawnOutput();
-    isProcessing = false;
-        
-    }
-
-    private bool CintaLibre()
-    {
-        return primeraCinta != null
-            && !primeraCinta.isSpaceTaken
-            && primeraCinta.beltItem == null;
-    }
-
-    private void SpawnOutput()
-    {
-        if (outputPrefab == null)
+        while (true)
         {
-            Debug.LogError($"[{name}] No hay outputPrefab asignado", this);
-            return;
+            detectarbelt();
+            if (MaquinaUtil.CintaLibre(primeraCinta))
+                break;
+            yield return null;
         }
 
-        GameObject nueva = Instantiate(outputPrefab, primeraCinta.GetItemPosition(), Quaternion.identity);
-        nueva.SetActive(true);
-
-        BeltItem itemcomponent = nueva.GetComponent<BeltItem>();
-        if (itemcomponent == null)
-            Debug.LogError($"[{name}] El outputPrefab no tiene BeltItem, la cinta no lo va a mover", this);
-
-        primeraCinta.beltItem = itemcomponent;
-        primeraCinta.isSpaceTaken = true;
+        MaquinaUtil.SoltarEnCinta(this, outputPrefab, "outputPrefab", primeraCinta);
+        isProcessing = false;
     }
 
     public void detectar()
     {
         if (jugador == null) return;
 
-        bool cerca = false;
-        Collider[] objetosdetectados = Physics.OverlapSphere(transform.position, radiodetection);
+        jugadorcerca = MaquinaUtil.JugadorCerca(transform.position, radiodetection, distanciacerca, jugador);
+        MaquinaUtil.MostrarCartel(cartelmejora, jugadorcerca);
 
-        foreach (Collider col in objetosdetectados)
-        {
-            if (col.CompareTag("Player"))
-            {
-                float distancia = Vector3.Distance(transform.position, col.transform.position);
-                if (distancia < distanciacerca && !jugador.IsHolding)
-                    cerca = true;
-            }
-        }
-
-        jugadorcerca = cerca;
-
-        if (cartelmejora != null)
-            cartelmejora.gameObject.SetActive(jugadorcerca);
-
-        if (jugadorcerca && !BuildManager.BuildModeActivo && Input.GetKeyDown(KeyCode.Q))
+        if (MaquinaUtil.PidioMejora(jugadorcerca))
             mejorar();
     }
 
@@ -231,74 +175,24 @@ public class MachineSlot : MonoBehaviour
             return;
 
         Belt anterior = primeraCinta;
-        primeraCinta = null;
-
-        primeraCinta = DetectarSalida().belt;
+        primeraCinta = MaquinaUtil.DetectarSalida(this, puntoSalida, alturaRayo, angulorayo, distanciamax, capasconectadas, ref avisoCapasVacias).belt;
 
         DetectorConexion.LogCambio(this, anterior, primeraCinta, debugConexiones);
     }
 
-    private void CalcularMiRayo(out Vector3 inicio, out Vector3 direccion)
-    {
-        DetectorConexion.CalcularRayo(transform, puntoSalida, alturaRayo, out inicio, out direccion);
-        direccion = Quaternion.AngleAxis(angulorayo, transform.up) * direccion;
-    }
-
-    private ResultadoConexion DetectarSalida()
-    {
-        Vector3 inicio, direccion;
-        CalcularMiRayo(out inicio, out direccion);
-        return DetectorConexion.Detectar(this, inicio, direccion, distanciamax, capasconectadas, ref avisoCapasVacias);
-    }
-
     private void OnDrawGizmos()
     {
-        Vector3 inicio, direccion;
-        CalcularMiRayo(out inicio, out direccion);
-        ResultadoConexion r = DetectorConexion.Detectar(this, inicio, direccion, distanciamax, capasconectadas, ref avisoCapasVacias);
-        DetectorConexion.DibujarRayo(inicio, direccion, distanciamax, r, r.belt != null);
+        MaquinaUtil.DibujarSalida(this, puntoSalida, alturaRayo, angulorayo, distanciamax, capasconectadas, ref avisoCapasVacias);
     }
 
     public void mejorar()
     {
-        if (manager == null)
-        {
-            Debug.LogWarning($"[{name}] No hay economymanager, no se puede comprar la mejora", this);
-            return;
-        }
-
-        int costoActual = GetCostoMejora(cantidadMejoras);
-
-        if (manager.Gastar(costoActual))
-        {
-            cantidadMejoras += 1;
+        if (MaquinaUtil.ComprarMejora(this, manager, costomejora, MULTIPLICADOR_MEJORA, ref cantidadMejoras, txtcostomejora))
             processTime = Mathf.Max(0f, processTime - 1f / 3f);
-
-            if (txtcostomejora != null)
-                txtcostomejora.text = GetCostoMejora(cantidadMejoras).ToString();
-        }
-    }
-
-    private int GetCostoMejora(int mejoras)
-    {
-        return Mathf.RoundToInt(costomejora * Mathf.Pow(MULTIPLICADOR_MEJORA, mejoras));
     }
 
     public void reproduciranimacion()
     {
-        if(!TieneEstado(estadoAnimacion))
-        {
-            if (!avisoEstadoFaltante)
-            {
-                avisoEstadoFaltante = true;
-                Debug.LogWarning($"[{name}] No se encontró el estado de animación '{estadoAnimacion}' en el Animator", this);
-            }
-            return;
-        }
-
-        animator.speed = 1f;
-        animator.Play(estadoAnimacion, 0, 0f);
+        MaquinaUtil.Reproducir(this, animator, estadoAnimacion, 1f, ref avisoEstadoFaltante);
     }
-
-
 }

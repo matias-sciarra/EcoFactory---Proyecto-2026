@@ -1,0 +1,268 @@
+fileFormatVersion: 2
+guid: a703b8d81c074594f8ef85160fde57ac
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Armature
+    100004: caja compacta
+    100006: caja compacta_end
+    100008: conjunto de elementos caja
+    100010: cuadrado empujador
+    100012: cuadrado empujador_end
+    100014: Cube
+    100016: empujador
+    100018: empujador_end
+    100020: root
+    100022: tgrozos
+    100024: tgrozos_end
+    100026: Tuerca adelante
+    100028: Tuerca adelante_end
+    100030: tuerca atras
+    100032: tuerca atras_end
+    100034: ventilador
+    100036: ventilador_end
+    400000: //RootNode
+    400002: Armature
+    400004: caja compacta
+    400006: caja compacta_end
+    400008: conjunto de elementos caja
+    400010: cuadrado empujador
+    400012: cuadrado empujador_end
+    400014: Cube
+    400016: empujador
+    400018: empujador_end
+    400020: root
+    400022: tgrozos
+    400024: tgrozos_end
+    400026: Tuerca adelante
+    400028: Tuerca adelante_end
+    400030: tuerca atras
+    400032: tuerca atras_end
+    400034: ventilador
+    400036: ventilador_end
+    2100000: Witefan
+    2100002: Mrerial rust
+    2100004: Material.016
+    2100006: black fan
+    2100008: METALIC BROWN
+    2100010: Metal Cosas
+    2100012: Material.017
+    2100014: Wire bottom
+    2100016: Material.015
+    2100018: Material
+    2100020: Material.019
+    2100022: Material.018
+    2100024: Material.020
+    2100026: Carton_Base2
+    2100028: Carton_Gris
+    2100030: Carton_Base3
+    2100032: Carton_Base1
+    2100034: Material.014
+    2100036: mADERA tEXTURA
+    2100038: Material.003
+    2100040: Material.013
+    2100042: Vidrio
+    4300000: Cube
+    7400000: Armature|ArmatureAction
+    7400002: Armature|Cube.001|Cube|CubeAction|Cube|CubeAction
+    7400004: Armature|Cube.003|Cube|CubeAction|Cube|CubeAction
+    9500000: //RootNode
+    13700000: Cube
+    2186277476908879412: ImportLogs
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Carton_Base1
+    second: {fileID: 2100000, guid: 57ccfea8c8e020c4ba8db18eaa855205, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Carton_Base2
+    second: {fileID: 2100000, guid: 59a6e5fd882b2c94e915947b7f898bc2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Carton_Base3
+    second: {fileID: 2100000, guid: fca09bc84ddc6d343becf804f61137c8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Carton_Gris
+    second: {fileID: 2100000, guid: 638a8436a8d3c724caf2612fb7de8989, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: METALIC BROWN
+    second: {fileID: 2100000, guid: b68437a88fdb4614bae9a7e98a981b4e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: e1a1d07c57eaa8949970c91520a7130e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.003
+    second: {fileID: 2100000, guid: 8ee0ef34181b91547ad13d633ef94ef4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.013
+    second: {fileID: 2100000, guid: 7ed3847947a9883438d49de7fd48099f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.014
+    second: {fileID: 2100000, guid: 00fc146b9b784f64da9aaf974754591b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.015
+    second: {fileID: 2100000, guid: a11cad00f4cee7a4fb5768b06c4c5823, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.016
+    second: {fileID: 2100000, guid: 3b221faadd07a764d96d910dd075bbed, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.017
+    second: {fileID: 2100000, guid: 55a682b170d7d8a4298df804201d3eef, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.018
+    second: {fileID: 2100000, guid: 862b8145b591095428de1301d5c04992, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.019
+    second: {fileID: 2100000, guid: b85094d6aa9f1b34d9cbad2ca855dda6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.020
+    second: {fileID: 2100000, guid: 13e3f68719a1a0a45add48e4f2351678, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal Cosas
+    second: {fileID: 2100000, guid: 4f2d95f3422a0864082b9f11371062ee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mrerial rust
+    second: {fileID: 2100000, guid: 07c6e30c35fb347419e10c242a7874dc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Vidrio
+    second: {fileID: 2100000, guid: c70a224fce922a541bfeb81d0bcaf4cc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wire bottom
+    second: {fileID: 2100000, guid: 538db37c4fbeb75429cccec9563d4e2a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Witefan
+    second: {fileID: 2100000, guid: 25da6b1f14780d140bb2f5f13aa19b2d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: black fan
+    second: {fileID: 2100000, guid: 7c59d9068e047a349b2ba820ad6bca42, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mADERA tEXTURA
+    second: {fileID: 2100000, guid: 88e7698b1f460f840a25596ad6ca3f36, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 1
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

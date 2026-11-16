@@ -1,0 +1,218 @@
+fileFormatVersion: 2
+guid: fed8c813dbf4f864eb1ba1986235536f
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Agrandador
+    100004: Agrandador_end
+    100006: Armature
+    100008: Cajas
+    100010: Cajas_end
+    100012: compresedor
+    100014: compresedor_end
+    100016: Cylinder
+    100018: Root perno, arriba
+    100020: Root todo
+    100022: Tuerca
+    100024: Tuerca 1
+    100026: Tuerca 1_end
+    100028: Tuerca_end
+    400000: //RootNode
+    400002: Agrandador
+    400004: Agrandador_end
+    400006: Armature
+    400008: Cajas
+    400010: Cajas_end
+    400012: compresedor
+    400014: compresedor_end
+    400016: Cylinder
+    400018: Root perno, arriba
+    400020: Root todo
+    400022: Tuerca
+    400024: Tuerca 1
+    400026: Tuerca 1_end
+    400028: Tuerca_end
+    2100000: mATERIAL METALICO PRINCIPAL
+    2100002: mADERA tEXTURA
+    2100004: Mtalico
+    2100006: Material.001
+    2100008: Cables
+    2100010: Material.010
+    2100012: Material.012
+    2100014: Material.011
+    2100016: Material.003
+    2100018: Material.014
+    2100020: Material.013
+    2100022: Material.006
+    2100024: Box 1
+    2100026: Material.005
+    2100028: Vidrio
+    4300000: Cylinder
+    7400000: Armature|ArmatureAction
+    7400002: Armature|Cube.001|Cube|CubeAction
+    7400004: Armature|Cube|CubeAction
+    9500000: //RootNode
+    13700000: Cylinder
+    2186277476908879412: ImportLogs
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Box 1
+    second: {fileID: 2100000, guid: 5ffa582ef6eae1e4585975078a843800, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cables
+    second: {fileID: 2100000, guid: bd22635cfded6324aa2b363c2de8a0bd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.001
+    second: {fileID: 2100000, guid: 7669013a85d0d3a4cabfe44710dad463, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.003
+    second: {fileID: 2100000, guid: 220c9fd9b2a778c4a9a5390fd66c68a6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.005
+    second: {fileID: 2100000, guid: 8831224036dbccb48884dc43f9f188c0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.006
+    second: {fileID: 2100000, guid: b0ce93354fac05d4f9b66611e67e1908, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.010
+    second: {fileID: 2100000, guid: 0527a8dcc6e6a7e458cbbeff01b354b1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.011
+    second: {fileID: 2100000, guid: 3f156acca18524b4497212076374da85, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.012
+    second: {fileID: 2100000, guid: b7ee4eca505a7f0499ff58009192ace9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.013
+    second: {fileID: 2100000, guid: 8897068d14fbf9943927361ad535acbf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.014
+    second: {fileID: 2100000, guid: 54ca77d08c21cfd49bd443845bd35f3a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mtalico
+    second: {fileID: 2100000, guid: 58c68db5d07e7b6459a455df2d0dbb6e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Vidrio
+    second: {fileID: 2100000, guid: 8054fadf895ee684f924d8a1d3097daf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mADERA tEXTURA
+    second: {fileID: 2100000, guid: bd4efa0b743ca7e42aba6c997a2e4f9c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mATERIAL METALICO PRINCIPAL
+    second: {fileID: 2100000, guid: 5f07673e26a82c342a49fb2620ba3ad2, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 1
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
