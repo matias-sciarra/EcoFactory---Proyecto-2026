@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748171, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1228,7 +1228,8 @@ MonoBehaviour:
     vecesComprada: 0
     nivelnecesario: 2
     Botontienda: {fileID: 0}
-  - prefab: {fileID: 106589009103801200, guid: a0e95ffecea4f974fb607cebddfc1714, type: 3}
+  - prefab: {fileID: 7933770845607586370, guid: a0e95ffecea4f974fb607cebddfc1714,
+      type: 3}
     imagenUI: {fileID: 21300000, guid: bbcf42a851e499443a9aac3d77928d8d, type: 3}
     precioBase: 90
     vecesComprada: 0
@@ -1241,14 +1242,14 @@ MonoBehaviour:
     vecesComprada: 0
     nivelnecesario: 3
     Botontienda: {fileID: 0}
-  - prefab: {fileID: 8862075243052507514, guid: 2242e8577e8519f4b99bacb2298bcc07,
+  - prefab: {fileID: 4500185888559885087, guid: 2a074f8126ef9f1428d2d2a107aa2e79,
       type: 3}
     imagenUI: {fileID: 21300000, guid: bbcf42a851e499443a9aac3d77928d8d, type: 3}
     precioBase: 90
     vecesComprada: 0
     nivelnecesario: 4
     Botontienda: {fileID: 0}
-  - prefab: {fileID: 4794032457326603212, guid: ca5891ac856222d49835e2f85f6fd28b,
+  - prefab: {fileID: 5749908351102410616, guid: ca5891ac856222d49835e2f85f6fd28b,
       type: 3}
     imagenUI: {fileID: 21300000, guid: bbcf42a851e499443a9aac3d77928d8d, type: 3}
     precioBase: 90

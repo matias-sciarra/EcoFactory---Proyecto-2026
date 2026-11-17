@@ -36,8 +36,8 @@ public class machine : MonoBehaviour
 
     public Animator animator;
     public AnimationClip animacion;
-    public string estadoAnimacion = "Procesar";
-    public string estadoReposo = "Idle";
+    public string estadoAnimacion = "Accion";
+    public string estadoReposo = "New State";
     public float tiempoSinAnimacion = 0.5f;
 
     private bool ocupado;
