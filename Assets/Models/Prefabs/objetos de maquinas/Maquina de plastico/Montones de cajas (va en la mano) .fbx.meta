@@ -1,10 +1,21 @@
 fileFormatVersion: 2
-guid: e361909f200b41748acb379d9cfb68d6
+guid: ede7d52993c2a9f43ba30d5af1da9aac
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
+    2100000: PET_AzulIntenso
+    2100002: PET_AzulClaro
+    2100004: Tapa_Blanca
+    2100006: Tapa_Naranja
+    2100008: Tapa_Azul
+    2100010: PET_Verde
+    2100012: PET_AmarilloClaro
+    2100014: Tapa_Roja
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Pilon_Botellas_Optimizado.124
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -38,7 +49,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 1
+    addColliders: 0
     useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1

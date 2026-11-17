@@ -393,7 +393,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf404f7d0153044ba55b4761d11d65b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  residuoproscesado: {fileID: 0}
+  residuoproscesado: {fileID: 8678523808151633928, guid: 8d62f0fbc2774484d97324da4d330d24,
+    type: 3}
   primeraCinta: {fileID: 0}
   manager: {fileID: 0}
   dineroPorResiduo: 100

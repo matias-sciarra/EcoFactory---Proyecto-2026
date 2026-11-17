@@ -5,12 +5,12 @@ ModelImporter:
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: Carton_Tono3
-    2100002: Metal Cosas
-    2100004: Material.012
+    2100000: Carton_Tono3.001
+    2100002: Metal Cosas.001
+    2100004: Material.026
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Cylinder
+    4300000: Cylinder.001
     6400000: //RootNode
   externalObjects: {}
   materials:

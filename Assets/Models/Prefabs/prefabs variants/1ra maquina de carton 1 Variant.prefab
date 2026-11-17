@@ -125,7 +125,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   acceptedItemId: 
-  outputPrefab: {fileID: 0}
+  outputPrefab: {fileID: 47619374258777596, guid: 9b1139b89d430b54494e9805d80dcf75,
+    type: 3}
   processTime: 1.5
   cantidad: 3
   actual: 0

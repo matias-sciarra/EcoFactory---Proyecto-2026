@@ -15,14 +15,14 @@ MonoBehaviour:
   manager: {fileID: 0}
   dineroPorObjeto: 100
   precios:
-  - tipo: 
-    precio: 0
-  - tipo: 
-    precio: 0
-  - tipo: 
-    precio: 0
-  - tipo: 
-    precio: 0
+  - tipo: Carton
+    precio: 300
+  - tipo: Plastico
+    precio: 500
+  - tipo: Vidrio
+    precio: 800
+  - tipo: Metal
+    precio: 1000
   precioPorDefecto: 100
 --- !u!1001 &5999261672492598105
 PrefabInstance:
@@ -33,7 +33,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: 260cc18238b3b39439fe4620958d8370, type: 3}
       propertyPath: m_Name
-      value: zona de  compra  Variant
+      value: 'zona de  compra '
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 260cc18238b3b39439fe4620958d8370, type: 3}
       propertyPath: m_LocalPosition.x

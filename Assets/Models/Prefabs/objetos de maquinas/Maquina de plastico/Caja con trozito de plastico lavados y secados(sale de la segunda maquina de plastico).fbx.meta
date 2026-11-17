@@ -1,20 +1,19 @@
 fileFormatVersion: 2
-guid: ec9afb2b24681724d9a5b12e3d6aa725
+guid: d6252e6e2e11c25479a54c7d62460a7f
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: Contenedor_Gris_Limpio
-    2100002: PET_Cristal_Limpio
-    2100004: PET_Azul_Lavado
-    2100006: HDPE_Blanco_Puro
-    2100008: PET_Verde_Lavado
-    2100010: HDPE_Amarillo_Limpio
+    2100000: Contenedor_Gris_Limpio.001
+    2100002: PET_Cristal_Limpio.001
+    2100004: PET_Azul_Lavado.001
+    2100006: HDPE_Blanco_Puro.001
+    2100008: PET_Verde_Lavado.001
+    2100010: HDPE_Amarillo_Limpio.001
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Contenedor_Plastico_Limpio.001
-    6400000: //RootNode
+    4300000: Contenedor_Plastico_Limpio.002
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -48,7 +47,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 1
+    addColliders: 0
     useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1
