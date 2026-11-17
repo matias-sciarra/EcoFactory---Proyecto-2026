@@ -27,6 +27,23 @@ public class moneymachine : MonoBehaviour
         //Las maquinas construidas en runtime salen de un prefab, que no puede guardar
         //una referencia a un objeto de la escena: hay que buscarlo aca
         ResolverManager();
+        AsignarCapaConexiones();
+    }
+
+    //Las cintas solo detectan colliders que esten en su LayerMask (capasconectadas, capa "conexiones").
+    //Esta maquina estaba en Default, asi que el rayo de la cinta nunca la veia y no daba ningun error
+    private void AsignarCapaConexiones()
+    {
+        int capa = LayerMask.NameToLayer("conexiones");
+
+        if (capa < 0)
+        {
+            Debug.LogWarning(name + ": no existe la capa 'conexiones', las cintas no van a detectar esta maquina", this);
+            return;
+        }
+
+        foreach (Transform t in GetComponentsInChildren<Transform>(true))
+            t.gameObject.layer = capa;
     }
 
     private bool ResolverManager()

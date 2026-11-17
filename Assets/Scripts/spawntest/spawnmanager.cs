@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class spawnmanager : MonoBehaviour
 {
-    public GameObject prefab;
+    public GameObject prefab;   // se usa solo si la lista "prefabs" esta vacia
+    [Tooltip("Elemento 0 = nivel 1, elemento 1 = nivel 2, etc. (hasta 4)")]
+    public GameObject[] prefabs;
+    private const int NIVEL_MAXIMO = 4;
     private float spawnrate = 10f;
     private float tiempo = 0f;
     private  int contadordedestroyables = 0;
@@ -38,7 +41,23 @@ public class spawnmanager : MonoBehaviour
         float z = Random.Range(b.min.z, b.max.z);
         float y = 1f;
 
-        Instantiate(prefab, new Vector3(x, y, z), Quaternion.identity);
+        GameObject elegido = ElegirPrefab();
+        if (elegido == null)
+            return;
+
+        Instantiate(elegido, new Vector3(x, y, z), Quaternion.identity);
+    }
+
+    //Nivel 1 -> solo puede salir el prefab 0, nivel 2 -> prefabs 0 y 1, ... hasta el nivel 4
+    private GameObject ElegirPrefab()
+    {
+        if (prefabs == null || prefabs.Length == 0)
+            return prefab;
+
+        int nivel = levelmanager.instance != null ? levelmanager.instance.currentLevel : 1;
+        int disponibles = Mathf.Clamp(nivel, 1, Mathf.Min(NIVEL_MAXIMO, prefabs.Length));
+
+        return prefabs[Random.Range(0, disponibles)];
     }
 
     void detectar()
