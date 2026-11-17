@@ -153,7 +153,7 @@ MonoBehaviour:
   autoConectar: 1
   intervaloRedSeguridad: 2
   debugConexiones: 0
-  angulorayo: 0
+  angulorayo: 180
   cartelmejora: {fileID: 5543935168759091427}
   txtcostomejora: {fileID: 3491342255064795440}
   costomejora: 300
@@ -509,7 +509,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a703b8d81c074594f8ef85160fde57ac, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.0371175
+      value: 1.325892
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a703b8d81c074594f8ef85160fde57ac, type: 3}
       propertyPath: m_LocalPosition.y
@@ -517,7 +517,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a703b8d81c074594f8ef85160fde57ac, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.1068292
+      value: -18.051735
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a703b8d81c074594f8ef85160fde57ac, type: 3}
       propertyPath: m_LocalRotation.x
