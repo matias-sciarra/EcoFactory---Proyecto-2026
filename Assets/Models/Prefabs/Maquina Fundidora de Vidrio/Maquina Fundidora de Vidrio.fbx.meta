@@ -133,6 +133,27 @@ ModelImporter:
     4300036: Maquina Fundidora de Metales.021
     4300038: Maquina Fundidora de Metales.022
     4300040: Vidrio
+    6400000: Lava
+    6400002: Maquina Fundidora de Metales
+    6400004: Maquina Fundidora de Metales.002
+    6400006: Maquina Fundidora de Metales.003
+    6400008: Maquina Fundidora de Metales.004
+    6400010: Maquina Fundidora de Metales.005
+    6400012: Maquina Fundidora de Metales.007
+    6400014: Maquina Fundidora de Metales.009
+    6400016: Maquina Fundidora de Metales.010
+    6400018: Maquina Fundidora de Metales.011
+    6400020: Maquina Fundidora de Metales.012
+    6400022: Maquina Fundidora de Metales.014
+    6400024: Maquina Fundidora de Metales.015
+    6400026: Maquina Fundidora de Metales.016
+    6400028: Maquina Fundidora de Metales.017
+    6400030: Maquina Fundidora de Metales.018
+    6400032: Maquina Fundidora de Metales.019
+    6400034: Maquina Fundidora de Metales.020
+    6400036: Maquina Fundidora de Metales.021
+    6400038: Maquina Fundidora de Metales.022
+    6400040: Vidrio
     7400000: Lava|Cube|CubeAction
     7400002: Lava|LavaAction
     9500000: //RootNode
@@ -169,7 +190,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1

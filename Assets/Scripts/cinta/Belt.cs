@@ -391,7 +391,9 @@ public class Belt : MonoBehaviour
                 //Mismo orden que al elegir el destino: la maquina que recibe es la que paga
                 bool entregado = true;
 
-                if (destinoMoney != null)
+                if (destinoMoney != null && itemActual != null)
+                    destinoMoney.RecibirObjeto(itemActual);
+                else if (destinoMoney != null)
                     destinoMoney.RecibirObjeto(item);
                 else if (destinoSlot != null)
                     entregado = destinoSlot.TryInsert(grabbable);
