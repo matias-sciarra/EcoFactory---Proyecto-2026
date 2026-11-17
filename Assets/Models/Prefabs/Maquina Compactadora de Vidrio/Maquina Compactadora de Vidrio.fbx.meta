@@ -54,7 +54,6 @@ ModelImporter:
     4300002: Cylinder.001
     4300004: Maquina Compactadora de Vidrio
     4300006: Vidrio
-    6400000: Maquina Compactadora de Vidrio
     7400000: "Animaci\xF3n Aplastador|ArmatureAction"
     7400002: Maquina Compactadora de Vidrio|Cube.005Action.001
     9500000: //RootNode
@@ -62,102 +61,7 @@ ModelImporter:
     13700002: Cylinder.001
     13700004: Vidrio
     2186277476908879412: ImportLogs
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Cobre aplastador
-    second: {fileID: 2100000, guid: ee069de98e768f54ea92b1c6ef743461, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Cuadrados
-    second: {fileID: 2100000, guid: e00a10feab040294383fdba075de3ba3, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Metal Aplastador
-    second: {fileID: 2100000, guid: 5652adba798d0f94bab8af7df16f50de, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Metal Base
-    second: {fileID: 2100000, guid: d9fe340d1d1044a4ab59ab128aebf8fb, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Metal Base.001
-    second: {fileID: 2100000, guid: 141d726e5c9750542936128ca63a11a6, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Metal Circulitos
-    second: {fileID: 2100000, guid: 0bb0a00037183c34881e95e212c5fede, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Metal Circulitos.002
-    second: {fileID: 2100000, guid: 435610db6505bca4d8ac7b426a1090a4, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Metal Cuadradito
-    second: {fileID: 2100000, guid: eb48a00ab79e3a84995f0c193422b18a, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Metal Cubos
-    second: {fileID: 2100000, guid: a7177c409e2d8f54e9a049ecfa5c7fa9, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Metal Entrada
-    second: {fileID: 2100000, guid: 7e0ee3f77f6d76c4cb039b3dee596fcd, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Metal Rejiilla
-    second: {fileID: 2100000, guid: 78d2b748c895c53429a29d6cc72e90c5, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Metal Tubos
-    second: {fileID: 2100000, guid: 9d180789dec3f4141ba19932201a8717, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Negro
-    second: {fileID: 2100000, guid: f0786fc1193b05543b298f999648d0c4, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Negro Base
-    second: {fileID: 2100000, guid: 99a5c2d805f2d9646bfc3b03d552bbf1, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Negro Cuadrado
-    second: {fileID: 2100000, guid: c9095b32a3d8d1743a5375e8e077f0e0, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Negro.001
-    second: {fileID: 2100000, guid: 27189f244ce64404b9c62a1855b06906, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Piso base
-    second: {fileID: 2100000, guid: 30d6856e2f8161a478814db503403bb5, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: VidrioVerde.001
-    second: {fileID: 2100000, guid: 8cffe6edd2f9ec245ae99d534eb5afb3, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: metal Cilindros
-    second: {fileID: 2100000, guid: 86b2d2d180bdfc84cb66b625c6552443, type: 2}
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
@@ -190,7 +94,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 1
+    addColliders: 0
     useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1

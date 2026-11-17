@@ -5,15 +5,16 @@ ModelImporter:
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: Metal_Limpio
-    2100002: Metal_Oxido_Leve
-    2100004: Metal_Oxido_Fuerte
-    2100006: Metal_Latas
-    2100008: Metal_Oxido_Medio
-    2100010: Metal_Mate_Sucio
+    2100000: Metal_Limpio.001
+    2100002: Metal_Oxido_Leve.001
+    2100004: Metal_Oxido_Fuerte.001
+    2100006: Metal_Latas.001
+    2100008: Metal_Oxido_Medio.001
+    2100010: Metal_Mate_Sucio.001
     2300000: //RootNode
     3300000: //RootNode
     4300000: Lamina_219
+    6400000: //RootNode
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -47,7 +48,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1

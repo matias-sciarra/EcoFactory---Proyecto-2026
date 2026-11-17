@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ca4c430d87179864e9580667938ad7ad
+guid: 69264d5bc158f914397e0f8d29bfbe11
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -176,57 +176,7 @@ ModelImporter:
     7400196: Maquina Clasificadora.010|Cube.005Action.010
     7400198: Maquina Clasificadora.010|Cube.005Action.011
     9500000: //RootNode
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Blanco Tabla.001
-    second: {fileID: 2100000, guid: c00ee5338b8300940a40feeccf74a217, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Blanco.001
-    second: {fileID: 2100000, guid: ad5ebc4670f659e4c9a9b8ff9e14f7be, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Boton Blanco.001
-    second: {fileID: 2100000, guid: 314ab7300af52f64cb69d168666d3ee0, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Boton Rojo.001
-    second: {fileID: 2100000, guid: ef2babe8696aa4b47927cbf893a6f39c, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Boton Verde.001
-    second: {fileID: 2100000, guid: 623e93cf56dc856428511464812400b1, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Cobre.001
-    second: {fileID: 2100000, guid: a32ee1ec79a5376498525a9d04003328, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Gris Tabla.001
-    second: {fileID: 2100000, guid: cb400c937c01d434d8be65d446eb5922, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Metal
-    second: {fileID: 2100000, guid: bf4ac4363007da04cb53d28f45221fbe, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Metal Cilindros
-    second: {fileID: 2100000, guid: b7372964efe25404290b75f05b20f282, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Negro.001
-    second: {fileID: 2100000, guid: 0f11b22a1f46b424aa09d3204efd65b2, type: 2}
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0

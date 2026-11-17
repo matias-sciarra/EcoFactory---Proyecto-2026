@@ -95,9 +95,6 @@ ModelImporter:
     4300012: Vidrio_019_impureza_0.006
     4300014: Vidrio_019_impureza_0.008
     4300016: Vidrio_019_impureza_0.009
-    6400000: Maquina Clasificadora
-    6400002: Tacho de Basura
-    6400004: Tapa
     7400000: Impureza|Impureza.001Action
     7400002: Impureza|Impureza.002Action
     7400004: Impureza|Impureza.003Action
@@ -142,82 +139,7 @@ ModelImporter:
     13700006: Vidrio_019_impureza_0.006
     13700008: Vidrio_019_impureza_0.008
     13700010: Vidrio_019_impureza_0.009
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Blanco Tabla.001
-    second: {fileID: 2100000, guid: de578e970e8f6c14dbf4b9ba9854513c, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Blanco.001
-    second: {fileID: 2100000, guid: 7224c49176fcff74d8ccfcde5dc5856c, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Boton Rojo.001
-    second: {fileID: 2100000, guid: 6d10177181987e14ba41161e7fcdfc9a, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Boton Verde.001
-    second: {fileID: 2100000, guid: f4832748f769ec04dbea8698d0b2218b, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Gris Tabla.001
-    second: {fileID: 2100000, guid: 3967f324f2dccbf4f84982ba33d37d71, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Impureza.001
-    second: {fileID: 2100000, guid: 1c96d81fb5e3cab4c8ec824da2e0fa86, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Impureza.003
-    second: {fileID: 2100000, guid: 2d122fad7d774c24ebcdad1873ce43b5, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Impureza.006
-    second: {fileID: 2100000, guid: 4ba4e5b43d4394f4b80ca241772e9f26, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Impureza.008
-    second: {fileID: 2100000, guid: 450e27f59b4fa2b46afb5d6edd24bb5f, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Impureza.009
-    second: {fileID: 2100000, guid: ffb1a8ed8fcb80e40a7a266acf621ae9, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Metal Verde Clarito
-    second: {fileID: 2100000, guid: 454a255031ff3ca4aa31649eaa91857c, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Metal Verde Medio
-    second: {fileID: 2100000, guid: 8dc751e7bc62e3047a59a5cf54175de6, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Negro.001
-    second: {fileID: 2100000, guid: 8b71eaebc20ad404bac4921f3ccfdbd3, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Tacho
-    second: {fileID: 2100000, guid: d3a3bb8711707f14a9069701324db449, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Tapa Tacho
-    second: {fileID: 2100000, guid: b2767926db40ddf46968b0bc2ad1b55d, type: 2}
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
@@ -250,7 +172,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 1
+    addColliders: 0
     useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1
