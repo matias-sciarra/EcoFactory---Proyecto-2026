@@ -335,6 +335,7 @@ void EnterBuildMode()
         player.transform.rotation = oldPlayerRotation;
         fpsCamera.localPosition = oldCameraLocalPosition;
         fpsCamera.localRotation = oldCameraLocalRotation;
+        techoRenderer.enabled = true;
 
         if (characterController != null)
         {

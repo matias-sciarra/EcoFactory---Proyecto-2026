@@ -16,9 +16,7 @@ public class MenuInicio : MonoBehaviour
         if (panelMenu != null)
             panelMenu.SetActive(true);
 
-        if (raizJugador != null)
-            raizJugador.SetActive(false);
-        else
+        if (raizJugador == null)
             Debug.LogError("MenuInicio: asigna el objeto raíz Player.");
 
         Cursor.lockState = CursorLockMode.None;
