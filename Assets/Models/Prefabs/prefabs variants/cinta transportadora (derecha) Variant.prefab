@@ -434,7 +434,7 @@ MonoBehaviour:
   intervaloRedSeguridad: 2
   debugConexiones: 0
   angulorayo: -90
---- !u!65 &65643334877969858
+--- !u!65 &65957391927579448
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

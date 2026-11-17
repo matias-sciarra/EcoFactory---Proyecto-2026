@@ -54,6 +54,7 @@ ModelImporter:
     4300002: Cylinder.001
     4300004: Cylinder.002
     4300006: Maquina Compactadora de Metales.002
+    6400000: Maquina Compactadora de Metales.002
     7400000: "Animaci\xF3n Aplastador|ArmatureAction"
     7400002: Maquina Compactadora de Metales.002|Cube.005Action.003
     9500000: //RootNode
@@ -188,7 +189,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1

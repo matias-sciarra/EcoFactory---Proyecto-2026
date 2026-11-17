@@ -95,6 +95,9 @@ ModelImporter:
     4300012: Vidrio_019_impureza_0.006
     4300014: Vidrio_019_impureza_0.008
     4300016: Vidrio_019_impureza_0.009
+    6400000: Maquina Clasificadora
+    6400002: Tacho de Basura
+    6400004: Tapa
     7400000: Impureza|Impureza.001Action
     7400002: Impureza|Impureza.002Action
     7400004: Impureza|Impureza.003Action
@@ -247,7 +250,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1

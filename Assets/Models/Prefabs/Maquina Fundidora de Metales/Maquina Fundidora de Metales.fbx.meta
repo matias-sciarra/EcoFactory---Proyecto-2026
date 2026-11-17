@@ -45,6 +45,9 @@ ModelImporter:
     4300000: Lava
     4300002: Maquina Fundidora de Metales
     4300004: Metal
+    6400000: Lava
+    6400002: Maquina Fundidora de Metales
+    6400004: Metal
     7400000: Lava|Cube|CubeAction
     7400002: Lava|LavaAction
     9500000: //RootNode
@@ -206,7 +209,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1
