@@ -1,6 +1,7 @@
 ﻿
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityStandardAssets.Characters.FirstPerson;
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -10,16 +11,23 @@ public class MenuInicio : MonoBehaviour
 {
     [SerializeField] private GameObject panelMenu;
     [SerializeField] private GameObject raizJugador;
+    private FirstPersonController controladorFPS;
 
     private void Start()
     {
         if (panelMenu != null)
             panelMenu.SetActive(true);
 
-        // El controlador FPS captura el cursor al soltar el mouse. Mantener
-        // al jugador desactivado evita que interfiera con los clics del menú.
         if (raizJugador != null)
-            raizJugador.SetActive(false);
+        {
+            // Dejamos la cámara activa para renderizar la escena, pero el
+            // controlador no debe capturar el cursor mientras se usa el menú.
+            controladorFPS = raizJugador.GetComponentInChildren<FirstPersonController>(true);
+            if (controladorFPS != null)
+                controladorFPS.enabled = false;
+            else
+                Debug.LogError("MenuInicio: no se encontró FirstPersonController dentro de Player.");
+        }
 
         if (raizJugador == null)
             Debug.LogError("MenuInicio: asigna el objeto raíz Player.");
@@ -43,6 +51,8 @@ public class MenuInicio : MonoBehaviour
             panelMenu.SetActive(false);
 
         raizJugador.SetActive(true);
+        if (controladorFPS != null)
+            controladorFPS.enabled = true;
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -60,6 +70,8 @@ public class MenuInicio : MonoBehaviour
             panelMenu.SetActive(false);
 
         raizJugador.SetActive(true);
+        if (controladorFPS != null)
+            controladorFPS.enabled = true;
 
         // Aquí posteriormente cargaremos la posición
         // y el progreso de la partida.
