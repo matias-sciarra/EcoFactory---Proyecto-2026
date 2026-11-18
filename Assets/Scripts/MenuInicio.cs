@@ -16,6 +16,11 @@ public class MenuInicio : MonoBehaviour
         if (panelMenu != null)
             panelMenu.SetActive(true);
 
+        // El controlador FPS captura el cursor al soltar el mouse. Mantener
+        // al jugador desactivado evita que interfiera con los clics del menú.
+        if (raizJugador != null)
+            raizJugador.SetActive(false);
+
         if (raizJugador == null)
             Debug.LogError("MenuInicio: asigna el objeto raíz Player.");
 
