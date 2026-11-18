@@ -267,7 +267,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.5462136, y: 3.1306586, z: 2.540967}
   m_Center: {x: -0.06368902, y: 1.5665376, z: -0.033605278}
---- !u!114 &114336606837819974
+--- !u!114 &693323183099369623
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -276,36 +276,35 @@ MonoBehaviour:
   m_GameObject: {fileID: 7128346485260446514}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bbf404f7d0153044ba55b4761d11d65b, type: 3}
+  m_Script: {fileID: 11500000, guid: d039e9effc427ea4e91d5a350740bdd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  residuoproscesado: {fileID: 5418321236195529069, guid: f32fa3291a300ff41a65df32d3c7532b,
+  acceptedItemId: Botellas
+  outputPrefab: {fileID: 5418321236195529069, guid: f32fa3291a300ff41a65df32d3c7532b,
     type: 3}
+  processTime: 1.5
+  cantidad: 3
+  actual: 0
   primeraCinta: {fileID: 0}
-  manager: {fileID: 0}
-  dineroPorResiduo: 100
   capasconectadas:
     serializedVersion: 2
-    m_Bits: 12288
-  distanciamax: 7
+    m_Bits: 8192
+  distanciamax: 3
   alturaRayo: 0.5
   puntoSalida: {fileID: 0}
   autoConectar: 1
   intervaloRedSeguridad: 2
   debugConexiones: 0
-  angulorayo: 90
+  angulorayo: 180
   cartelmejora: {fileID: 4331300585495874336}
   txtcostomejora: {fileID: 1478091794601341215}
   costomejora: 300
-  aumentoVelocidadPorMejora: 0.25
   radiodetection: 5
   distanciacerca: 2
+  manager: {fileID: 0}
   jugador: {fileID: 0}
-  animator: {fileID: 7128346485251053810}
+  animator: {fileID: 0}
   animacion: {fileID: 0}
-  estadoAnimacion: Procesar
-  estadoReposo: Idle
-  tiempoSinAnimacion: 0.5
 --- !u!1 &9194017827374129977
 GameObject:
   m_ObjectHideFlags: 0
@@ -437,15 +436,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 58078e14c361b5643a77e91b548d9a24, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.92443967
+      value: -28.20259
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 58078e14c361b5643a77e91b548d9a24, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.03
+      value: 0.70100945
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 58078e14c361b5643a77e91b548d9a24, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -9.394545
+      value: -34.642654
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 58078e14c361b5643a77e91b548d9a24, type: 3}
       propertyPath: m_LocalRotation.x
@@ -494,12 +493,6 @@ GameObject:
 --- !u!4 &7128346485260678930 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 58078e14c361b5643a77e91b548d9a24,
-    type: 3}
-  m_PrefabInstance: {fileID: 7128346485260545426}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &7128346485251053810 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 9500000, guid: 58078e14c361b5643a77e91b548d9a24,
     type: 3}
   m_PrefabInstance: {fileID: 7128346485260545426}
   m_PrefabAsset: {fileID: 0}

@@ -1,0 +1,133 @@
+fileFormatVersion: 2
+guid: fa3d817883becd94eabf9261efa1a313
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Animacion Maquina Fundidora de Vidrio
+    100002: Fijo
+    100004: Fijo_end
+    100006: Lava
+    100008: Lava_end
+    100010: Maquina Fundidora de Metales
+    100012: //RootNode
+    400000: Animacion Maquina Fundidora de Vidrio
+    400002: Fijo
+    400004: Fijo_end
+    400006: Lava
+    400008: Lava_end
+    400010: Maquina Fundidora de Metales
+    400012: //RootNode
+    2100000: Cable.002
+    2100002: Cable.003
+    2100004: Metal Rejilla
+    2100006: Negro.001
+    2100008: Negro Entrada
+    2100010: Material.004
+    2100012: Metal Barra
+    2100014: Negro Tubos
+    2100016: Tubos
+    2100018: Metal
+    2100020: Piso Fundidora
+    2100022: Techo Fundidora
+    2100024: Negro Salida
+    2100026: Puertita.001
+    2100028: Manijita.001
+    2100030: Boton rojo.001
+    2100032: Boton Verde.002
+    2100034: Boton Amarillo.001
+    2100036: Puertita electricidad.001
+    2100038: Manijita Electricidad.001
+    2100040: VidrioVerde
+    2100042: Lava
+    4300000: Maquina Fundidora de Metales
+    7400000: Animacion Maquina Fundidora de Vidrio|Animacion Maquina Fundidora de
+      VidrioAction
+    7400002: Animacion Maquina Fundidora de Vidrio|Cube|CubeAction
+    9500000: //RootNode
+    13700000: Maquina Fundidora de Metales
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 1
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

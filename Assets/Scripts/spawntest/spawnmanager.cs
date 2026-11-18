@@ -21,17 +21,18 @@ public class spawnmanager : MonoBehaviour
 
     // Update is called once per frame  
     void Update()
-    {
-         tiempo += Time.deltaTime;
-       if(tiempo >= spawnrate && contadordedestroyables < limitededestruibles)
-       {
-            spawn();
-            tiempo = 0;
+        {
+            tiempo += Time.deltaTime;
 
-       }
+            if (tiempo >= spawnrate)
+            {
+                tiempo = 0f;
+                detectar();
 
-
-    }
+                if (contadordedestroyables < limitededestruibles)
+                    spawn();
+            }
+        }
 
     void spawn()
     {
@@ -62,14 +63,19 @@ public class spawnmanager : MonoBehaviour
 
     void detectar()
     {
-        Vector3 inicio = transform.position;
-        Collider[] objetosdetectados = Physics.OverlapSphere(inicio, radiodetection);
-        foreach (Collider col in  objetosdetectados)
+        contadordedestroyables = 0;
+        HashSet<GameObject> unicos = new HashSet<GameObject>();
+
+        Collider[] objetosdetectados = Physics.OverlapSphere(transform.position, radiodetection);
+        foreach (Collider col in objetosdetectados)
         {
-            if(col.CompareTag("destroyable"))
+            if (col.CompareTag("destroyable"))
             {
-                contadordedestroyables+=1;
+                GameObject raiz = col.attachedRigidbody != null ? col.attachedRigidbody.gameObject : col.gameObject;
+                unicos.Add(raiz);
             }
         }
+
+        contadordedestroyables = unicos.Count;
     }
 }

@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d039e9effc427ea4e91d5a350740bdd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  acceptedItemId: 
+  acceptedItemId: PilonCarton
   outputPrefab: {fileID: 47619374258777596, guid: 9b1139b89d430b54494e9805d80dcf75,
     type: 3}
   processTime: 1.5
@@ -134,7 +134,7 @@ MonoBehaviour:
   capasconectadas:
     serializedVersion: 2
     m_Bits: 12288
-  distanciamax: 123
+  distanciamax: 3
   alturaRayo: 0.4
   puntoSalida: {fileID: 0}
   autoConectar: 1
@@ -150,8 +150,6 @@ MonoBehaviour:
   jugador: {fileID: 0}
   animator: {fileID: 0}
   animacion: {fileID: 0}
-  estadoAnimacion: Procesar
-  estadoReposo: Idle
 --- !u!1 &3212261815531602710
 GameObject:
   m_ObjectHideFlags: 0

@@ -31,7 +31,7 @@ public class PlayerGrabber : MonoBehaviour
         {
             Debug.Log("TryGrab: el rayo pegó contra: " + hit.collider.gameObject.name);
 
-            Grabbable grabbable = hit.collider.GetComponent<Grabbable>();
+            Grabbable grabbable = hit.collider.GetComponentInParent<Grabbable>();
             if (grabbable == null)
             {
                 Debug.Log("TryGrab: ese objeto no tiene el componente Grabbable");
@@ -60,12 +60,14 @@ public class PlayerGrabber : MonoBehaviour
         {
             Debug.Log("El rayo pegó contra: " + hit.collider.gameObject.name);
 
-            MachineSlot machine = hit.collider.GetComponent<MachineSlot>();
-            if (machine == null)
+            MachineSlot slot = hit.collider.GetComponentInParent<MachineSlot>();
+            machine maquina = slot == null ? hit.collider.GetComponentInParent<machine>() : null;
+
+            if (slot == null && maquina == null)
             {
-                Debug.Log("Ese objeto NO tiene el componente MachineSlot");
+                Debug.Log("Ese objeto NO tiene el componente MachineSlot ni machine");
             }
-            else if (machine.TryInsert(heldItem))
+            else if (slot != null ? slot.TryInsert(heldItem) : maquina.TryInsert(heldItem))
             {
                 Debug.Log("Insertado con éxito");
                 heldItem = null;

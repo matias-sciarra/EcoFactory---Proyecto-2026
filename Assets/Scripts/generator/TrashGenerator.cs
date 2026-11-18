@@ -65,15 +65,8 @@ public class TrashGenerator : MonoBehaviour
     //Genera la basura arriba de la cinta para que se pueda ir hacia otra maquina u otro lugar
     void GenerateTrash()
     {
-        Vector3 position = primeraCinta.GetItemPosition();
-        Quaternion rotation = Quaternion.identity;
-        GameObject nueva = Instantiate( Prefabtrash, position, rotation );
-        Debug.Log("se genero");
-
-        BeltItem itemcomponent = nueva.GetComponent<BeltItem>();
-        primeraCinta.beltItem = itemcomponent;
-        primeraCinta.isSpaceTaken = true;
-
+        if (MaquinaUtil.SoltarEnCinta(this, Prefabtrash, "Prefabtrash", primeraCinta))
+            Debug.Log("se genero");
     }
 
 

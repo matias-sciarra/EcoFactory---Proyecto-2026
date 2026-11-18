@@ -21,11 +21,27 @@ public class moneymachine : MonoBehaviour
 
     private static readonly HashSet<string> tiposAvisados = new HashSet<string>();
     private bool avisoSinManager;
+    private bool inicializado;
 
     void Awake()
     {
         //Las maquinas construidas en runtime salen de un prefab, que no puede guardar
         //una referencia a un objeto de la escena: hay que buscarlo aca
+        if (!enabled)
+            return;
+
+        Inicializar();
+    }
+
+    void Start()
+    {
+        if (!inicializado)
+            Inicializar();
+    }
+
+    private void Inicializar()
+    {
+        inicializado = true;
         ResolverManager();
         AsignarCapaConexiones();
     }

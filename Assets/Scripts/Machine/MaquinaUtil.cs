@@ -1,12 +1,22 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
 public static class MaquinaUtil
 {
+    private static readonly HashSet<string> avisosSinBeltItem = new HashSet<string>();
+
     public static bool JugadorCerca(Vector3 centro, float radio, float distanciaCerca, PlayerGrabber jugador)
     {
+        float distancia;
+        return JugadorCerca(centro, radio, distanciaCerca, jugador, out distancia);
+    }
+
+    public static bool JugadorCerca(Vector3 centro, float radio, float distanciaCerca, PlayerGrabber jugador, out float distanciaMinima)
+    {
         bool cerca = false;
+        distanciaMinima = float.MaxValue;
         Collider[] objetosdetectados = Physics.OverlapSphere(centro, radio);
 
         foreach (Collider col in objetosdetectados)
@@ -15,11 +25,21 @@ public static class MaquinaUtil
             {
                 float distancia = Vector3.Distance(centro, col.transform.position);
                 if (distancia < distanciaCerca && !jugador.IsHolding)
+                {
                     cerca = true;
+                    if (distancia < distanciaMinima)
+                        distanciaMinima = distancia;
+                }
             }
         }
 
         return cerca;
+    }
+
+    public static void ProponerMejoraSiPidio(Component duenio, bool jugadorcerca, float distancia, System.Action mejorar)
+    {
+        if (jugadorcerca && !BuildManager.BuildModeActivo && Input.GetKeyDown(KeyCode.Q))
+            ArbitroMejoras.Proponer(duenio, distancia, mejorar);
     }
 
     public static void MostrarCartel(Button cartel, bool visible)
@@ -96,16 +116,43 @@ public static class MaquinaUtil
             return false;
         }
 
+        if (cinta == null)
+        {
+            Debug.LogError($"[{duenio.name}] No hay cinta de salida para soltar el {nombreCampo} '{prefab.name}'", duenio);
+            return false;
+        }
+
+        if (!TieneBeltItem(duenio, prefab, nombreCampo))
+            return false;
+
         GameObject nueva = Object.Instantiate(prefab, cinta.GetItemPosition(), Quaternion.identity);
         nueva.SetActive(true);
 
         BeltItem itemcomponent = nueva.GetComponent<BeltItem>();
         if (itemcomponent == null)
-            Debug.LogError($"[{duenio.name}] El {nombreCampo} no tiene BeltItem, la cinta no lo va a mover", duenio);
+        {
+            Debug.LogError($"[{duenio.name}] La instancia de '{prefab.name}' quedó sin BeltItem, se destruye y la cinta queda libre", duenio);
+            Object.Destroy(nueva);
+            return false;
+        }
 
         cinta.beltItem = itemcomponent;
         cinta.isSpaceTaken = true;
         return true;
+    }
+
+    public static bool TieneBeltItem(Component duenio, GameObject prefab, string nombreCampo)
+    {
+        if (prefab != null && prefab.GetComponent<BeltItem>() != null)
+            return true;
+
+        string nombrePrefab = prefab != null ? prefab.name : "(ninguno)";
+        string clave = duenio.GetInstanceID() + "|" + nombrePrefab;
+
+        if (avisosSinBeltItem.Add(clave))
+            Debug.LogError($"[{duenio.name}] El {nombreCampo} '{nombrePrefab}' no tiene el componente BeltItem en su raíz: no se suelta en la cinta y la cinta queda libre. Agregale BeltItem al prefab", duenio);
+
+        return false;
     }
 
     public static bool TieneEstado(Animator animator, string estado)

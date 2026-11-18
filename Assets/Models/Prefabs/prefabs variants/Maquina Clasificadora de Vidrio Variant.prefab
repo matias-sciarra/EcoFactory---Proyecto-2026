@@ -368,7 +368,20 @@ MonoBehaviour:
   - {fileID: 0}
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &1860526318279214763
+--- !u!65 &65305488881581968
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7933770845607586370}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.143368, y: 3.583051, z: 4.988159}
+  m_Center: {x: -0.6631489, y: 1.2915252, z: -0.1301651}
+--- !u!114 &880780455154951646
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -377,36 +390,35 @@ MonoBehaviour:
   m_GameObject: {fileID: 7933770845607586370}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bbf404f7d0153044ba55b4761d11d65b, type: 3}
+  m_Script: {fileID: 11500000, guid: d039e9effc427ea4e91d5a350740bdd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  residuoproscesado: {fileID: 4421158262406767204, guid: f4898caf9b8bcdf4293e57d9d30127e1,
+  acceptedItemId: Pilonvidrio
+  outputPrefab: {fileID: 4421158262406767204, guid: f4898caf9b8bcdf4293e57d9d30127e1,
     type: 3}
+  processTime: 1.5
+  cantidad: 3
+  actual: 0
   primeraCinta: {fileID: 0}
-  manager: {fileID: 0}
-  dineroPorResiduo: 100
   capasconectadas:
     serializedVersion: 2
     m_Bits: 8192
-  distanciamax: 7
+  distanciamax: 3
   alturaRayo: 0.5
   puntoSalida: {fileID: 0}
   autoConectar: 1
   intervaloRedSeguridad: 2
-  debugConexiones: 0
+  debugConexiones: 1
   angulorayo: 180
   cartelmejora: {fileID: 3336517636206591749}
   txtcostomejora: {fileID: 533020525856837731}
   costomejora: 300
-  aumentoVelocidadPorMejora: 0.25
   radiodetection: 5
   distanciacerca: 2
+  manager: {fileID: 0}
   jugador: {fileID: 0}
   animator: {fileID: 0}
   animacion: {fileID: 0}
-  estadoAnimacion: Procesar
-  estadoReposo: Idle
-  tiempoSinAnimacion: 0.5
 --- !u!1001 &7933770845607685262
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -544,15 +556,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400044, guid: 6394bb5c682600742998d9876aed5b06, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.4223185
+      value: -27.971313
       objectReference: {fileID: 0}
     - target: {fileID: 400044, guid: 6394bb5c682600742998d9876aed5b06, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.9999999
+      value: 0.71500987
       objectReference: {fileID: 0}
     - target: {fileID: 400044, guid: 6394bb5c682600742998d9876aed5b06, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 48.411552
+      value: -37.317825
       objectReference: {fileID: 0}
     - target: {fileID: 400044, guid: 6394bb5c682600742998d9876aed5b06, type: 3}
       propertyPath: m_LocalRotation.x

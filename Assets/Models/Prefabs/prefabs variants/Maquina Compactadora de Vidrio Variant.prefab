@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 9168688875704730954}
   - component: {fileID: 8902671264434157577}
   - component: {fileID: 3336046309178137191}
-  m_Layer: 5
+  m_Layer: 13
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -145,7 +145,7 @@ MonoBehaviour:
   dineroPorResiduo: 100
   capasconectadas:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8192
   distanciamax: 7
   alturaRayo: 0
   puntoSalida: {fileID: 0}
@@ -162,8 +162,6 @@ MonoBehaviour:
   jugador: {fileID: 0}
   animator: {fileID: 0}
   animacion: {fileID: 0}
-  estadoAnimacion: Procesar
-  estadoReposo: Idle
   tiempoSinAnimacion: 0.5
 --- !u!1 &7907396741918660286
 GameObject:
@@ -177,7 +175,7 @@ GameObject:
   - component: {fileID: 3858478104581632013}
   - component: {fileID: 860370061442133641}
   - component: {fileID: 8823005943491375091}
-  m_Layer: 5
+  m_Layer: 13
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -275,7 +273,7 @@ GameObject:
   - component: {fileID: 7491238746237420680}
   - component: {fileID: 9215454451087347928}
   - component: {fileID: 4518523924912127307}
-  m_Layer: 5
+  m_Layer: 13
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -426,21 +424,73 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 100000, guid: 4c42f1ef799de704da15c66cce0d005f, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 4c42f1ef799de704da15c66cce0d005f, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 4c42f1ef799de704da15c66cce0d005f, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 100006, guid: 4c42f1ef799de704da15c66cce0d005f, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 100008, guid: 4c42f1ef799de704da15c66cce0d005f, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 100010, guid: 4c42f1ef799de704da15c66cce0d005f, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 100012, guid: 4c42f1ef799de704da15c66cce0d005f, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 100014, guid: 4c42f1ef799de704da15c66cce0d005f, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 100016, guid: 4c42f1ef799de704da15c66cce0d005f, type: 3}
       propertyPath: m_Name
       value: Maquina Compactadora de Vidrio Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 100016, guid: 4c42f1ef799de704da15c66cce0d005f, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 100018, guid: 4c42f1ef799de704da15c66cce0d005f, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 100020, guid: 4c42f1ef799de704da15c66cce0d005f, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 100022, guid: 4c42f1ef799de704da15c66cce0d005f, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 100024, guid: 4c42f1ef799de704da15c66cce0d005f, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 400016, guid: 4c42f1ef799de704da15c66cce0d005f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.718327
+      value: -22.324066
       objectReference: {fileID: 0}
     - target: {fileID: 400016, guid: 4c42f1ef799de704da15c66cce0d005f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.03
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 400016, guid: 4c42f1ef799de704da15c66cce0d005f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -7.239969
+      value: -33.625443
       objectReference: {fileID: 0}
     - target: {fileID: 400016, guid: 4c42f1ef799de704da15c66cce0d005f, type: 3}
       propertyPath: m_LocalRotation.x

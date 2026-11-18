@@ -379,8 +379,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.9403698, y: 3.6563022, z: 8.583504}
-  m_Center: {x: 0.0031901598, y: 1.3281511, z: -0.42064476}
+  m_Size: {x: 2.9403698, y: 3.6563022, z: 7.6538353}
+  m_Center: {x: 0.0031901598, y: 1.3281511, z: -0.39796257}
 --- !u!114 &114574076658837420
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -393,14 +393,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf404f7d0153044ba55b4761d11d65b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cantidadrequerida: 4
   residuoproscesado: {fileID: 8678523808151633928, guid: 8d62f0fbc2774484d97324da4d330d24,
     type: 3}
   primeraCinta: {fileID: 0}
+  contador: 0
   manager: {fileID: 0}
   dineroPorResiduo: 100
+  acceptedItemId: 
   capasconectadas:
     serializedVersion: 2
-    m_Bits: 12288
+    m_Bits: 8192
   distanciamax: 7
   alturaRayo: 0.5
   puntoSalida: {fileID: 0}
@@ -417,8 +420,6 @@ MonoBehaviour:
   jugador: {fileID: 0}
   animator: {fileID: 0}
   animacion: {fileID: 0}
-  estadoAnimacion: Procesar
-  estadoReposo: Idle
   tiempoSinAnimacion: 0.5
 --- !u!1001 &9162306209997403040
 PrefabInstance:
@@ -545,7 +546,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400012, guid: 0d6aa46d0e840a84cb4e6b04dd74573c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.021792
+      value: -3.9916189
       objectReference: {fileID: 0}
     - target: {fileID: 400012, guid: 0d6aa46d0e840a84cb4e6b04dd74573c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -553,7 +554,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400012, guid: 0d6aa46d0e840a84cb4e6b04dd74573c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.174895
+      value: -14.892912
       objectReference: {fileID: 0}
     - target: {fileID: 400012, guid: 0d6aa46d0e840a84cb4e6b04dd74573c, type: 3}
       propertyPath: m_LocalRotation.x

@@ -27,7 +27,6 @@ public class Belt : MonoBehaviour
     public PlayerGrabber jugador;
     public float costomejora = 50f;
     private const float MULTIPLICADOR_MEJORA = 2.1f;
-    private int cantidadMejoras = 0;
     public TextMeshProUGUI txtcostomejora;
     public Transform puntoItem;
     public bool autoConectar = true;
@@ -53,12 +52,14 @@ public class Belt : MonoBehaviour
     private void OnEnable()
     {
         BuildManager.OnConstruccionCambiada += PedirRecalculo;
+        BeltManager.OnPrecioMejoraCambiado += RefrescarPrecio;
         PedirRecalculo();
     }
 
     private void OnDisable()
     {
         BuildManager.OnConstruccionCambiada -= PedirRecalculo;
+        BeltManager.OnPrecioMejoraCambiado -= RefrescarPrecio;
         StopAllCoroutines();
         recalculoPendiente = false;
         isMoving = false;
@@ -71,12 +72,12 @@ public class Belt : MonoBehaviour
         gameObject.name = $"Belt: {_beltID++}";
 
       
-        puntoSalida = transform.parent;
+
         //Las cintas colocadas en runtime salen de un prefab, y un prefab no puede guardar
         //referencias a objetos de la escena: hay que resolverlas aca
         if (manager == null) manager = FindObjectOfType<economymanager>();
         if (jugador == null) jugador = FindObjectOfType<PlayerGrabber>();
-        if (txtcostomejora != null) txtcostomejora.text = costomejora.ToString();
+        RefrescarPrecio();
         if (cartelmejora != null) cartelmejora.onClick.AddListener(mejorar);
 
         //Si en el Inspector se arrastro un prefab (asset) en vez de un objeto de la escena,
@@ -130,33 +131,17 @@ public class Belt : MonoBehaviour
     //Detecta si el jugador esta cerca (y sin nada agarrado) para mostrar el cartel de mejora
     public void detectar()
     {
-        //Sin jugador no hay nada que detectar. Sin este corte, una excepcion aca aborta
-        //el Update entero y la cinta nunca llega a mover el objeto
         if (jugador == null)
             return;
 
-        Vector3 inicio = transform.position;
+        float distanciaJugador;
+        jugadorcerca = MaquinaUtil.JugadorCerca(transform.position, radiodetection, distanciacerca, jugador, out distanciaJugador);
 
-        Collider[] objetosdetectados = Physics.OverlapSphere(inicio, radiodetection);
+        if (cartelmejora != null)
+            cartelmejora.gameObject.SetActive(jugadorcerca);
 
-        foreach (Collider col in objetosdetectados)
-        {
-            if(col.CompareTag("Player"))
-            {
-                float distancia = Vector3.Distance(transform.position, col.transform.position);
-                jugadorcerca = distancia < distanciacerca && !jugador.IsHolding;
-
-                if (cartelmejora != null)
-                    cartelmejora.gameObject.SetActive(jugadorcerca);
-
-                if(jugadorcerca && !BuildManager.BuildModeActivo && Input.GetKeyDown(KeyCode.Q))
-                {
-                    mejorar();
-                }
-            }
-
-
-        };
+        if (jugadorcerca && !BuildManager.BuildModeActivo && Input.GetKeyDown(KeyCode.Q))
+            BeltManager.ProponerMejora(this, distanciaJugador);
     }
 
     private void PedirRecalculo()
@@ -238,23 +223,18 @@ public class Belt : MonoBehaviour
             return;
         }
 
-        int costoActual = GetCostoMejora(cantidadMejoras);
+        if (_beltManager == null)
+            _beltManager = ObtenerBeltManager();
 
-        if (manager.Gastar(costoActual))
-        {
-            cantidadMejoras += 1;
-
-            if (_beltManager != null)
-                _beltManager.speed += 1f / 3f;
-
-            if (txtcostomejora != null)
-                txtcostomejora.text = GetCostoMejora(cantidadMejoras).ToString();
-        }
+        _beltManager.ComprarMejora(manager, costomejora, MULTIPLICADOR_MEJORA, 1f / 3f);
     }
 
-    private int GetCostoMejora(int mejoras)
+    private void RefrescarPrecio()
     {
-        return Mathf.RoundToInt(costomejora * Mathf.Pow(MULTIPLICADOR_MEJORA, mejoras));
+        if (txtcostomejora == null || _beltManager == null)
+            return;
+
+        txtcostomejora.text = _beltManager.PrecioMejora(costomejora, MULTIPLICADOR_MEJORA).ToString();
     }
 
     //Le da la posicion en la cinta al objeto salido de la maquina

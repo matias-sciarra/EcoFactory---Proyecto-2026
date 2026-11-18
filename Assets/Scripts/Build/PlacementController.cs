@@ -287,16 +287,29 @@ public class PlacementController : MonoBehaviour
         if (buildingPrefab == null)
             return;
 
-        previewObject = Instantiate(buildingPrefab);
+        GameObject contenedor = new GameObject("PreviewContenedor");
+        contenedor.SetActive(false);
 
-        previewObject.transform.rotation =
-            Quaternion.Euler(0, rotationSteps * 90f, 0);
+        previewObject = Instantiate(buildingPrefab, contenedor.transform);
+
+        foreach (MonoBehaviour script in
+                 previewObject.GetComponentsInChildren<MonoBehaviour>(true))
+        {
+            script.enabled = false;
+        }
 
         foreach (Collider col in
-                 previewObject.GetComponentsInChildren<Collider>())
+                 previewObject.GetComponentsInChildren<Collider>(true))
         {
             col.enabled = false;
         }
+
+        previewObject.SetActive(false);
+        previewObject.transform.SetParent(null, false);
+        Destroy(contenedor);
+
+        previewObject.transform.rotation =
+            Quaternion.Euler(0, rotationSteps * 90f, 0);
 
         if (currentCell == null)
         {

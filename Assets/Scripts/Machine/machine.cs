@@ -5,13 +5,15 @@ using TMPro;
 
 public class machine : MonoBehaviour
 {
-    private int cantidadrequerida = 4;
+    public int cantidadrequerida = 4;
     public GameObject residuoproscesado;
     public Belt primeraCinta;
-    private int contador = 0;
+    public int contador = 0;
     public economymanager manager;
 
     public int dineroPorResiduo = 100;
+
+    public string acceptedItemId = "";
 
     public LayerMask capasconectadas;
     public float distanciamax = 7f;
@@ -36,8 +38,8 @@ public class machine : MonoBehaviour
 
     public Animator animator;
     public AnimationClip animacion;
-    public string estadoAnimacion = "Accion";
-    public string estadoReposo = "New State";
+    private const string estadoAnimacion = "Accion";
+    private const string estadoReposo = "New State";
     public float tiempoSinAnimacion = 0.5f;
 
     private bool ocupado;
@@ -49,6 +51,9 @@ public class machine : MonoBehaviour
     private bool avisoEstadoFaltante;
     private bool avisoReposoFaltante;
     private bool avisoSinCinta;
+    private bool avisoSinClip;
+    private bool referenciasResueltas;
+
 
     public float VelocidadAnimacion
     {
@@ -57,6 +62,16 @@ public class machine : MonoBehaviour
 
     void Awake()
     {
+        if (!enabled)
+            return;
+
+        ResolverReferencias();
+    }
+
+    private void ResolverReferencias()
+    {
+        referenciasResueltas = true;
+
         if (manager == null) manager = FindObjectOfType<economymanager>();
         if (jugador == null) jugador = FindObjectOfType<PlayerGrabber>();
 
@@ -82,6 +97,9 @@ public class machine : MonoBehaviour
 
     void Start()
     {
+        if (!referenciasResueltas)
+            ResolverReferencias();
+
         MaquinaUtil.MostrarCosto(txtcostomejora, costomejora, MULTIPLICADOR_MEJORA, cantidadMejoras);
         if (cartelmejora != null) cartelmejora.onClick.AddListener(mejorar);
 
@@ -93,6 +111,16 @@ public class machine : MonoBehaviour
 
         detectarbelt();
         proximoChequeo = Time.time + Random.Range(0f, Mathf.Max(0f, intervaloRedSeguridad));
+
+        if (animator == null)
+            animator = GetComponentInChildren<Animator>();
+
+        if (animacion == null && animator != null && animator.runtimeAnimatorController != null)
+        {
+            AnimationClip[] clips = animator.runtimeAnimatorController.animationClips;
+            if (clips.Length > 0)
+                animacion = clips[0];
+        }
     }
 
     private void ValidarAnimator()
@@ -110,9 +138,6 @@ public class machine : MonoBehaviour
 
         if (!MaquinaUtil.TieneEstado(animator, estadoReposo))
             MaquinaUtil.AvisarEstadoFaltante(this, estadoReposo, ref avisoReposoFaltante);
-
-        if (animacion == null)
-            Debug.LogWarning($"[{name}] Hay Animator pero no AnimationClip asignado, se usa tiempoSinAnimacion ({tiempoSinAnimacion}s) por residuo", this);
     }
 
     void Update()
@@ -141,9 +166,45 @@ public class machine : MonoBehaviour
         if (objeto == null || !PuedeRecibir())
             return false;
 
+        Destroy(objeto);
+        ProcesarResiduo();
+        return true;
+    }
+
+    public bool PuedeAceptar(Grabbable item)
+    {
+        return MotivoRechazo(item) == null;
+    }
+
+    public bool TryInsert(Grabbable item)
+    {
+        string motivo = MotivoRechazo(item);
+        if (motivo != null)
+        {
+            Debug.Log($"[{name}] TryInsert: rechazado, " + motivo);
+            return false;
+        }
+
+        item.OnConsumedByMachine();
+        ProcesarResiduo();
+        return true;
+    }
+
+    private string MotivoRechazo(Grabbable item)
+    {
+        if (item == null)
+            return "item es null";
+        if (!PuedeRecibir())
+            return "la máquina está ocupada procesando";
+        if (!string.IsNullOrEmpty(acceptedItemId) && item.itemId != acceptedItemId)
+            return $"itemId '{item.itemId}' no coincide con acceptedItemId '{acceptedItemId}'";
+        return null;
+    }
+
+    private void ProcesarResiduo()
+    {
         ocupado = true;
         contador += 1;
-        Destroy(objeto);
 
         Pagar();
 
@@ -154,7 +215,6 @@ public class machine : MonoBehaviour
         }
 
         rutinaProceso = StartCoroutine(RutinaProceso(true));
-        return true;
     }
 
     private void Pagar()
@@ -207,10 +267,23 @@ public class machine : MonoBehaviour
         float velocidad = VelocidadAnimacion;
 
         if (animator == null || animacion == null)
+        {
+            AvisarSinClip();
             return tiempoSinAnimacion / velocidad;
+        }
 
         MaquinaUtil.Reproducir(this, animator, estadoAnimacion, velocidad, ref avisoEstadoFaltante);
         return animacion.length / velocidad;
+    }
+
+    private void AvisarSinClip()
+    {
+        if (avisoSinClip)
+            return;
+
+        avisoSinClip = true;
+        string falta = animator == null ? "Animator ni AnimationClip" : "AnimationClip";
+        Debug.LogWarning($"[{name}] La máquina no tiene {falta}: procesa sin animación y usa tiempoSinAnimacion ({tiempoSinAnimacion}s) como tiempo de proceso", this);
     }
 
     public void generarbasuraproscesada()
@@ -230,11 +303,11 @@ public class machine : MonoBehaviour
     {
         if (jugador == null) return;
 
-        jugadorcerca = MaquinaUtil.JugadorCerca(transform.position, radiodetection, distanciacerca, jugador);
+        float distanciaJugador;
+        jugadorcerca = MaquinaUtil.JugadorCerca(transform.position, radiodetection, distanciacerca, jugador, out distanciaJugador);
         MaquinaUtil.MostrarCartel(cartelmejora, jugadorcerca);
 
-        if (MaquinaUtil.PidioMejora(jugadorcerca))
-            mejorar();
+        MaquinaUtil.ProponerMejoraSiPidio(this, jugadorcerca, distanciaJugador, mejorar);
     }
 
     public void mejorar()

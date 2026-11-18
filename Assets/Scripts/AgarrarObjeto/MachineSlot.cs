@@ -14,7 +14,7 @@ public class MachineSlot : MonoBehaviour
 
     public Belt primeraCinta;
     public LayerMask capasconectadas;
-    public float distanciamax = 123f;
+    public float distanciamax = 4f;
     public float alturaRayo = 0;
     public Transform puntoSalida;
     public bool autoConectar = true;
@@ -43,8 +43,8 @@ public class MachineSlot : MonoBehaviour
     [Header("Animations")]
     public Animator animator;
     public AnimationClip animacion;
-    public string estadoAnimacion = "Procesar";
-    public string estadoReposo = "Idle";
+    private const string estadoAnimacion = "Accion";
+    private const string estadoReposo = "New State";
     private bool avisoEstadoFaltante;
 
     void OnEnable()
@@ -57,6 +57,7 @@ public class MachineSlot : MonoBehaviour
     {
         BuildManager.OnConstruccionCambiada -= PedirRecalculo;
         recalculoPendiente = false;
+        isProcessing = false;
     }
 
     void Start()
@@ -75,6 +76,16 @@ public class MachineSlot : MonoBehaviour
 
         detectarbelt();
         proximoChequeo = Time.time + Random.Range(0f, Mathf.Max(0f, intervaloRedSeguridad));
+
+        if (animator == null)
+            animator = GetComponentInChildren<Animator>();
+
+        if (animacion == null && animator != null && animator.runtimeAnimatorController != null)
+        {
+            AnimationClip[] clips = animator.runtimeAnimatorController.animationClips;
+            if (clips.Length > 0)
+                animacion = clips[0];
+        }
     }
 
     void Update()
@@ -102,6 +113,8 @@ public class MachineSlot : MonoBehaviour
         if (!string.IsNullOrEmpty(acceptedItemId) && item.itemId != acceptedItemId)
             return $"itemId '{item.itemId}' no coincide con acceptedItemId '{acceptedItemId}'";
         return null;
+        if (outputPrefab != null && outputPrefab.GetComponent<BeltItem>() == null)
+            return "el outputPrefab no tiene BeltItem";
     }
 
     public bool TryInsert(Grabbable item)
@@ -146,11 +159,11 @@ public class MachineSlot : MonoBehaviour
     {
         if (jugador == null) return;
 
-        jugadorcerca = MaquinaUtil.JugadorCerca(transform.position, radiodetection, distanciacerca, jugador);
+        float distanciaJugador;
+        jugadorcerca = MaquinaUtil.JugadorCerca(transform.position, radiodetection, distanciacerca, jugador, out distanciaJugador);
         MaquinaUtil.MostrarCartel(cartelmejora, jugadorcerca);
 
-        if (MaquinaUtil.PidioMejora(jugadorcerca))
-            mejorar();
+        MaquinaUtil.ProponerMejoraSiPidio(this, jugadorcerca, distanciaJugador, mejorar);
     }
 
     private void PedirRecalculo()

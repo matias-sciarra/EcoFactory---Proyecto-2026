@@ -278,6 +278,14 @@ public class BuildManager : MonoBehaviour
     
 void EnterBuildMode()
 {
+    // Antes, si faltaba alguna de estas referencias, saltaba una excepcion a mitad de camino
+    // y el juego quedaba con buildModeActivo en true (E y Q dejaban de funcionar)
+    if (player == null || fpsCamera == null || buildPosition == null || placementController == null)
+    {
+        Debug.LogError("BuildManager: falta asignar player, fpsCamera, buildPosition o placementController, no se puede entrar al modo construcción", this);
+        return;
+    }
+
     buildMode = true;
     buildModeActivo = true;
 
@@ -285,10 +293,13 @@ void EnterBuildMode()
     oldPlayerRotation = player.transform.rotation;
     oldCameraLocalPosition = fpsCamera.localPosition;
     oldCameraLocalRotation = fpsCamera.localRotation;
-    techoRenderer.enabled = false;
-    
 
-    fpsController.enabled = false;
+    // techo no esta asignado en todas las escenas (por ejemplo "escena papa")
+    if (techoRenderer != null)
+        techoRenderer.enabled = false;
+
+    if (fpsController != null)
+        fpsController.enabled = false;
     player.transform.rotation = Quaternion.identity;
 
     fpsCamera.position = buildPosition.position;
@@ -327,15 +338,19 @@ void EnterBuildMode()
         buildMode = false;
         buildModeActivo = false;
 
-        placementController.CancelPlacement();
+        if (placementController != null)
+            placementController.CancelPlacement();
 
-        fpsController.enabled = false;
+        if (fpsController != null)
+            fpsController.enabled = false;
 
         player.transform.position = oldPlayerPosition;
         player.transform.rotation = oldPlayerRotation;
         fpsCamera.localPosition = oldCameraLocalPosition;
         fpsCamera.localRotation = oldCameraLocalRotation;
-        techoRenderer.enabled = true;
+
+        if (techoRenderer != null)
+            techoRenderer.enabled = true;
 
         if (characterController != null)
         {
@@ -343,7 +358,8 @@ void EnterBuildMode()
             characterController.enabled = true;
         }
 
-        fpsController.enabled = true;
+        if (fpsController != null)
+            fpsController.enabled = true;
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -389,24 +405,20 @@ private void ActualizarUIMaquina()
             : Color.red;
     }
 
-    // Actualizar la imagen independientemente del texto del precio
+    // Actualizar la imagen independientemente del texto del precio.
+    // (Antes se escribian 2 Debug.Log cada vez que cambiaba la plata o la seleccion)
     if (imgMaquina != null)
-{
-    imgMaquina.sprite = maquinas[indiceSeleccionado].imagenUI;
+    {
+        imgMaquina.sprite = maquinas[indiceSeleccionado].imagenUI;
+    }
+    else if (!avisoSinImagen)
+    {
+        avisoSinImagen = true;
+        Debug.LogError("BuildManager sin Image asignada: " + gameObject.name, this);
+    }
+}
 
-    Debug.Log("Índice seleccionado: " + indiceSeleccionado);
-    Debug.Log("Sprite asignado: " +
-        (imgMaquina.sprite != null
-            ? imgMaquina.sprite.name
-            : "NULL"));
-}
-else
-{
-    Debug.LogError(
-        "BuildManager sin Image asignada: " + gameObject.name,
-        this);
-}
-}
+    private bool avisoSinImagen;
 
 
     private int level()
