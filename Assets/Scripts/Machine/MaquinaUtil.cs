@@ -136,6 +136,9 @@ public static class MaquinaUtil
             return false;
         }
 
+        Belt.FijarKinematico(nueva);
+        nueva.transform.position = cinta.GetItemPosition(nueva);
+
         cinta.beltItem = itemcomponent;
         cinta.isSpaceTaken = true;
         return true;

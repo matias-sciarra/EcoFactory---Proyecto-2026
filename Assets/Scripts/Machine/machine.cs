@@ -23,6 +23,7 @@ public class machine : MonoBehaviour
     public float intervaloRedSeguridad = 2f;
     public bool debugConexiones = false;
     public float angulorayo = 90f;
+    public Transform puntoEntrada;
 
     public Button cartelmejora;
     public TextMeshProUGUI txtcostomejora;

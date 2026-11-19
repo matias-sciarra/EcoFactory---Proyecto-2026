@@ -31,6 +31,10 @@ public class Belt : MonoBehaviour
     public Transform puntoItem;
     public bool autoConectar = true;
     public Transform puntoSalida;
+    public Transform puntoEntrada;
+    public bool debugRecorrido = false;
+    private const float DURACION_DEBUG_RECORRIDO = 4f;
+    private GameObject itemKinematico;
     public float alturaRayo = 0.5f;
     public float distanciaRayo = 7f;
     public float intervaloRedSeguridad = 2f;
@@ -250,8 +254,64 @@ public class Belt : MonoBehaviour
         }
 
         return transform.position;
-        
 
+
+    }
+
+    public Vector3 GetItemPosition(GameObject item)
+    {
+        return GetItemPosition() + Vector3.up * OffsetBase(item);
+    }
+
+    public static float OffsetBase(GameObject item)
+    {
+        if (item == null)
+            return 0f;
+
+        Renderer[] renderers = item.GetComponentsInChildren<Renderer>();
+        bool hayBounds = false;
+        Bounds bounds = new Bounds();
+
+        for (int i = 0; i < renderers.Length; i++)
+        {
+            Renderer r = renderers[i];
+            if (r is ParticleSystemRenderer || r is TrailRenderer || r is LineRenderer)
+                continue;
+
+            if (!hayBounds)
+            {
+                bounds = r.bounds;
+                hayBounds = true;
+            }
+            else
+            {
+                bounds.Encapsulate(r.bounds);
+            }
+        }
+
+        if (!hayBounds)
+            return 0f;
+
+        return item.transform.position.y - bounds.min.y;
+    }
+
+    public static void FijarKinematico(GameObject item)
+    {
+        if (item == null)
+            return;
+
+        Rigidbody[] cuerpos = item.GetComponentsInChildren<Rigidbody>();
+        for (int i = 0; i < cuerpos.Length; i++)
+        {
+            Rigidbody rb = cuerpos[i];
+            if (!rb.isKinematic)
+            {
+                rb.velocity = Vector3.zero;
+                rb.angularVelocity = Vector3.zero;
+                rb.isKinematic = true;
+            }
+            rb.useGravity = false;
+        }
     }
 
     //Hace que la cinta empiece el movimiento de objetos
@@ -277,6 +337,12 @@ public class Belt : MonoBehaviour
                 yield break;
             }
 
+            if (item != itemKinematico)
+            {
+                FijarKinematico(item);
+                itemKinematico = item;
+            }
+
             Belt destinoBelt = beltInSequence;
             moneymachine destinoMoney = moneyMachineInSequence;
             MachineSlot destinoSlot = machineSlotInSequence;
@@ -287,14 +353,54 @@ public class Belt : MonoBehaviour
                 if (destinoBelt.isSpaceTaken)
                     yield break;
 
-                Vector3 toPosition = destinoBelt.GetItemPosition();
                 destinoBelt.isSpaceTaken = true;
                 destinoReservado = destinoBelt;
 
-                while (item != null && destinoBelt != null && item.transform.position != toPosition)
+                Vector3 desfase = Vector3.up * OffsetBase(item);
+
+                Transform[] puntos = null;
+                if (puntoItem != null && puntoSalida != null && destinoBelt.puntoEntrada != null)
+                    puntos = new Transform[] { puntoItem, puntoSalida, destinoBelt.puntoEntrada };
+
+                int total = puntos != null ? puntos.Length : 0;
+                int paso = 0;
+
+                while (item != null && destinoBelt != null)
                 {
-                    item.transform.position =
-                        Vector3.MoveTowards(item.transform.position, toPosition, Velocidad * Time.deltaTime);
+                    Vector3 objetivo;
+
+                    if (paso < total)
+                    {
+                        if (puntos[paso] == null)
+                        {
+                            paso++;
+                            continue;
+                        }
+
+                        objetivo = puntos[paso].position + desfase;
+                    }
+                    else
+                    {
+                        objetivo = destinoBelt.GetItemPosition() + desfase;
+                    }
+
+                    Vector3 posicionActual = item.transform.position;
+
+                    if (posicionActual == objetivo)
+                    {
+                        if (paso >= total)
+                            break;
+
+                        paso++;
+                        continue;
+                    }
+
+                    Vector3 posicionNueva = Vector3.MoveTowards(posicionActual, objetivo, Velocidad * Time.deltaTime);
+                    item.transform.position = posicionNueva;
+
+                    if (debugRecorrido)
+                        Debug.DrawLine(posicionActual, posicionNueva, Color.cyan, DURACION_DEBUG_RECORRIDO);
+
                     yield return null;
                 }
 
@@ -348,7 +454,12 @@ public class Belt : MonoBehaviour
                         ? destinoSlot.transform
                         : destinoMaquina.transform;
 
-                Vector3 toPosition = machineTransform.position;
+                Transform puntoDestino = null;
+                if (destinoMoney == null && destinoSlot == null && destinoMaquina != null)
+                    puntoDestino = destinoMaquina.puntoEntrada;
+
+                Vector3 toPosition = puntoDestino != null ? puntoDestino.position : machineTransform.position;
+                
 
                 //Igual que el movimiento hacia otra cinta, pero el destino es la maquina
                 while (item != null && machineTransform != null && item.transform.position != toPosition)
@@ -387,7 +498,7 @@ public class Belt : MonoBehaviour
                 }
                 else
                 {
-                    item.transform.position = GetItemPosition();
+                    item.transform.position = GetItemPosition(item);
                 }
             }
         }
