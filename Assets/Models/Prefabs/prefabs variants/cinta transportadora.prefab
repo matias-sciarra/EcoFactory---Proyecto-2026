@@ -74,11 +74,13 @@ MonoBehaviour:
   puntoItem: {fileID: 288685616960199914}
   autoConectar: 1
   puntoSalida: {fileID: 4033846867273513162}
+  puntoEntrada: {fileID: 0}
+  debugRecorrido: 0
   alturaRayo: 0.5
   distanciaRayo: 4.5
   intervaloRedSeguridad: 2
   debugConexiones: 0
-  angulorayo: 0
+  angulorayo: 180
 --- !u!1 &2974368549503956398
 GameObject:
   m_ObjectHideFlags: 0
@@ -494,7 +496,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 9e930ca8b3a9c2f498b37cd085d807be, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.2176963
+      value: -2.9858935
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 9e930ca8b3a9c2f498b37cd085d807be, type: 3}
       propertyPath: m_LocalPosition.y
@@ -502,7 +504,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 9e930ca8b3a9c2f498b37cd085d807be, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 22.469355
+      value: -3.56
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 9e930ca8b3a9c2f498b37cd085d807be, type: 3}
       propertyPath: m_LocalRotation.x
