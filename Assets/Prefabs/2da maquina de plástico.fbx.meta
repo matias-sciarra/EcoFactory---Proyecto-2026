@@ -63,7 +63,132 @@ ModelImporter:
     9500000: //RootNode
     13700000: Cylinder.005
     2186277476908879412: ImportLogs
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cables.001
+    second: {fileID: 2100000, guid: a153b2e78be6b2f459651d8261f924b7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material que cambia de iluminosidad
+    second: {fileID: 2100000, guid: 6bc92d85c29909148a49ff2c9d1e22e8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material vuevo para plastico
+    second: {fileID: 2100000, guid: 6f94dfbd81a299d4eadbc01b03f12318, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.007
+    second: {fileID: 2100000, guid: 4c53623a1e5cded49b20fbfd1976773b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.013
+    second: {fileID: 2100000, guid: 60157eb15c35297418bf2ed946299679, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.015
+    second: {fileID: 2100000, guid: 574ed3290db7e3842978d17ae50e4bef, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.018
+    second: {fileID: 2100000, guid: 4ffc5dcb40bd77f41907d9b16c53b843, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.024
+    second: {fileID: 2100000, guid: 7c636f3ac03d17b42b61fc12f340ce85, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.025
+    second: {fileID: 2100000, guid: 0198bef69a5ad3346b296ae12fec508d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.031
+    second: {fileID: 2100000, guid: d784f70cded834b4798a5347cbdec573, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal_Contenedor_Azul.001
+    second: {fileID: 2100000, guid: c600d57279550a7448e31611e473a7e8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mtalico
+    second: {fileID: 2100000, guid: 3368ee5d139a6a844b6eed5aeb995e49, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mtalico.001
+    second: {fileID: 2100000, guid: bddb337f59b27754f8ec8360b42d6100, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Nuevo material resaltante para plastico
+    second: {fileID: 2100000, guid: aeba48f38c99d6a4c88e3ef0d24c324b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PET_AzulClaro.001
+    second: {fileID: 2100000, guid: 520d663402d66c04986cee29ca2ee731, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PET_AzulIntenso
+    second: {fileID: 2100000, guid: a6e75d121a3b77c45a11321543680703, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PET_AzulOscuro.001
+    second: {fileID: 2100000, guid: ed171d00f3eb6284392a2be1070fd2f3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PET_VerdeSprite.001
+    second: {fileID: 2100000, guid: d496050131d130947973843e6b5036f0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plastico_Amarillo.001
+    second: {fileID: 2100000, guid: b7e9765ab59fedd4da9eb229383d509e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plastico_Blanco.001
+    second: {fileID: 2100000, guid: 30e5b82c45502be4499172ce34a35d24, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plastico_Rojo.001
+    second: {fileID: 2100000, guid: e0c6c1c657efea64689e109ba5169c48, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TEXTO ECOFACTORYDESIGN
+    second: {fileID: 2100000, guid: eb76299ff5d77c24c86938a815c94268, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tapa_Azul
+    second: {fileID: 2100000, guid: 3f937f4784f6acb46a32368ea45b3e5c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Vidrio
+    second: {fileID: 2100000, guid: 94afe682b11dd8a4baf1150be31bbebc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Witefan
+    second: {fileID: 2100000, guid: 6b2fd4e12ca45b848b3d93bf1d68613e, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
