@@ -14,6 +14,7 @@ public class MenuInicio : MonoBehaviour
     [SerializeField] private GameObject panelMenu;
     [SerializeField] private GameObject raizJugador;
     [SerializeField] private Button botonContinuar;
+    [SerializeField] private GameObject panelCreditos; 
 
     private readonly List<Behaviour> pausados = new List<Behaviour>();
     private readonly List<FPSController> controlesPropios = new List<FPSController>();
@@ -34,6 +35,9 @@ public class MenuInicio : MonoBehaviour
     {
         if (panelMenu != null)
             panelMenu.SetActive(true);
+
+        if (panelCreditos != null)
+            panelCreditos.SetActive(false);
 
         if (raizJugador == null)
             Debug.LogError("MenuInicio: asigna el objeto raíz Player.");
@@ -106,14 +110,17 @@ public class MenuInicio : MonoBehaviour
 
     private void EmpezarJuego()
     {
-        if (panelMenu != null)
-            panelMenu.SetActive(false);
+    if (panelCreditos != null)
+        panelCreditos.SetActive(false);
 
-        raizJugador.SetActive(true);
-        ReanudarJugador();
+    if (panelMenu != null)
+        panelMenu.SetActive(false);
 
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+    raizJugador.SetActive(true);
+    ReanudarJugador();
+
+    Cursor.lockState = CursorLockMode.Locked;
+    Cursor.visible = false;
     }
 
     private void PausarJugador()
@@ -216,5 +223,23 @@ public class MenuInicio : MonoBehaviour
 
         avisoSinSavemanager = true;
         Debug.LogError("MenuInicio: no hay ningún savemanager en la escena. Agregá un GameObject con el componente savemanager: sin él no se guarda ni se carga la partida", this);
+    }
+
+    public void AbrirCreditos()
+    {
+    if (panelMenu != null)
+        panelMenu.SetActive(false);
+
+    if (panelCreditos != null)
+        panelCreditos.SetActive(true);
+    }
+
+    public void CerrarCreditos()
+    {
+    if (panelCreditos != null)
+        panelCreditos.SetActive(false);
+
+    if (panelMenu != null)
+        panelMenu.SetActive(true);
     }
 }
