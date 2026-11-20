@@ -8,10 +8,10 @@ public class spawnmanager : MonoBehaviour
     [Tooltip("Elemento 0 = nivel 1, elemento 1 = nivel 2, etc. (hasta 4)")]
     public GameObject[] prefabs;
     private const int NIVEL_MAXIMO = 4;
-    private float spawnrate = 10f;
+    private float spawnrate = 3f;
     private float tiempo = 0f;
     private  int contadordedestroyables = 0;
-    private int limitededestruibles = 5;
+    private int limitededestruibles = 20;
     public float radiodetection = 30f;
 
     void Start()
