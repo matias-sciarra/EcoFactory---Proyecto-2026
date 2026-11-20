@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748171, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1149,42 +1149,42 @@ MonoBehaviour:
   maquinas:
   - prefab: {fileID: 2742158258148557992, guid: bd8ce66d48743e749a92fb16eb0ca306,
       type: 3}
-    imagenUI: {fileID: 21300000, guid: 91c9bfbe1bb07f546a3be20e269f5c47, type: 3}
+    imagenUI: {fileID: 21300000, guid: 3279d0e90f3e69940ac8b859fcd37544, type: 3}
     precioBase: 100
     vecesComprada: 0
     nivelnecesario: 1
     Botontienda: {fileID: 0}
   - prefab: {fileID: 3161402145758067695, guid: e536fb65fcd66124fb62f0bbd144705a,
       type: 3}
-    imagenUI: {fileID: 21300000, guid: 5c516a1b45a65334e9b9b45dbdb916f8, type: 3}
+    imagenUI: {fileID: 21300000, guid: 5a991e67188b2e0469c2a10700b50e2f, type: 3}
     precioBase: 150
     vecesComprada: 0
     nivelnecesario: 1
     Botontienda: {fileID: 0}
   - prefab: {fileID: 9162306209997501708, guid: 806a45e18a67bdc4a866900b6fb46622,
       type: 3}
-    imagenUI: {fileID: 21300000, guid: 6b28dd38b29106e488b4af2b9eefd993, type: 3}
+    imagenUI: {fileID: 21300000, guid: d587401eb97c6a242a432fcfa28b9b01, type: 3}
     precioBase: 80
     vecesComprada: 0
     nivelnecesario: 1
     Botontienda: {fileID: 0}
   - prefab: {fileID: 1742419586573036537, guid: 301fd761215e0a140875db8fa6a6f812,
       type: 3}
-    imagenUI: {fileID: 21300000, guid: 91c9bfbe1bb07f546a3be20e269f5c47, type: 3}
+    imagenUI: {fileID: 21300000, guid: b9b8c2f5d5518d74785854308d74a34a, type: 3}
     precioBase: 90
     vecesComprada: 0
     nivelnecesario: 1
     Botontienda: {fileID: 0}
   - prefab: {fileID: 8592584822726232981, guid: bd89bd67976ef0d488ad6202dac6cadf,
       type: 3}
-    imagenUI: {fileID: 21300000, guid: fcc274a05d1996b488a33e7f8f9376d9, type: 3}
+    imagenUI: {fileID: 21300000, guid: 2e9607c1ed993ad4faf3a2b812645904, type: 3}
     precioBase: 90
     vecesComprada: 0
     nivelnecesario: 1
     Botontienda: {fileID: 0}
   - prefab: {fileID: 3093451061530968607, guid: b9b56dabe9a44124fafe2816748339c6,
       type: 3}
-    imagenUI: {fileID: 21300000, guid: 152a94580b75ef24b802e33cb0f963f9, type: 3}
+    imagenUI: {fileID: 21300000, guid: 9adfd77a04ce30541b9835b0bd599c51, type: 3}
     precioBase: 90
     vecesComprada: 0
     nivelnecesario: 1
@@ -1204,49 +1204,49 @@ MonoBehaviour:
     nivelnecesario: 2
     Botontienda: {fileID: 0}
   - prefab: {fileID: 566762520524499334, guid: 70e0fc960647f544e950018e756933ef, type: 3}
-    imagenUI: {fileID: 21300000, guid: d587401eb97c6a242a432fcfa28b9b01, type: 3}
+    imagenUI: {fileID: 21300000, guid: bbcf42a851e499443a9aac3d77928d8d, type: 3}
     precioBase: 90
     vecesComprada: 0
     nivelnecesario: 2
     Botontienda: {fileID: 0}
   - prefab: {fileID: 7933770845607586370, guid: a0e95ffecea4f974fb607cebddfc1714,
       type: 3}
-    imagenUI: {fileID: 21300000, guid: bbcf42a851e499443a9aac3d77928d8d, type: 3}
+    imagenUI: {fileID: 21300000, guid: 02eaa46b240f8eb48a5984b47f1b71fe, type: 3}
     precioBase: 90
     vecesComprada: 0
     nivelnecesario: 3
     Botontienda: {fileID: 0}
   - prefab: {fileID: 7507958913819234417, guid: bfc1f4dd4225d4846b0c9cb756424f64,
       type: 3}
-    imagenUI: {fileID: 21300000, guid: bbcf42a851e499443a9aac3d77928d8d, type: 3}
+    imagenUI: {fileID: 21300000, guid: 04c77a21f61b3654ca358382b5a8a580, type: 3}
     precioBase: 90
     vecesComprada: 0
     nivelnecesario: 3
     Botontienda: {fileID: 0}
   - prefab: {fileID: 4500185888559885087, guid: 2a074f8126ef9f1428d2d2a107aa2e79,
       type: 3}
-    imagenUI: {fileID: 21300000, guid: bbcf42a851e499443a9aac3d77928d8d, type: 3}
+    imagenUI: {fileID: 21300000, guid: f2e812ea82d4f66458eade5fe0e704bc, type: 3}
     precioBase: 90
     vecesComprada: 0
     nivelnecesario: 4
     Botontienda: {fileID: 0}
   - prefab: {fileID: 8448873020660310257, guid: 9befedd365ad7b2498b533ab3c9f2139,
       type: 3}
-    imagenUI: {fileID: 21300000, guid: bbcf42a851e499443a9aac3d77928d8d, type: 3}
+    imagenUI: {fileID: 21300000, guid: c7053ef004a558546905be2d13aa6c89, type: 3}
     precioBase: 90
     vecesComprada: 0
     nivelnecesario: 4
     Botontienda: {fileID: 0}
   - prefab: {fileID: 1403615955237944627, guid: 11f9594ebcb77da41b042d3fce184775,
       type: 3}
-    imagenUI: {fileID: 21300000, guid: bbcf42a851e499443a9aac3d77928d8d, type: 3}
+    imagenUI: {fileID: 21300000, guid: 3d513dd60ba136941bcd6357ade4056d, type: 3}
     precioBase: 90
     vecesComprada: 0
     nivelnecesario: 3
     Botontienda: {fileID: 0}
   - prefab: {fileID: 5749908351102410616, guid: ca5891ac856222d49835e2f85f6fd28b,
       type: 3}
-    imagenUI: {fileID: 21300000, guid: bbcf42a851e499443a9aac3d77928d8d, type: 3}
+    imagenUI: {fileID: 21300000, guid: bfc97dd28a63046409091c755442bbba, type: 3}
     precioBase: 90
     vecesComprada: 0
     nivelnecesario: 4
